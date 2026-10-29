@@ -134,8 +134,14 @@ def carry_over(new: dict, old: dict, moves: list[dict]) -> dict:
             report["missing"] += 1
             continue
         for k in DERIVED_KEYS:
-            if k in o and not c.get(k):      # a prebuilt print already carries its translations
+            if k in o and not c.get(k):
                 c[k] = o[k]
+        # a prebuilt print brings its own German translation; the other languages (English, made later) are
+        # carried language by language as long as they stay aligned with the Latin sections
+        if c.get("translations") is not o.get("translations"):
+            for lang, t in (o.get("translations") or {}).items():
+                if lang not in c["translations"] and t and len(t.get("body") or []) == len(c.get("body") or []):
+                    c["translations"][lang] = t
         report["carried"] += 1
 
     for mv in moves:

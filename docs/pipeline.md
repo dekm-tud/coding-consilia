@@ -159,7 +159,7 @@ The website never loads `output/consilia.json`. `src/build_site_data.py` writes 
 |---|---|
 | `index.json` | metadata per consilium as an array whose index `i` the embeddings refer to, pages and region boxes |
 | `text/{print}.json` | Latin argument, casus and body, loaded per print |
-| `tr/{en,de}/{print}.json` | machine translations, loaded when a translation is switched on |
+| `tr/{en,de}/{print}.json` | machine translations, used by the search and the Ask page and not shown in the reader |
 | `annotations/` | subject layers and citations (see [annotation.md](annotation.md)) |
 | `lemmas.json` | form → lemma list of the full-text search |
 | `manifest.json` | data revision (hash of `index.json`), counts, file sizes |
@@ -177,7 +177,7 @@ Sans 3, self-hosted). Permalinks and citations use the canonical address in `sit
 
 | Page | Scripts | Content |
 |---|---|---|
-| Reader `index.html` | `reader-app.js`, `viewer.js` | one print at a time: index, text with casus, argument, body and keywords, translation, facsimile in Mirador 4 with the consilium's regions, permalink, citation, error report. Deep links `?id=`, `?vol=&n=`, `&tr=en`, `&q=` |
+| Reader `index.html` | `reader-app.js`, `viewer.js` | one print at a time: index, text with casus, argument, body and keywords, facsimile in Mirador 4 with the consilium's regions, permalink, citation, error report. Deep links `?id=`, `?vol=&n=`, `&q=` |
 | Search `search.html` | `search-app.js`, `search-worker.js`, `embed-worker.js` | full text (word forms and lemmas), semantic search (query embedded in the browser), similar passages, subjects and citations, with all state kept in the URL |
 | Ask `chat.html` | `chat-app.js` | an assistant driven by a chat API the reader provides (Anthropic, OpenAI, Gemini or any OpenAI-compatible endpoint), which calls search tools that run in the browser and answers with links to the consilia |
 | `introduction.html`, `baldus.html`, `panormitanus.html` | `essay.js` | introduction to the genre and the authors, English and German |
@@ -204,7 +204,7 @@ npx -y -p @playwright/test playwright test -c tests/playwright.config.js
 ```
 
 `tests/test_casus.py` checks that the casus correction keeps ids and numbering, loses or duplicates no text and
-keeps translations aligned. `tests/smoke.spec.js` covers the reader (deep links, casus, translation, facsimile),
+keeps translations aligned. `tests/smoke.spec.js` covers the reader (deep links, casus, Latin text only, facsimile),
 the search (full text with lemmas, exact forms in quotation marks, semantic and similar search, URL state), the
 preview gate and the about and chat pages, and some of the tests need network access. `tests/models.spec.js` covers the
 browser query models.

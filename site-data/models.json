@@ -23,7 +23,7 @@
    "query_prefix": "",
    "dims": 1024,
    "embeddings": [
-    "https://huggingface.co/datasets/dekmATtud/consilia-embeddings/resolve/v0.2/bge-m3/",
+    "https://huggingface.co/datasets/dekmATtud/consilia-embeddings/resolve/v0.3/bge-m3/",
     "hf-export/bge-m3/"
    ],
    "notes": "Baseline for comparison with the fine-tune.",
@@ -64,7 +64,7 @@
    "query_prefix": "",
    "dims": 1024,
    "embeddings": [
-    "https://huggingface.co/datasets/dekmATtud/consilia-embeddings/resolve/v0.2/etp-bgem3-ft/",
+    "https://huggingface.co/datasets/dekmATtud/consilia-embeddings/resolve/v0.3/etp-bgem3-ft/",
     "hf-export/etp-bgem3-ft/"
    ],
    "notes": "The project's Latin-tuned model. On the Layer B gold it is NOT better than stock BGE-M3 overall (worse for short and Latin queries, better for long English definitions); ONNX uploaded 2026-10-17 (int8 with last 6 layers fp32, 796 MB; fp16). Parity of the shipped int8: mean top-20 overlap 0.915, pass.",
@@ -105,7 +105,7 @@
    "query_prefix": "Instruct: Given a question about medieval legal opinions, retrieve passages of consilia that answer it\nQuery:",
    "dims": 1024,
    "embeddings": [
-    "https://huggingface.co/datasets/dekmATtud/consilia-embeddings/resolve/v0.2/qwen3-0.6b/",
+    "https://huggingface.co/datasets/dekmATtud/consilia-embeddings/resolve/v0.3/qwen3-0.6b/",
     "hf-export/qwen3-0.6b/"
    ],
    "notes": "Weaker than the 4B/8B models on rare and sensitive categories (rape, incest) in the project's own earlier evaluation.",
@@ -144,7 +144,7 @@
    "query_prefix": "Instruct: Given a question about medieval legal opinions, retrieve passages of consilia that answer it\nQuery:",
    "dims": 2560,
    "embeddings": [
-    "https://huggingface.co/datasets/dekmATtud/consilia-embeddings/resolve/v0.2/qwen3-4b/",
+    "https://huggingface.co/datasets/dekmATtud/consilia-embeddings/resolve/v0.3/qwen3-4b/",
     "hf-export/qwen3-4b/"
    ],
    "notes": "Large download; needs WebGPU and roughly 8 GB of GPU memory. Only community ONNX exports exist (fp32, 16 GB); a smaller export has not been made yet.",

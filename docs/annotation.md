@@ -22,7 +22,7 @@ python src/prepare_keyword_reduction_input.py   # candidates for the final selec
 python src/apply_keyword_reduction.py           # keywords_final, after src/gpu/reduce_keywords.py on the server
 ```
 
-`qwen_process.py` translates first and then extracts keywords from its own English translation, because the model
+The translations are not shown in the reader, because their quality is not sufficient for reading alongside the Latin, but the search and the Ask page use them. They can be added to the TEI export with `--translations`. `qwen_process.py` translates first and then extracts keywords from its own English translation, because the model
 reads clean English more reliably than sixteenth-century legal Latin. It writes after every batch, so an interrupted
 run continues where it stopped. The raw keywords are merged into one vocabulary by clustering their embeddings and
 letting the model name each cluster.
@@ -39,8 +39,8 @@ candidates in two passes, one for its central themes and one for distinctive min
 returns must come from that candidate list. A selection from the whole vocabulary by embedding similarity was
 tested and dropped, because it missed topics that are mentioned only briefly in a long text.
 
-Translations that no longer match their Latin paragraphs after a text correction are withheld by the website and
-can be redone with `tools/retranslate_stale.py`.
+Translations that no longer match their Latin paragraphs after a text correction can be redone with
+`tools/retranslate_stale.py`.
 
 ## Subject index and body codebook
 
@@ -93,7 +93,7 @@ only when both agree (`eval/reviews/citation_resolutions.jsonl`).
 ## Embeddings
 
 The search page embeds the query in the browser and compares it with precomputed vectors of every body and casus
-section, in Latin and in English. The same sections are embedded with every model, so a row means the same passage
+section. The vectors cover the Latin text and the English translation. The same sections are embedded with every model, so a row means the same passage
 in every model directory, and a consilium scores with the best of its sections, which keeps short mentions in long
 texts findable.
 

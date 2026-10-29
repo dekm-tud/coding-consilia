@@ -70,7 +70,7 @@ src/gemini_ocr/                             column transcription with Gemini
 tools/                                      transcription decisions, reviews, kraken and Flair training, dataset
                                             builders, publishing helpers (see tools/RELEASE.md)
 output/consilia.json                        the generated edition data, source of the website
-site-data/                                  what the website loads: index, texts per print, translations,
+site-data/                                  what the website loads: index, texts and translations per print,
                                             annotation layers, lemma list, model registry
 index.html, search.html, chat.html, …       the website, with scripts, styles, fonts and Mirador in assets/
 eval/                                       gold sets and evaluation reports of the annotation layers

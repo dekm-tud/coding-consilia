@@ -21,6 +21,10 @@ Then: python src/build_site_data.py  (lists the files in manifest.json so the si
 
 from __future__ import annotations
 
+import sys as _sys
+from pathlib import Path as _P
+_sys.path.insert(0, str(_P(__file__).resolve().parents[1]))
+from import_prebuilt import edition_form  # noqa: E402  (evidence quotes in the edition's spelling)
 import argparse
 import json
 import sys
@@ -108,7 +112,7 @@ def export_body(files: list[Path]) -> dict:
                 continue
             status = "verified_by_editor" if rv else ("verified_by_model" if a["code"] in codes2 else ("machine" if p2 is None else "disputed"))
             out.append({"unit": unit, "doc": doc_id(um.get("doc") or unit.split("#")[0]), "section": um.get("section"), "window": um.get("window"),
-                        "kind": um.get("kind"), "code": a["code"], "role": (rv or {}).get("role") or a["role"], "evidence_la": a.get("evidence_la", ""),
+                        "kind": um.get("kind"), "code": a["code"], "role": (rv or {}).get("role") or a["role"], "evidence_la": edition_form(a.get("evidence_la", "")),
                         "status": status, "pass_agreement": a["code"] in codes2 if p2 else None})
             seen.add(a["code"])
         if p2 and unit in p2:                      # pass 2 only: disputed
@@ -116,7 +120,7 @@ def export_body(files: list[Path]) -> dict:
                 if code in seen or not a.get("evidence_valid", True):
                     continue
                 out.append({"unit": unit, "doc": doc_id(um.get("doc") or unit.split("#")[0]), "section": um.get("section"), "window": um.get("window"),
-                            "kind": um.get("kind"), "code": code, "role": a["role"], "evidence_la": a.get("evidence_la", ""), "status": "disputed", "pass_agreement": False})
+                            "kind": um.get("kind"), "code": code, "role": a["role"], "evidence_la": edition_form(a.get("evidence_la", "")), "status": "disputed", "pass_agreement": False})
     models = sorted({rec["model"] for rec in p1.values()} | ({r["model"] for r in p2.values()} if p2 else set()))
     return {"codebook_version": cb["version"], "roles": cb["roles"], "counted_roles_default": cb["counted_roles_default"],
             "codes": [{"id": c["id"], "group": c["group"], "label_en": c["label_en"], "label_de": c.get("label_de", ""), "label_la": c.get("label_la", "")} for c in cb["codes"]],

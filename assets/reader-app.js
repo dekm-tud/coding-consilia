@@ -1,5 +1,6 @@
-/* Reader: index of one print, continuous text with optional translation, facsimile with region
-   overlays. Data: site-data/ (index.json + one text shard + translation shards on demand).
+/* Reader: index of one print, continuous Latin text, facsimile with region
+   overlays. Data: site-data/ (index.json + one text shard). The machine translations are not shown on the site;
+   the translation code below stays inert (trMode is always 'la').
    Deep links: ?id=<consilium id> | ?vol=<print>&n=<number> | ?q=<find in print> | &tr=en|de */
 let site = null, volume = null, items = [], activeIndex = 0, srcPage = 0;
 let observer = null, highlightRe = null, searchTimer = null, suppressObserver = false;
@@ -36,7 +37,6 @@ loadSiteData().then(async s => {
       if (c) targetId = c.id; else notice = `Consilium ${wantN} was not found in ${printLabel(startVol, site.authors)}.`;
     }
   }
-  const tr = params.get('tr'); if (tr === 'en' || tr === 'de') { trMode = tr; $('tr-select').value = tr; }
   sel.value = startVol;
   if (notice) { const n = document.createElement('div'); n.className = 'notice'; n.textContent = notice; $('rd-inner').parentElement.insertBefore(n, $('rd-inner')); }   // shown at once, above the text
   if (!(await loadVolume(startVol))) return;
@@ -66,12 +66,6 @@ async function loadVolume(v) {
   // legend of the marks, once per print, above the text (hidden with the toggle)
   const old = document.querySelector('.marks-legend'); if (old) old.remove();
   if (refShard && Object.keys(refShard).length) { const lg = document.createElement('div'); lg.className = 'marks-legend'; lg.title = 'Citations and names found by a language model in the Latin text and checked by a tagger (machine annotation). Click a resolved citation or a jurist to open the index.'; lg.innerHTML = '<span class="lg-civ">Corpus iuris civilis</span><span class="lg-can">Corpus iuris canonici</span><span class="lg-oth">Libri feudorum, other works</span><span class="lg-jur">jurists, glossa</span><span class="lg-per">persons</span><span class="lg-plc">places, institutions</span><span class="lg-dat">dates, statutes</span>'; $('rd-inner').parentElement.insertBefore(lg, $('rd-inner')); }
-  // which translations exist for this print
-  const trSel = $('tr-select');
-  const have = site.manifest.files || {};
-  [...trSel.options].forEach(o => { if (o.value !== 'la') o.disabled = !have[`tr/${o.value}/${v}.json`]; });
-  if (trSel.options[trSel.selectedIndex].disabled) { trMode = 'la'; trSel.value = 'la'; }
-  $('tr-note').textContent = trMode === 'la' ? '' : 'Machine translation, reading aid only';
   await buildIndex(); buildList(); await buildText(); clearFind(); activate(0, false);
   return true;
 }
@@ -92,6 +86,8 @@ function buildList() {
   });
   setCount(null);
 }
+/* the print's own word for the numbered summary (site-data/editions.json argument_label): Argumentum, Summarium */
+function argLabel(v) { const e = site.editions && site.editions[v]; return (e && e.argument_label) || 'Argumentum'; }
 async function ensureTr() {
   if (trMode === 'la') return null;
   if (!trShard) { try { trShard = await getShard(`tr/${trMode}`, volume); } catch (e) { trShard = {}; } }
@@ -143,7 +139,7 @@ function consHTML(c, re, tr) {
   }
   html += `<h2>${h(c.title_display || c.title)}</h2>` + (c.title_display && c.title && c.title_display !== c.title ? `<div class="asprinted">${h(c.title)}</div>` : '');
   if (c.argument.length) {
-    html += `<div class="sect-h">Argumentum</div><ol class="arg">` + c.argument.map(it => `<li><span class="n">${it.n}</span><span>${h(it.text)}</span></li>`).join('') + `</ol>`;
+    html += `<div class="sect-h">${esc(argLabel(c.volume))}</div><ol class="arg">` + c.argument.map(it => `<li><span class="n">${it.n}</span><span>${h(it.text)}</span></li>`).join('') + `</ol>`;
     if (tr && tr.argument) html += trArgument(tr.argument, trMode);
   }
   if (c.body.length) {
@@ -229,15 +225,6 @@ function clearFind() {
   items.forEach((c, i) => { const art = $(`c-${i}`), ix = document.querySelector(`.ix[data-idx="${i}"]`); if (art) { art.classList.remove('hidden'); art.innerHTML = consHTML(c, null, trShard ? trShard[c.id] : null); } ix && ix.classList.remove('hidden'); });
 }
 
-/* ── translation mode ───────────────────────────────────────────────────── */
-$('tr-select').addEventListener('change', async e => {
-  trMode = e.target.value; trShard = null;
-  $('tr-note').textContent = trMode === 'la' ? '' : 'Machine translation, reading aid only';
-  const keep = activeIndex;
-  await buildText();
-  activate(keep, true); scrollTo(keep, 'auto'); pushState();
-});
-
 /* ── activation, scrolling, facsimile ───────────────────────────────────── */
 function activate(i, scrollIndex) {
   activeIndex = i; srcPage = 0;
@@ -291,11 +278,11 @@ $('ix-toggle').addEventListener('click', () => $('rd').classList.toggle('ix-open
 $('fac-toggle').addEventListener('click', () => { $('rd').classList.toggle('fac-open'); setTimeout(() => fac.home(), 250); });
 function closeDrawers() { $('rd').classList.remove('ix-open'); }
 
-/* narrow screens: the print and translation selects live in the index drawer */
+/* narrow screens: the print select lives in the index drawer */
 function placeControls() {
   const narrow = matchMedia('(max-width: 760px)').matches;
   const home = document.querySelector('.topbar'), drawer = $('mobile-controls');
-  ['volume-select', 'tr-select'].forEach(id => {
+  ['volume-select'].forEach(id => {
     const el = $(id); const target = narrow ? drawer : home;
     if (el.parentElement !== target) { if (narrow) { drawer.appendChild(el); el.style.display = ''; } else { home.insertBefore(el, $('fac-toggle')); el.style.display = ''; } }
   });

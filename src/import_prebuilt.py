@@ -57,6 +57,22 @@ def split_sections(text: str | None) -> list[str]:
 _CTRL = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
 
 
+# The Latin text in the edition's form, as in the Baldus volumes (tools/final_text.py, gold_eval.clean): "et" for
+# "&", "ae"/"oe" for the ligatures, no accents (ę stays), and the glyphs the column transcription used for long s
+# (ű, Ź, ż, ž), the ct and st ligatures (ĉ, ţ) and dotless i (ı) replaced by plain letters. Abbreviations with
+# a tilde (nõ, tamẽ) are left as transcribed, because their expansion depends on the word.
+_FORM = str.maketrans({"æ": "ae", "Æ": "Ae", "œ": "oe", "Œ": "Oe", "ű": "s", "Ź": "s", "ż": "s", "ž": "s",
+                       "ĉ": "c", "ţ": "t", "ı": "i", "à": "a", "è": "e", "ì": "i", "ò": "o", "ù": "u",
+                       "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u", "À": "A", "È": "E", "Ò": "O", "\u0301": "", "\u0300": ""})
+
+
+def edition_form(t: str) -> str:
+    if not isinstance(t, str):
+        return t
+    t = t.translate(_FORM)
+    return re.sub(r"&", "et", t)
+
+
 def _clean(v):
     """Strip control characters the OCR model occasionally emits (\\x00/\\x10 found in 3 consilia)."""
     if isinstance(v, str):
@@ -70,6 +86,9 @@ def _clean(v):
 
 def normalise(rec: dict) -> dict:
     c = _clean(dict(rec))
+    for k in ("title", "summary", "casus"):
+        c[k] = edition_form(c.get(k))
+    c["body"] = [edition_form(t) for t in (c.get("body") or [])]
     c["n"] = int(str(c.get("n", 0)).strip() or 0)
     c["casus"] = split_sections(c.get("casus"))
     c.setdefault("summary", "")

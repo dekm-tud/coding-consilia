@@ -123,17 +123,39 @@ function toolSpecs() { return Object.entries(TOOLS).map(([name, t]) => ({ type: 
 const SYSTEM = `You are the research assistant of "Consilia", a digital edition of late-medieval legal opinions (Latin) by Baldus de Ubaldis (Consilia, Venice 1575, 5 volumes) and Panormitanus (Consilia, Venice 1571). Answer from the edition's data only, using the tools; never invent consilia, numbers or quotations. Two annotation layers exist besides the automatic keywords: a controlled subject scheme per consilium (list_subjects, consilia_by_subject) and a codebook on body and sexuality with Latin evidence quotes (list_body_codes, consilia_by_body_code); both are machine assignments, say so when you rely on them. A third layer indexes the cited works by title (list_references, consilia_by_reference; resolved by rule from the printed abbreviations, about half of all citations) and the jurists cited by name (list_jurists, consilia_by_jurist). search_semantic finds passages by meaning when the user has loaded the browser embedding model; similar_consilia finds neighbours of a consilium from stored vectors. Combine a semantic search with full-text searches for Latin terms. Search in Latin (the texts are Latin; use stems and variants, e.g. "adulter" for adultery, "dos dotis dotem" for dowry) and run several searches when a topic has synonyms. Read the full text of the most relevant consilia with get_consilium before summarising their content. Cite every consilium you mention as a markdown link with its print and number, e.g. [Baldus, vol. 4, cons. 62](index.html?id=consilium-baldo_cons_print_venice_1575_v4-62). Say when you rely on a machine translation or an automatic keyword. Answer in the language of the question. Be concise and precise.`;
 
 /* ── chat loop ─────────────────────────────────────────────────────────── */
-function md(s) {
-  let h = esc(s);
-  h = h.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<i>$1</i>').replace(/`([^`]+)`/g, '<code>$1</code>');
+function mdInline(h) {        // h is escaped text
+  h = h.replace(/`([^`]+)`/g, '<code>$1</code>');
   h = h.replace(/\[([^\]]+)\]\((index\.html\?id=[^)\s]+|https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-  const lines = h.split('\n'); let out = '', list = null;
-  for (const ln of lines) {
-    const li = ln.match(/^\s*(?:[-*]|\d+\.)\s+(.*)$/);
-    if (li) { const kind = /^\s*\d/.test(ln) ? 'ol' : 'ul'; if (list !== kind) { if (list) out += `</${list}>`; out += `<${kind}>`; list = kind; } out += `<li>${li[1]}</li>`; }
-    else { if (list) { out += `</${list}>`; list = null; } if (ln.trim()) out += `<p>${ln}</p>`; }
+  h = h.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/__(.+?)__/g, '<b>$1</b>');
+  return h.replace(/(^|[^*\w])\*(?!\s)(.+?)(?<!\s)\*(?!\w)/g, '$1<i>$2</i>');
+}
+/* the markdown a chat model writes: headings, rules, quotes, lists, tables, paragraphs; inline marks per block */
+function md(s) {
+  const lines = esc(s).split('\n'); let out = '', list = null, para = [];
+  const flushPara = () => { if (para.length) { out += `<p>${mdInline(para.join(' '))}</p>`; para = []; } };
+  const closeList = () => { if (list) { out += `</${list}>`; list = null; } };
+  for (let i = 0; i < lines.length; i++) {
+    const ln = lines[i];
+    if (!ln.trim()) { flushPara(); closeList(); continue; }
+    const hd = ln.match(/^\s{0,3}(#{1,6})\s+(.*?)\s*#*\s*$/);
+    if (hd) { flushPara(); closeList(); const lv = hd[1].length <= 2 ? 3 : hd[1].length === 3 ? 4 : 5; out += `<h${lv}>${mdInline(hd[2])}</h${lv}>`; continue; }
+    if (/^\s{0,3}([-*_])(\s*\1){2,}\s*$/.test(ln)) { flushPara(); closeList(); out += '<hr>'; continue; }
+    if (/^\s*\|.*\|\s*$/.test(ln) && i + 1 < lines.length && /^\s*\|?\s*:?-{2,}/.test(lines[i + 1])) {
+      flushPara(); closeList();
+      const cells = r => r.trim().replace(/^\||\|$/g, '').split('|').map(c => mdInline(c.trim()));
+      out += '<table><thead><tr>' + cells(ln).map(c => `<th>${c}</th>`).join('') + '</tr></thead><tbody>';
+      i += 2;
+      for (; i < lines.length && /^\s*\|.*\|\s*$/.test(lines[i]); i++) out += '<tr>' + cells(lines[i]).map(c => `<td>${c}</td>`).join('') + '</tr>';
+      i--; out += '</tbody></table>'; continue;
+    }
+    const q = ln.match(/^\s*&gt;\s?(.*)$/);
+    if (q) { flushPara(); closeList(); out += `<blockquote>${mdInline(q[1])}</blockquote>`; continue; }
+    const li = ln.match(/^\s*(?:[-*+]|\d+[.)])\s+(.*)$/);
+    if (li) { flushPara(); const kind = /^\s*\d/.test(ln) ? 'ol' : 'ul'; if (list !== kind) { closeList(); out += `<${kind}>`; list = kind; } out += `<li>${mdInline(li[1])}</li>`; continue; }
+    if (list && /^\s{2,}\S/.test(ln)) { out = out.replace(/<\/li>$/, ' ' + mdInline(ln.trim()) + '</li>'); continue; }   // continuation of a list item
+    closeList(); para.push(ln.trim());
   }
-  if (list) out += `</${list}>`; return out;
+  flushPara(); closeList(); return out.replace(/(<\/blockquote>)<blockquote>/g, '<br>');
 }
 function addMsg(who, text, isErr) {
   const d = document.createElement('div'); d.className = 'msg' + (who === 'tool' ? ' tool' : '');

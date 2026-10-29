@@ -58,11 +58,15 @@ test('v4 n.62 opens with the case of Nardus (casus block above the title)', asyn
   await expect(await activeCons(page)).not.toContainText('Nardus maritauit');
 });
 
-test('translation toggle renders English under the Latin sections', async ({ page }) => {
+test('the reader shows the Latin text only, and Panormitanus has a Summarium', async ({ page }) => {
   await page.goto(`/index.html?id=${encodeURIComponent(P + 'v1-17')}&tr=en`);
   const c = await activeCons(page);
-  await expect(c.locator('p.tr').first()).toBeVisible();
-  await expect(c.locator('p.tr .trlang').first()).toHaveText('en');
+  await expect(c.locator('.sect').first()).toBeVisible();
+  await expect(c.locator('p.tr')).toHaveCount(0);
+  await expect(page.locator('#tr-select')).toHaveCount(0);
+  await expect(c.locator('.sect-h').first()).toHaveText('Argumentum');
+  await page.goto('/index.html?vol=Panormitanus_Cons_Print_Venice_1571_v1&n=1');
+  await expect((await activeCons(page)).locator('.sect-h', { hasText: 'Summarium' }).first()).toBeVisible();
 });
 
 test('reader loads the metadata index and ONE text shard, never the full corpus', async ({ page }) => {
