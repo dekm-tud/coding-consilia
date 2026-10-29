@@ -1,0 +1,75 @@
+# Span scheme (Layer C): citations and named entities in the Latin text.
+#
+# Version 0.1, drafted 2026-10-17 on the editor's behalf. Flat spans (no nesting, no overlap), so the
+# output can train a sequence tagger (BIO). Marked on the transcription as printed: abbreviations stay
+# abbreviated, spelling as in the print. A span is the whole reference as the print gives it, from the
+# first sigil to the last element that belongs to the same reference (law + title, author + place).
+#
+# The `ref` field of CIT_* spans is a normalised reference when the model can give one with confidence
+# (e.g. "D. 28.2.29", "C. 6.28.4", "X 4.1.3", "Nov. 118", "Inst. 2.18"); otherwise null. It is not part of
+# the span labelling and never trains the tagger.
+
+version: "0.1"
+
+labels:
+  - id: CIT_CIV
+    en: Citation of the Corpus iuris civilis
+    de: Zitat aus dem Corpus iuris civilis
+    scope: >
+      Digest (ff., l., §), Codex (C.), Institutes (insti., instit.), Authenticae and Novels (Auth., Nouel., in Auth.),
+      with the title named after it (ff. de legatis 1., C. de testamentis, l. si sterilis ff. de contrah. empt.).
+      One span per cited passage; a chain of several passages separated by "et" becomes several spans.
+    examples: ["l. si quis ff. de legat. 1.", "C. de testa. l. hac consultissima", "insti. de inoffi. te. §. mater", "in Auth. vt cum de appe. cogno."]
+  - id: CIT_CAN
+    en: Citation of the Corpus iuris canonici
+    de: Zitat aus dem Corpus iuris canonici
+    scope: >
+      Decretum Gratiani (di., C. q., de pe., de cons.), Liber Extra (extra de ..., X), Liber Sextus (in vi., lib. 6.),
+      Clementines (Clem.), Extravagantes; with the capitulum and title.
+    examples: ["c. si quis extra de sponsa.", "xxx. q. v. c. nostrates", "Clem. vnica de testib.", "c. cum contingat de offi. dele. in vi."]
+  - id: CIT_FEUD
+    en: Citation of the Libri feudorum
+    de: Zitat aus den Libri feudorum
+    scope: "References to the Libri feudorum (in vsibus feud., de feud. ... ff. is not feudal)."
+    examples: ["in vsib. feu. ti. de capi. qui cur. vend.", "c. 1. de feu. mar."]
+  - id: CIT_OTHER
+    en: Other cited text (Bible, philosophy, literature)
+    de: Sonstiges zitiertes Werk (Bibel, Philosophie, Literatur)
+    scope: "Scripture, Aristotle, Cicero, Seneca, the Glossa ordinaria cited as a work ('gl. in l. ...' is JURIST + CIT_CIV)."
+    examples: ["Matth. xix.", "Arist. in v. Ethico.", "in Psal."]
+  - id: JURIST
+    en: Cited jurist or glossator
+    de: Zitierter Jurist oder Glossator
+    scope: >
+      Names and sigla of legal authorities cited for an opinion: Bar./Bart., Bal. (also 'Ego Bal.' as the author's
+      self-reference), Cy., Dy., Inno., Host., Ioan. And., Spec., Azo, gl./glo. (the gloss), doct., Accur.
+      The name only, not the following citation (that is CIT_*).
+    examples: ["Bar.", "Cy. et Dy.", "glo.", "Ioan. And.", "Ego Bal."]
+  - id: PERSON
+    en: Person of the case
+    de: Person des Falls
+    scope: >
+      Parties and other individuals of the facts: named (dominus Franciscus de Rubeis, domina Francischina) or
+      placeholder names (Titius, Seius, Sempronius, Maeuius). Includes the title (dominus, domina, ser, magister)
+      when it precedes the name directly. Not roles without a name (testator, filius, vxor).
+    examples: ["Titius", "domina Francischina", "ser Petrus de Monte"]
+  - id: PLACE
+    en: Place
+    de: Ort
+    scope: "Cities, castles, regions, countries, dioceses as geographical names (Perusii, ciuitas Florentiae, in Tuscia). The noun 'ciuitas' belongs to the span when it carries the name."
+    examples: ["Perusii", "ciuitatis Florentiae", "in comitatu Pisarum"]
+  - id: ORG
+    en: Institution
+    de: Institution
+    scope: "Communes, churches, monasteries, chapters, hospitals, guilds, courts named as bodies (commune Perusii, ecclesia sancti Laurentii, monasterium sancti Petri, capitulum)."
+    examples: ["commune Perusii", "ecclesia sancti Laurentii", "monasterium sancte Iustine"]
+  - id: STATUTE
+    en: Statute of a city or lord
+    de: Statut einer Stadt oder eines Herrn
+    scope: "A municipal or seigneurial statute referred to as a norm (statutum Perusii, statuto ciuitatis Florentiae, per formam statuti, sub rubrica de ...). The whole expression with the rubric when quoted."
+    examples: ["statutum Perusii", "per statuta ciuitatis Pisarum sub rubrica de successionibus"]
+  - id: DATE
+    en: Date or year
+    de: Datum oder Jahr
+    scope: "Calendar dates and years in the facts (anno domini M.CCC.LXXX., die xv. mensis Augusti)."
+    examples: ["anno domini .M.CCC.LXXX.", "die xv. Augusti"]

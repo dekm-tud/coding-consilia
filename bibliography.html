@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <script src="assets/gate-config.js"></script>
+  <script src="assets/gate.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibliography – Consilia</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%275%27 fill=%27%231c3d5a%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Georgia,serif%27 font-weight=%27700%27 font-size=%2721%27 text-anchor=%27middle%27 fill=%27%23f6f1e7%27%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/app.css">
+  <script src="assets/common.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="about.html"><span class="logo" aria-hidden="true"></span>Consilia <span class="beta">beta</span></a>
+  <nav class="nav">
+    <a href="about.html">About</a>
+    <a href="introduction.html">Introduction</a>
+    <a href="bibliography.html" class="active">Bibliography</a>
+    <a href="index.html">Read</a>
+    <a href="search.html">Search</a>
+    <a href="chat.html">Ask</a>
+  </nav>
+  <span class="spacer"></span>
+  <button class="iconbtn" id="theme-toggle" title="Dark mode" aria-label="Toggle dark mode"></button>
+</header>
+
+<main class="page bib-page">
+  <div class="bib-head">
+    <div class="essay-lang"><div class="seg" id="essay-lang" title="Language of the text"></div></div>
+    <section class="essay-block" data-lang="en">
+      <h1 class="title">Bibliography</h1>
+      <p class="lead">Research literature on legal and medical consilia, together with the sources cited on the introduction and author pages.</p>
+    </section>
+    <section class="essay-block" data-lang="de">
+      <h1 class="title">Bibliographie</h1>
+      <p class="lead">Forschungsliteratur zu juristischen und medizinischen Consilia, zusammen mit den Quellen, die auf den Seiten zur Einführung und zu den Autoren zitiert werden.</p>
+    </section>
+  </div>
+  <div class="bib-layout">
+    <aside class="bib-side" id="bib-side">
+      <label class="bib-sort"><span id="bib-sort-l"></span> <select id="bib-sort" class="field"></select></label>
+      <div id="bib-facets" class="bib-facets"></div>
+      <p class="bib-dl" id="bib-dl"></p>
+    </aside>
+    <section class="bib-main">
+      <div class="bib-sticky">
+        <div class="bib-bar">
+          <div class="search"><span class="glyph"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+            <input id="bib-q" class="field" type="search" autocomplete="off" spellcheck="false"></div>
+          <button type="button" class="btn bib-filter-btn" id="bib-filter-btn"></button>
+          <span class="bib-count" id="bib-count"></span>
+        </div>
+        <div class="bib-active" id="bib-active"></div>
+        <nav class="bib-az" id="bib-az" aria-label="A–Z"></nav>
+      </div>
+      <div id="bib-list" class="bib-list"><p class="muted">…</p></div>
+    </section>
+  </div>
+</main>
+<footer class="site-foot">
+  <div class="inner">
+    <div><b>Prof. Dr. Michael Schonhardt</b><br><a href="https://www.linglit.tu-darmstadt.de/institutlinglit/mitarbeitende/schonhardt_linglit/schonhardt_startseite_linglit.de.jsp" target="_blank" rel="noopener">Digitale Editorik und Kulturgeschichte des Mittelalters</a>, Technische Universität Darmstadt / Akademie der Wissenschaften und der Literatur | Mainz</div>
+    <div>Institut für Sprach- und Literaturwissenschaft<br>Residenzschloss 1, 64283 Darmstadt<br><a href="mailto:michael.schonhardt@tu-darmstadt.de">michael.schonhardt@tu-darmstadt.de</a></div>
+    <div><a href="about.html#impressum">Imprint / Impressum</a> · <a href="https://github.com/dekm-tud/coding-consilia">Repository</a> · <a href="https://github.com/dekm-tud/coding-consilia/issues">Report an error</a><br>Texts CC BY 4.0, code MIT. Portrait of Baldus after J.-J. Boissard, <i>Bibliotheca sive Thesaurus virtutis et gloriae</i>, Frankfurt 1627 (public domain).</div>
+  </div>
+</footer>
+
+<script src="assets/essay.js"></script>
+<script src="assets/bibliography.js"></script>
+</body>
+</html>

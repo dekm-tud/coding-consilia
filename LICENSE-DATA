@@ -1,0 +1,18 @@
+Text data of the Consilia portal
+================================
+
+The transcriptions, structured texts, machine translations, keywords and
+annotation layers in data/, output/ and site-data/, and the TEI exports made
+from them, are released under the
+
+    Creative Commons Attribution 4.0 International (CC BY 4.0)
+    https://creativecommons.org/licenses/by/4.0/
+
+Attribution: Michael Schonhardt (ed.), Consilia. A portal for medieval legal
+opinions, https://dekm-tud.github.io/coding-consilia/ (see CITATION.cff; every
+TEI file and site-data/manifest.json record the data revision).
+
+The printed sources (Baldus de Ubaldis, Consilia, Venice 1575; Nicolaus de
+Tudeschis, Consilia, Venice 1571) are in the public domain. Page images are not
+part of this repository; they are served by the holding libraries and the
+Internet Archive under their own terms, credited beneath every page.

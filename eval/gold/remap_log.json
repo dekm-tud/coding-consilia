@@ -1,0 +1,32 @@
+{
+ "methods": {
+  "unchanged": 170,
+  "evidence": 11,
+  "truncated": 1
+ },
+ "unmapped": [
+  {
+   "file": "intimate_body_gold.jsonl",
+   "unit": "consilium-baldo_cons_print_venice_1575_v5-377#s2w1",
+   "reason": "negative unit: its Latin is no longer a unit of its own (re-windowed after the casus move)"
+  }
+ ],
+ "evidence_failures": [],
+ "files": {
+  "intimate_body_gold.jsonl": {
+   "in": 150,
+   "out": 153
+  },
+  "intimate_body_rare_gold.jsonl": {
+   "in": 33,
+   "out": 37
+  }
+ },
+ "subjects_casus_affected": [
+  "consilium-baldo_cons_print_venice_1575_v2-467",
+  "consilium-baldo_cons_print_venice_1575_v3-226-2",
+  "consilium-baldo_cons_print_venice_1575_v4-99",
+  "consilium-baldo_cons_print_venice_1575_v4-216",
+  "consilium-baldo_cons_print_venice_1575_v5-440"
+ ]
+}

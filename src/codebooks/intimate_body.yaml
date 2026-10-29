@@ -1,0 +1,388 @@
+# Codebook: the intimate and reproductive body in the consilia (Layer B)
+#
+# Version 1.0, drafted 2026-09-23 by Claude Opus 5.5 on the editor's behalf
+# (the editor delegated curation). It is used verbatim as the system-prompt
+# codebook for src/gpu/classify_units.py --task body, and as the guideline for
+# the gold-standard annotation (eval/gold/intimate_body_gold.jsonl).
+#
+# UNIT: one body section (or a <=4,000-char window of one). Every code needs
+# a Latin evidence quote copied from that unit.
+#
+# DECIDE FROM THE LATIN. The English translation is a reading aid and can be
+# wrong. Homonyms are the main source of error: see `not` under each code and
+# the global `homonyms` list at the end.
+#
+# ROLE (exactly one per annotation) says HOW the unit deals with the matter:
+#   topic       - the bodily matter is (part of) the question the consilium decides
+#                 (e.g. "was the marriage consummated?", "is the child born in the
+#                 7th month legitimate?").
+#   argument    - not the question itself, but a step of the reasoning actually
+#                 depends on it (e.g. a succession case turns on whether the widow
+#                 is pregnant; a dowry claim fails because of adultery).
+#   analogy     - raised as a comparison, example or hypothetical to support a point
+#                 about something else ("just as an adulteress loses her dowry, so…").
+#   case_fact   - the matter appears in the narrated facts of the case (casus,
+#                 punctus quaestionis) but is neither decided nor argued (e.g. the
+#                 testator 'instituit ventrem uxoris' while the question is about tutors).
+#   citation_only - the matter appears ONLY as the title/subject of an allegation
+#                 used for an unrelated proposition (e.g. "ff. de adulteriis, l. si
+#                 accusaturus" cited for a procedural rule).
+#   formulaic   - stock clause of a document with no discussion (e.g. "et postumos
+#                 nascituros" in a testament formula; "legitimus et naturalis" as
+#                 routine designation of a son).
+# Research counts use topic + argument by default; analogy and case_fact are shown; citation_only
+# and formulaic are recorded but excluded from counts.
+#
+# A unit can carry several codes. Use the most specific code; do not add the group.
+# If nothing applies: relevant=false and no annotations. figurative/homonym uses
+# are NOT annotated at all (e.g. "frater carnalis" = full brother).
+
+version: "1.0"
+roles: [topic, argument, case_fact, analogy, citation_only, formulaic]
+counted_roles_default: [topic, argument]
+
+groups:
+  - id: sex
+    label_en: Sexual acts, offences and their regulation
+    label_de: "Sexuelle Handlungen, Delikte und ihre Regelung"
+    counted_as_body: true
+  - id: marriage_body
+    label_en: Marriage as bodily union
+    label_de: "Ehe als körperliche Verbindung"
+    counted_as_body: true
+  - id: reproduction
+    label_en: Conception, pregnancy, birth and fertility
+    label_de: "Empfängnis, Schwangerschaft, Geburt und Fruchtbarkeit"
+    counted_as_body: true
+  - id: sex_gender
+    label_en: Sex, gender and bodily status
+    label_de: "Geschlecht und körperlicher Status"
+    counted_as_body: true
+  - id: chastity_honour
+    label_en: Chastity, continence and sexual honour
+    label_de: "Keuschheit, Enthaltsamkeit und sexuelle Ehre"
+    counted_as_body: true
+  - id: birth_status
+    label_en: Birth status (legitimacy, illegitimacy, legitimation, filiation)
+    label_de: "Geburtsstatus (Ehelichkeit, Unehelichkeit, Legitimation, Abstammung)"
+    counted_as_body: false   # linked group: shown alongside, not counted as "body" by default
+    note: >
+      Decided default: birth status is the legal consequence of sexual unions and is
+      coded, but kept separate so that the very frequent succession-technical uses
+      ("filius legitimus et naturalis") do not swamp the bodily material.
+
+codes:
+  # ------------------------------------------------------------------ sex
+  - id: adultery
+    group: sex
+    label_en: Adultery
+    label_de: "Ehebruch"
+    label_la: adulterium
+    definition: Sexual relations of a married person with someone other than the spouse, and its legal consequences (accusation, penalties, loss of dowry or gifts, separation, killing of the adulterer, suspicion/proof of adultery).
+    include:
+      - accusatio adulterii; lex Iulia de adulteriis applied to a real case or argued
+      - loss of dowry / donatio propter nuptias because of adultery
+      - suspicion or proof of adultery (e.g. through birth timing)
+    not:
+      - '"adulterinus" as a birth-status label only -> illegitimate_birth'
+      - '"ff./C. de adulteriis" cited for an unrelated rule -> role citation_only (still code adultery)'
+      - '"adulterare" = to falsify (coins, documents) -> not coded'
+    latin_cues: [adulterium, adulter, adultera, "de adulteriis", "lex Iulia", "in adulterio deprehensus"]
+
+  - id: stuprum
+    group: sex
+    label_en: Stuprum (illicit intercourse with an unmarried respectable woman or widow; seduction; defloration)
+    label_de: "Stuprum (unerlaubter Verkehr mit einer unverheirateten ehrbaren Frau oder Witwe; Verführung; Entjungferung)"
+    label_la: stuprum
+    definition: Non-marital intercourse with a virgin, widow or honest woman, whether consensual or not, as offence or as legal fact (penalties, dotare vel nubere, presumptions against stuprum).
+    include:
+      - '"qui virginem stupravit / corrupit"; obligation to endow or marry (dotare vel nubere)'
+      - presumption that stuprum is not presumed
+      - '"stuprum masculorum" -> code sodomy instead'
+    not:
+      - violent intercourse -> rape (code both only if the text treats both aspects)
+    latin_cues: [stuprum, stuprare, stupratus, corrumpere virginem, deflorare, "dotare vel nubere"]
+
+  - id: rape
+    group: sex
+    label_en: Rape and sexual violence
+    label_de: "Vergewaltigung und sexuelle Gewalt"
+    label_la: violentia / oppressio / stuprum violentum
+    definition: Intercourse or sexual assault by force or coercion, and its prosecution and consequences.
+    include:
+      - '"per vim cognovit", "violenter oppressit", "vim intulit mulieri"'
+      - raptus where the sexual violation (not only the abduction) is at issue
+    not:
+      - '"rapina" (robbery), "rapere" goods -> not coded'
+    latin_cues: [per vim, violenter, oppressit, "vim intulit", violatio, raptus]
+
+  - id: abduction
+    group: sex
+    label_en: Abduction of women (raptus)
+    label_de: "Frauenraub (raptus)"
+    label_la: raptus mulierum / virginum
+    definition: Carrying off a woman (often for marriage) against her or her family's will; C. 9.13 de raptu virginum; validity of marriage with the abductor.
+    not:
+      - robbery / seizure of goods -> not coded
+    latin_cues: [raptus, raptor, rapta, "de raptu virginum", abducere, abductio]
+
+  - id: incest
+    group: sex
+    label_en: Incest and incestuous unions
+    label_de: "Inzest und inzestuöse Verbindungen"
+    label_la: incestus
+    definition: Sexual relations or marriage between persons within prohibited degrees of kinship or affinity, treated as offence or as ground of nullity, and its consequences.
+    include:
+      - '"incestae nuptiae", marriage within prohibited degrees discussed as illicit union'
+    not:
+      - '"incestuosi" only as a birth-status category of children -> illegitimate_birth'
+      - mere computation of degrees for succession -> not coded
+    latin_cues: [incestus, incestum, incestuosus, "de incestis nuptiis", "gradus prohibitus"]
+
+  - id: sodomy
+    group: sex
+    label_en: Sodomy / same-sex acts
+    label_de: "Sodomie / gleichgeschlechtliche Handlungen"
+    label_la: sodomia / vitium contra naturam
+    definition: Same-sex or other 'unnatural' sexual acts as offence, sin or ground of infamy.
+    not:
+      - '"contra naturam" in any non-sexual sense (contra naturam feudi, contractus, speciei; usurarius peccat contra naturam) -> not coded'
+    latin_cues: [sodomia, sodomita, "vitium contra naturam", "stuprum masculorum", "coitus contra naturam"]
+
+  - id: concubinage_fornication
+    group: sex
+    label_en: Concubinage and fornication
+    label_de: "Konkubinat und Unzucht"
+    label_la: concubinatus / fornicatio
+    definition: Stable or occasional non-marital sexual unions; concubines (including clerics' concubines, focariae); gifts and legacies to concubines; fornication as sin or offence.
+    not:
+      - '"naturalis" children as birth status only -> illegitimate_birth'
+    latin_cues: [concubina, concubinatus, focaria, fornicatio, fornicari, "amasia"]
+
+  - id: prostitution
+    group: sex
+    label_en: Prostitution and procuring
+    label_de: "Prostitution und Kuppelei"
+    label_la: meretricium / lenocinium
+    definition: Prostitutes, brothels, procuring, 'common women' and the legal treatment of their earnings, testimony or status.
+    latin_cues: [meretrix, "mulier publica", lupanar, lenocinium, leno, prostibulum]
+
+  # ------------------------------------------------------------------ marriage_body
+  - id: consummation
+    group: marriage_body
+    label_en: Consummation / carnal union in marriage
+    label_de: "Vollzug der Ehe / fleischliche Vereinigung"
+    label_la: copula carnalis / matrimonium consummatum
+    definition: Whether and when a marriage was consummated, the legal difference between ratum and consummatum, carnal knowledge as creating affinity or perfecting marriage, 'traductio ad domum' as proxy for consummation.
+    not:
+      - '"consummatio" of a contract, crime, sale or act -> not coded'
+      - '"copulatio / copulativa" as grammatical conjunction -> not coded'
+      - '"carnalis" in "frater/soror/consanguineus carnalis" (full sibling) -> not coded'
+    latin_cues: ["copula carnalis", "carnaliter cognovit", "matrimonium consummatum", consummare, "cognitio carnalis", "traductio ad domum mariti"]
+
+  - id: impotence
+    group: marriage_body
+    label_en: Impotence, frigidity, bewitchment; non-consummation as ground of nullity
+    label_de: "Impotenz, Frigidität, Behexung; Nichtvollzug als Nichtigkeitsgrund"
+    label_la: impotentia coeundi / frigiditas / maleficium
+    definition: Inability to have intercourse (male or female) and its effect on the validity or dissolution of marriage, including inspection and the triennial cohabitation test.
+    not:
+      - '"impotentia iuris vel facti", "impotens" = legally/physically unable to act in general -> not coded'
+      - '"maleficium" = crime/delict in general -> not coded'
+    latin_cues: [frigidus, frigiditas, "de frigidis et maleficiatis", "impotentia coeundi", arcta, maleficiatus]
+
+  - id: marital_cohabitation
+    group: marriage_body
+    label_en: Marital debt, cohabitation and separation from bed
+    label_de: "Ehepflicht, Zusammenleben und Trennung von Tisch und Bett"
+    label_la: debitum coniugale / cohabitatio / separatio thori
+    definition: The spouses' bodily duties and living together; refusal of cohabitation; separation a toro; return of a wife to the husband's house as a bodily-personal (not property) matter.
+    latin_cues: ["debitum coniugale", cohabitare, "separatio thori", "divortium quoad thorum", "redire ad maritum"]
+
+  - id: marital_violence
+    group: marriage_body
+    label_en: Violence between spouses (saevitia) and 'correction' of wives
+    label_de: "Gewalt zwischen Ehegatten (saevitia) und „Züchtigung“ der Ehefrau"
+    label_la: saevitia / verberatio uxoris
+    definition: Physical violence in marriage - husband's cruelty as ground for separation or for the wife living apart, beating as 'correction', threats to the wife's body.
+    not:
+      - violence between unrelated persons -> not coded (Layer A: wounding)
+    latin_cues: [saevitia, seuitia, verberare, verberata, "correctio", "metus mortis"]
+
+  # ------------------------------------------------------------------ reproduction
+  - id: conception
+    group: reproduction
+    label_en: Conception
+    label_de: "Empfängnis"
+    label_la: conceptio
+    definition: Conception as a legal fact (time of conception, conceived but unborn treated as born 'quoad commodum', conception after the father's death).
+    not:
+      - '"concipere verba / formulam" (to draft words) -> not coded'
+    latin_cues: [conceptus, conceptio, "qui in utero est", "pro iam nato habetur"]
+
+  - id: pregnancy_unborn
+    group: reproduction
+    label_en: Pregnancy and the unborn child (venter)
+    label_de: "Schwangerschaft und das ungeborene Kind (venter)"
+    label_la: praegnantia / venter
+    definition: A woman's pregnancy and the unborn as a legal subject - curator ventris, missio in possessionem ventris nomine, inspectio ventris, suspended division of an inheritance until birth, alleged or feigned pregnancy.
+    include:
+      - postumi ONLY where the pregnancy / unborn child is actually at issue in the case
+    not:
+      - '"postumos nascituros" as a stock clause of the testament -> role formulaic (or not coded if merely listed)'
+      - '"pregnantia verba" (weighty words) -> not coded'
+      - '"venter" = stomach/belly in a non-reproductive sense -> not coded'
+    latin_cues: [praegnans, gravida, venter, "curator ventris", "ventris nomine", "de inspiciendo ventre", "in utero"]
+
+  - id: birth
+    group: reproduction
+    label_en: Birth and its timing; live birth and viability
+    label_de: "Geburt und ihr Zeitpunkt; Lebendgeburt und Lebensfähigkeit"
+    label_la: partus / nativitas
+    definition: Childbirth and its legal effects - whether a child was born alive and viable, born in the 7th or 10th/11th month, order of birth of twins, monstrous births, death of mother or child at birth, the puerperium.
+    include:
+      - '"natus vivus", "vitalis", "septimo mense", "partus perfectus", "monstrum"'
+    not:
+      - '"natus" as mere biographical fact ("filius natus ex…") -> not coded unless birth itself is at issue'
+    latin_cues: [partus, pario, peperit, enixa, puerperium, "septimo mense", "decimo mense", vitalis, "vivus natus"]
+
+  - id: abortion_miscarriage
+    group: reproduction
+    label_en: Abortion and miscarriage
+    label_de: "Abtreibung und Fehlgeburt"
+    label_la: abortus
+    definition: Induced or spontaneous loss of pregnancy, its criminal treatment and its effect on rights (e.g. rupture of a testament, dowry, succession).
+    not:
+      - '"aborta / abortivus" in a figurative sense ("the opportunity has lapsed") -> not coded'
+    latin_cues: [abortus, abortivus, abortio, "partum abigere", "venenum ad abortum"]
+
+  - id: fertility_sterility
+    group: reproduction
+    label_en: Fertility, sterility and childlessness as a bodily condition
+    label_de: "Fruchtbarkeit, Unfruchtbarkeit und Kinderlosigkeit als körperlicher Zustand"
+    label_la: sterilitas / fecunditas
+    definition: A person's capacity or incapacity to beget or bear children, including old age and presumptions about fertility.
+    not:
+      - '"sterilis" said of land, a year, a fund or a lex ("l. si sterilis") -> not coded'
+      - '"sine liberis decessit" as a mere fact of succession -> not coded'
+    latin_cues: [sterilis, sterilitas, fecunditas, "ad generandum", "ad pariendum", "senectus"]
+
+  - id: nursing
+    group: reproduction
+    label_en: Nursing and wet-nursing
+    label_de: "Stillen und Ammenwesen"
+    label_la: nutrix / lactatio
+    definition: Breastfeeding, wet-nurses and the care of infants' bodies (as distinct from 'alimenta' = maintenance money).
+    not:
+      - '"alimenta" as maintenance obligation -> not coded'
+      - '"nutrire" in the sense of fostering/raising generally -> only if bodily nursing is meant'
+    latin_cues: [nutrix, lac, lactare, ubera, "nutrimenta infantis"]
+
+  # ------------------------------------------------------------------ sex_gender
+  - id: sex_determination
+    group: sex_gender
+    label_en: Sex determination and hermaphroditism
+    label_de: "Geschlechtsbestimmung und Hermaphroditismus"
+    label_la: hermaphroditus / sexus
+    definition: Determining a person's sex, persons of ambiguous sex, and the legal effects of sex where the body (not only the legal category of 'male/female heirs') is at issue.
+    not:
+      - rules excluding women from succession "propter sexum" -> not coded (Layer A: agnatic succession)
+      - '"fragilitas sexus" as a general legal privilege of women -> not coded'
+    latin_cues: [hermaphroditus, "sexus praevalens", "uterque sexus", androgynus]
+
+  - id: castration
+    group: sex_gender
+    label_en: Eunuchs and castration
+    label_de: "Eunuchen und Kastration"
+    label_la: eunuchus / castratio / spado
+    not:
+      - '"castrum" / "castra" (castle, camp) -> not coded'
+    latin_cues: [eunuchus, spado, castratus, castrare]
+
+  - id: puberty_body
+    group: sex_gender
+    label_en: Puberty and age as bodily maturity
+    label_de: "Pubertät und Alter als körperliche Reife"
+    label_la: pubertas
+    definition: Puberty as bodily capacity (for marriage, intercourse, procreation), its proof by inspection or presumption ('malitia supplet aetatem' in marriage).
+    not:
+      - pupillary age and tutela as purely legal thresholds (pupillary substitution, restitution of minors) -> not coded
+    latin_cues: [pubertas, "habitu corporis", "inspectio corporis", "potens ad generandum", "malitia supplet aetatem"]
+
+  - id: virginity
+    group: sex_gender
+    label_en: Virginity and its proof
+    label_de: "Jungfräulichkeit und ihr Nachweis"
+    label_la: virginitas
+    definition: A woman's virginity as fact, value or legal condition; its loss, proof or inspection by midwives.
+    not:
+      - '"Virgo Maria", "beata virgo", church dedications -> not coded'
+    latin_cues: [virginitas, virgo, "per obstetrices", corrupta, "integra"]
+
+  # ------------------------------------------------------------------ chastity_honour
+  - id: chastity_conditions
+    group: chastity_honour
+    label_en: Chastity, continence and widowhood conditions
+    label_de: "Keuschheit, Enthaltsamkeit und Witwenstandsbedingungen"
+    label_la: castitas / continentia / vita vidualis
+    definition: Legal conditions or duties that regulate a person's sexual life - legacies or usufruct granted 'si caste vixerit', 'vitam vidualem servaverit', 'si non nupserit'; vows of chastity; clerical continence.
+    include:
+      - conditions of widowhood when the rationale or wording concerns chaste living
+    not:
+      - second-marriage penalties that concern only property transfer -> not coded (Layer A)
+    latin_cues: [caste, castitas, "vitam vidualem", "honeste vixerit", continentia, "votum castitatis", "si non nupserit"]
+
+  - id: sexual_honour
+    group: chastity_honour
+    label_en: Sexual honour and reputation
+    label_de: "Sexuelle Ehre und Ruf"
+    label_la: pudicitia / honestas
+    definition: A person's reputation as tied to sexual conduct (pudicitia, fama of a woman), infamy from sexual conduct, 'mulier inhonesta', as a legal factor.
+    latin_cues: [pudicitia, pudor, "inhonesta", "mala fama", "turpis vita", "impudica"]
+
+  # ------------------------------------------------------------------ birth_status (linked, not counted as body by default)
+  - id: illegitimate_birth
+    group: birth_status
+    label_en: Illegitimate birth (spurii, naturales, ex damnato coitu)
+    label_de: "Uneheliche Geburt (spurii, naturales, ex damnato coitu)"
+    label_la: spurii / naturales / adulterini / incestuosi
+    definition: Children born outside marriage and the legal consequences (succession, alimenta, capacity), including the types natural / spurious / adulterine / incestuous / 'ex damnato coitu'.
+    not:
+      - '"legitimus et naturalis" as a routine designation of a legitimate child -> not coded'
+    latin_cues: [spurius, "filius naturalis", nothus, "ex damnato coitu", adulterinus, incestuosus, bastardus, manzer]
+
+  - id: legitimation
+    group: birth_status
+    label_en: Legitimation
+    label_de: "Legitimation"
+    label_la: legitimatio
+    definition: Making illegitimate children legitimate (subsequent marriage, imperial/papal rescript, counts palatine) and its effects.
+    latin_cues: [legitimatio, legitimare, "per subsequens matrimonium", "comes palatinus", "rescriptum principis"]
+
+  - id: paternity_filiation
+    group: birth_status
+    label_en: Paternity and filiation proof
+    label_de: "Vaterschaft und Nachweis der Abstammung"
+    label_la: filiatio / paternitas
+    definition: Whether a person is the child of a given father or mother - presumptions ('pater is est quem nuptiae demonstrant'), acknowledgement, fama, birth timing as proof, supposititious children (partus suppositus).
+    latin_cues: ["pater is est", filiatio, "tractatus ut filius", "partus suppositus", "agnoscere liberos", "de agnoscendis liberis"]
+
+# Tokens that very often look relevant but are not (check the context every time).
+homonyms:
+  - {pattern: "frater/soror/consanguineus carnalis", meaning: "full sibling (same father and mother)"}
+  - {pattern: "copulatio / copulativa / coniunctio copulativa", meaning: "grammatical conjunction"}
+  - {pattern: "consummatio (contractus, criminis, venditionis)", meaning: "completion of an act"}
+  - {pattern: "sterilis fundus / annus / l. si sterilis (D. 19.1.21)", meaning: "unproductive land; a lex on sale"}
+  - {pattern: "impotentia iuris vel facti / impotens", meaning: "legal or factual incapacity"}
+  - {pattern: "contra naturam feudi / contractus / speciei", meaning: "contrary to the nature of an institution"}
+  - {pattern: "pregnantia verba", meaning: "weighty words"}
+  - {pattern: "Virgo Maria / beata virgo / ecclesia S. Mariae virginis", meaning: "religious reference"}
+  - {pattern: "castrum / castra", meaning: "castle / camp"}
+  - {pattern: "maleficium", meaning: "crime/delict in general (unless with frigiditas / impotence)"}
+  - {pattern: "rapina / rapere bona", meaning: "robbery"}
+  - {pattern: "adulterare monetam / instrumentum", meaning: "falsification"}
+  - {pattern: "alimenta", meaning: "maintenance money (not nursing)"}
+  - {pattern: "legitima (portio)", meaning: "the forced share - not birth status"}
+  - {pattern: "ff./C. de liberis et postumis (D. 28.2, C. 6.29) cited", meaning: "succession-technical title on instituting/disinheriting children: not coded unless the unborn is actually at issue"}
+  - {pattern: "pater naturalis / naturalis ratio / naturale ius", meaning: "natural father in Roman-law sense, natural reason: not birth status unless illegitimacy is meant"}
+  - {pattern: "sexus in statutes excluding women from succession", meaning: "legal category, not the body (Layer A: agnatic succession)"}

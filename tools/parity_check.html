@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Query-encoder parity</title>
+<style>
+  body { font: 14px/1.45 system-ui, sans-serif; max-width: 52rem; margin: 2rem auto; padding: 0 1rem; }
+  code, td, th { font-family: ui-monospace, monospace; font-size: 12px; }
+  table { border-collapse: collapse; margin: 1rem 0; } td, th { border: 1px solid #ccc; padding: .2rem .5rem; text-align: right; }
+  .pass { color: #1a7f37; font-weight: 700; } .fail { color: #b3261e; font-weight: 700; }
+</style>
+</head>
+<body>
+<h1>Query-encoder parity</h1>
+<p>Embeds the 50 fixed queries in <code>tools/parity_queries.json</code> with the model exactly as the search page ships it
+(transformers.js, same worker, same dtype/device choice) and compares them with the fp32 reference vectors from
+<code>python tools/parity_ref.py ref --tag &lt;tag&gt;</code>. Requirement: mean cosine &ge; 0.98 and mean top-20 overlap
+&ge; 0.9 against the corpus vectors. Serve the repository root (<code>python -m http.server</code>) and open
+<code>/tools/parity_check.html?model=etp-bgem3-ft</code> (add <code>&amp;auto=1</code> to start immediately; this downloads the model).</p>
+<p><label>Model <select id="tag"></select></label> <button id="run">Download model and run parity</button></p>
+<div id="log" style="white-space:pre-wrap"></div>
+<div id="out"></div>
+<script type="module">
+const MIN_COS = 0.98, MIN_OVERLAP = 0.9, K = 20;
+const $ = id => document.getElementById(id);
+const log = m => { $('log').textContent += m + '\n'; };
+const params = new URLSearchParams(location.search);
+const cfgAll = await (await fetch('../site-data/models.json')).json();
+const models = cfgAll.models;
+models.forEach(m => { const o = document.createElement('option'); o.value = m.tag; o.textContent = m.label; $('tag').appendChild(o); });
+if (params.get('model')) $('tag').value = params.get('model');
+
+function f16ToF32(buf) {
+  const t = new Float32Array(65536);
+  for (let h = 0; h < 65536; h++) { const s = (h & 0x8000) ? -1 : 1, e = (h >> 10) & 0x1f, m = h & 0x3ff;
+    t[h] = e === 0 ? s * Math.pow(2, -14) * (m / 1024) : e === 31 ? (m ? NaN : s * Infinity) : s * Math.pow(2, e - 15) * (1 + m / 1024); }
+  const u = new Uint16Array(buf), o = new Float32Array(u.length); for (let i = 0; i < u.length; i++) o[i] = t[u[i]]; return o;
+}
+const top = (q, E, D, n) => {              // indices of the K largest dot products
+  const s = new Float32Array(n);
+  for (let i = 0; i < n; i++) { let d = 0; const o = i * D; for (let j = 0; j < D; j++) d += q[j] * E[o + j]; s[i] = d; }
+  return Array.from(s.keys()).sort((a, b) => s[b] - s[a]).slice(0, K);
+};
+
+async function run() {
+  $('out').innerHTML = ''; $('log').textContent = '';
+  const cfg = models.find(m => m.tag === $('tag').value);
+  const queries = await (await fetch('parity_queries.json')).json();
+  const ref = await (await fetch(`parity_ref/${cfg.tag}.json`)).json();
+  let chunks = null, buf = null;
+  for (const base of cfg.embeddings) {
+    const b = /^https?:/.test(base) ? base : '../' + base;
+    try { chunks = await (await fetch(b + 'chunks.json')).json(); buf = await (await fetch(b + 'chunks.f16.bin')).arrayBuffer(); break; } catch (e) { /* next */ }
+  }
+  if (!buf) { log('corpus vectors not found'); return; }
+  const E = f16ToF32(buf), D = chunks.dims, N = chunks.n;
+  log(`corpus: ${N} x ${D}; reference: ${ref.vectors.length} vectors`);
+
+  const worker = new Worker('../assets/embed-worker.js', { type: 'module' });
+  const wait = new Map();
+  let ready;
+  const readyP = new Promise((res, rej) => { ready = { res, rej }; });
+  worker.onmessage = e => {
+    const m = e.data;
+    if (m.type === 'progress') { $('log').dataset.p = `${(m.loaded / 1e6).toFixed(0)}/${(m.total / 1e6).toFixed(0)} MB`; }
+    else if (m.type === 'ready') { log(`runtime: ${m.device} ${m.dtype}`); window.__runtime = `${m.device} ${m.dtype}`; ready.res(); }
+    else if (m.type === 'embedding') { wait.get(m.id).res(m.vec); }
+    else if (m.type === 'error') { (m.id !== undefined ? wait.get(m.id) : ready).rej(new Error(m.message)); }
+  };
+  worker.postMessage({ type: 'load', cfg: { onnx_repo: cfg.onnx_repo, onnx_revision: cfg.onnx_revision, dtype: cfg.dtype,
+    pooling: cfg.pooling, normalize: cfg.normalize, query_prefix: cfg.query_prefix } });
+  await readyP;
+
+  const rows = []; let sumCos = 0, sumOv = 0;
+  for (let i = 0; i < queries.length; i++) {
+    const vec = await new Promise((res, rej) => { wait.set(i, { res, rej }); worker.postMessage({ type: 'embed', id: i, text: queries[i].text }); });
+    const r = Float32Array.from(ref.vectors[i]);
+    let cos = 0, na = 0, nb = 0; for (let j = 0; j < D; j++) { cos += vec[j] * r[j]; na += vec[j] * vec[j]; nb += r[j] * r[j]; }
+    cos /= Math.sqrt(na * nb);
+    const a = new Set(top(r, E, D, N)), b = top(vec, E, D, N);
+    const ov = b.filter(x => a.has(x)).length / K;
+    sumCos += cos; sumOv += ov; rows.push([i, queries[i].lang, cos, ov]);
+  }
+  const meanCos = sumCos / queries.length, meanOv = sumOv / queries.length;
+  const pass = meanCos >= MIN_COS && meanOv >= MIN_OVERLAP;
+  window.__parity = { tag: cfg.tag, runtime: window.__runtime, meanCos, meanOverlap: meanOv,
+    minCos: Math.min(...rows.map(r => r[2])), minOverlap: Math.min(...rows.map(r => r[3])), pass };
+  $('out').innerHTML = `<p class="${pass ? 'pass' : 'fail'}">${pass ? 'PASS' : 'FAIL'} &middot; ${cfg.label} &middot; ${window.__runtime}
+    &middot; mean cosine ${meanCos.toFixed(4)} (min ${window.__parity.minCos.toFixed(4)}) &middot; mean top-${K} overlap ${meanOv.toFixed(3)} (min ${window.__parity.minOverlap.toFixed(2)})</p>
+    <table><tr><th>#</th><th>lang</th><th>cosine</th><th>top-${K} overlap</th></tr>${rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2].toFixed(4)}</td><td>${r[3].toFixed(2)}</td></tr>`).join('')}</table>`;
+  worker.terminate();
+}
+$('run').onclick = () => run().catch(e => { log('ERROR: ' + e.message); window.__parity = { error: e.message }; });
+if (params.get('auto')) $('run').click();
+</script>
+</body>
+</html>

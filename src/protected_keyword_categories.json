@@ -1,0 +1,25 @@
+{
+  "_comment": "Categories of vocabulary terms (output/vocabulary.json) that are force-included in every consilium's keywords_final whenever present in that consilium's pre-reduction keywords.argument/keywords.body, regardless of what the two-pass GPU reduction (src/gpu/reduce_keywords.py) happened to select. Curated by legal-historical/analytical judgment, not frequency. Applied by src/enforce_protected_keywords.py, which runs after apply_keyword_reduction.py. A consilium touching a protected category may end up with more than the nominal ~10 keywords_final — that's intended: guaranteed discoverability of a defined research area takes priority over the target count.",
+
+  "intimate_and_reproductive_body": {
+    "_description": "User-defined research category ('the intimate and reproductive body', 2026-08-07): sexual acts and offenses, marriage considered as bodily/sexual union (not its economic/contractual side), reproduction/pregnancy/birth and its legal-medical vocabulary, and legitimacy-of-birth consequences. Deliberately excludes marriage's property side (dowry, marriage settlements, marital property/gifts), paternal *authority* terms (paternal power/inheritance/fief — about legal authority, not the body), and marriage-sequence bookkeeping (first/second/subsequent marriage, remarriage) which are about family structure and succession timing rather than the body itself. Also excludes two false-positive homonyms caught during curation: 'consummation of crime' (completion of a criminal act, unrelated sense of 'consummation') and 'maritime law' (unrelated to 'marital').",
+    "terms": [
+      "rape", "adultery", "fornication", "incest", "sodomy", "bigamy", "concubinage",
+      "prostitution", "sexual intercourse", "sexual misconduct", "seduction", "abduction",
+      "sex", "sex determination",
+
+      "consummation", "impotence", "virginity", "chastity", "vow of chastity",
+      "carnal marriage", "spiritual marriage", "putative marriage", "conjugal life",
+
+      "pregnancy", "gestation", "gestational age", "conception", "abortion", "birth", "stillbirth",
+      "caesarean section", "puerperium", "fetus", "womb", "possession of the womb",
+      "substitution to the womb", "viability", "fertility", "sterility",
+      "posthumous conception", "infant mortality", "wet-nurse", "hermaphroditism",
+      "birth order", "progeny",
+
+      "illegitimacy", "legitimacy", "legitimation", "natural child", "spurious child",
+      "spurious grandson", "bastard", "bastardy", "filiation", "paternity",
+      "legitimate children", "legitimate heir"
+    ]
+  }
+}

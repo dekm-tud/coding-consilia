@@ -1,0 +1,1963 @@
+{
+"_doc": "Which footnote of which essay page cites which bibliography entry (Zotero key or new:id); made by matching the footnotes against the Zotero collection, 2026-10-29.",
+"citations": [
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n1",
+"key": "new:dean2007consilia",
+"kind": "literature",
+"match": "exact",
+"comment": "Chapter of a single-author monograph; neither chapter nor book in Zotero."
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n2",
+"key": "new:ascheri2003consilia",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n2",
+"key": "7GPC44H5",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n3",
+"key": "new:ascheri2003consilia",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n3",
+"key": "7GPC44H5",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n3",
+"key": "IG5TQT4I",
+"kind": "literature",
+"match": "exact",
+"comment": "Zotero date is 2024-03-12 (online publication); footnote gives 2020 (vol. 77, no. 188)."
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n3a",
+"key": "6X3X87FA",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n3b",
+"key": "MEIHQU4C",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n4",
+"key": "B5MPUKN9",
+"kind": "literature",
+"match": "exact",
+"comment": "Zotero has a duplicate: IAV5AHDA (same chapter, contributor only, no editors); B5MPUKN9 chosen (author + editors, but title misspells \"Castigliongio\")."
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n4",
+"key": "334D68BY",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n4",
+"key": "96AN5TMQ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n5",
+"key": "8WTRY539",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n6",
+"key": "8WTRY539",
+"kind": "literature",
+"match": "exact",
+"comment": "Short form; page range fits the Historia et ius article (pp. 1–5)."
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n6",
+"key": "6X3X87FA",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n5a",
+"key": "YNTTRMP5",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n5a",
+"key": "ZJ9YEBX3",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n5a",
+"key": "IDDE7WHZ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n5a",
+"key": "TXPBZJ55",
+"kind": "literature",
+"match": "exact",
+"comment": "Zotero date 1968; footnote gives 1970. Same work; the Zotero date should be checked (not verified online)."
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n5b",
+"key": "MEIHQU4C",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n7",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n8",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n9",
+"key": "new:dean2007crime",
+"kind": "literature",
+"match": "exact",
+"comment": "Short form; p. 95 lies in ch. 5 (new:dean2007consilia)."
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n10",
+"key": "8WTRY539",
+"kind": "literature",
+"match": "exact",
+"comment": "Short form; Historia et ius article."
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n11",
+"key": "8WTRY539",
+"kind": "literature",
+"match": "exact",
+"comment": "Short form; Historia et ius article."
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n11",
+"key": "IG5TQT4I",
+"kind": "literature",
+"match": "exact",
+"comment": "Zotero date is 2024-03-12 (online publication); footnote gives 2020 (vol. 77, no. 188)."
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n10a",
+"key": "WK3PIWBK",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n10b",
+"key": "YNTTRMP5",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n10c",
+"key": "9DJEE4VU",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n10c",
+"key": "46JZAHKH",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n10d",
+"key": "MEIHQU4C",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n12",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n12a",
+"key": "T62QVFSF",
+"kind": "literature",
+"match": "exact",
+"comment": "Cited as whole book; Zotero also holds individual chapters (e.g. 683YASTU, WTNTWXMA)."
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n13",
+"key": "YJHWCYFH",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n13",
+"key": "8FKJVSRQ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n13",
+"key": "8WTRY539",
+"kind": "literature",
+"match": "exact",
+"comment": "Short form; Historia et ius article."
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn1",
+"key": "new:dean2007consilia",
+"kind": "literature",
+"match": "exact",
+"comment": "Chapter of a single-author monograph; neither chapter nor book in Zotero."
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn2",
+"key": "new:ascheri2003consilia",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn2",
+"key": "7GPC44H5",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn3",
+"key": "new:ascheri2003consilia",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn3",
+"key": "7GPC44H5",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn3",
+"key": "IG5TQT4I",
+"kind": "literature",
+"match": "exact",
+"comment": "Zotero date is 2024-03-12 (online publication); footnote gives 2020 (vol. 77, no. 188)."
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn3a",
+"key": "6X3X87FA",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn3b",
+"key": "MEIHQU4C",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn4",
+"key": "B5MPUKN9",
+"kind": "literature",
+"match": "exact",
+"comment": "Zotero has a duplicate: IAV5AHDA (same chapter, contributor only, no editors); B5MPUKN9 chosen (author + editors, but title misspells \"Castigliongio\")."
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn4",
+"key": "334D68BY",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn4",
+"key": "96AN5TMQ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "8WTRY539",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "8WTRY539",
+"kind": "literature",
+"match": "exact",
+"comment": "Short form; page range fits the Historia et ius article (pp. 1–5)."
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "6X3X87FA",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn5a",
+"key": "YNTTRMP5",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn5a",
+"key": "ZJ9YEBX3",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn5a",
+"key": "IDDE7WHZ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn5a",
+"key": "TXPBZJ55",
+"kind": "literature",
+"match": "exact",
+"comment": "Zotero date 1968; footnote gives 1970. Same work; the Zotero date should be checked (not verified online)."
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn5b",
+"key": "MEIHQU4C",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn7",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn8",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn9",
+"key": "new:dean2007crime",
+"kind": "literature",
+"match": "exact",
+"comment": "Short form; p. 95 lies in ch. 5 (new:dean2007consilia)."
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn10",
+"key": "8WTRY539",
+"kind": "literature",
+"match": "exact",
+"comment": "Short form; Historia et ius article."
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn11",
+"key": "8WTRY539",
+"kind": "literature",
+"match": "exact",
+"comment": "Short form; Historia et ius article."
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn11",
+"key": "IG5TQT4I",
+"kind": "literature",
+"match": "exact",
+"comment": "Zotero date is 2024-03-12 (online publication); footnote gives 2020 (vol. 77, no. 188)."
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn10a",
+"key": "WK3PIWBK",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn10b",
+"key": "YNTTRMP5",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn10c",
+"key": "9DJEE4VU",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn10c",
+"key": "46JZAHKH",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn10d",
+"key": "MEIHQU4C",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn12",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn12a",
+"key": "T62QVFSF",
+"kind": "literature",
+"match": "exact",
+"comment": "Cited as whole book; Zotero also holds individual chapters (e.g. 683YASTU, WTNTWXMA)."
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn13",
+"key": "YJHWCYFH",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn13",
+"key": "8FKJVSRQ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn13",
+"key": "8WTRY539",
+"kind": "literature",
+"match": "exact",
+"comment": "Short form; Historia et ius article."
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n0",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n0",
+"key": "ATVZPD86",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n1",
+"key": "new:pennington1997baldus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n1",
+"key": "new:pennington2015kp",
+"kind": "literature",
+"match": "exact",
+"comment": "Web biography in the Ames Foundation Bio-Bibliographical Guide; classed as literature (authored text)."
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n2",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n2",
+"key": "new:bnflat11727",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n3",
+"key": "new:pennington2015kp",
+"kind": "literature",
+"match": "exact",
+"comment": "Web biography in the Ames Foundation Bio-Bibliographical Guide; classed as literature (authored text)."
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n4",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n4",
+"key": "ME977F7J",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "MEIHQU4C",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:pennington2015kp",
+"kind": "literature",
+"match": "exact",
+"comment": "Web biography in the Ames Foundation Bio-Bibliographical Guide; classed as literature (authored text)."
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:dean2007crime",
+"kind": "literature",
+"match": "exact",
+"comment": "Short form; p. 95 lies in ch. 5 (new:dean2007consilia)."
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n6",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n6",
+"key": "new:bavbarblat1399",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n6",
+"key": "new:manuscriptajuridicandbaldus",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n6",
+"key": "334D68BY",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n6",
+"key": "B5MPUKN9",
+"kind": "literature",
+"match": "exact",
+"comment": "Zotero has a duplicate: IAV5AHDA (same chapter, contributor only, no editors); B5MPUKN9 chosen (author + editors, but title misspells \"Castigliongio\")."
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n6a",
+"key": "7NI9GRAM",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n7",
+"key": "LWZC7HIW",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n7",
+"key": "new:pennington1997allegationes",
+"kind": "literature",
+"match": "exact",
+"comment": "Zotero has another chapter of the same volume (C2XMM8EZ, Landau) but not this one, and not the volume itself."
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n7a",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n8",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n8",
+"key": "96AN5TMQ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n8",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n8",
+"key": "new:baldus1490consilia",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "np1",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "np1",
+"key": "96AN5TMQ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n9",
+"key": "new:baldus1575consiliorum",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n9a",
+"key": "ME977F7J",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n9a",
+"key": "7NI9GRAM",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n9a",
+"key": "I4ACSFHS",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n9a",
+"key": "GHPTJ8VP",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n9a",
+"key": "T62QVFSF",
+"kind": "literature",
+"match": "exact",
+"comment": "Cited as whole book; Zotero also holds individual chapters (e.g. 683YASTU, WTNTWXMA)."
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "nm1",
+"key": "new:manuscriptajuridicandbaldus",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "nm1",
+"key": "new:manuscriptajuridicandbarblat1400",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "nm1",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "nm1",
+"key": "new:bavbarblat1399",
+"kind": "source",
+"match": "exact",
+"comment": "The digitised manuscripts themselves; DigiVatLib URLs recorded in the item."
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "nm2",
+"key": "7NI9GRAM",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "nm2",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "nm2",
+"key": "new:chicagocodexms6",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "nm2",
+"key": "9DJEE4VU",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "nm2",
+"key": "GHPTJ8VP",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "nm2",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "nm2",
+"key": "new:mpilhltndcensus",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn0",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn0",
+"key": "ATVZPD86",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn1",
+"key": "new:pennington1997baldus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn1",
+"key": "new:pennington2015kp",
+"kind": "literature",
+"match": "exact",
+"comment": "Web biography in the Ames Foundation Bio-Bibliographical Guide; classed as literature (authored text)."
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn2",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn2",
+"key": "new:bnflat11727",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn3",
+"key": "new:pennington2015kp",
+"kind": "literature",
+"match": "exact",
+"comment": "Web biography in the Ames Foundation Bio-Bibliographical Guide; classed as literature (authored text)."
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn4",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn4",
+"key": "ME977F7J",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "MEIHQU4C",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:pennington2015kp",
+"kind": "literature",
+"match": "exact",
+"comment": "Web biography in the Ames Foundation Bio-Bibliographical Guide; classed as literature (authored text)."
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:dean2007crime",
+"kind": "literature",
+"match": "exact",
+"comment": "Short form; p. 95 lies in ch. 5 (new:dean2007consilia)."
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "new:bavbarblat1399",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "new:manuscriptajuridicandbaldus",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "334D68BY",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "B5MPUKN9",
+"kind": "literature",
+"match": "exact",
+"comment": "Zotero has a duplicate: IAV5AHDA (same chapter, contributor only, no editors); B5MPUKN9 chosen (author + editors, but title misspells \"Castigliongio\")."
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn6a",
+"key": "7NI9GRAM",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn7",
+"key": "LWZC7HIW",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn7",
+"key": "new:pennington1997allegationes",
+"kind": "literature",
+"match": "exact",
+"comment": "Zotero has another chapter of the same volume (C2XMM8EZ, Landau) but not this one, and not the volume itself."
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn7a",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn8",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn8",
+"key": "96AN5TMQ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn8",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn8",
+"key": "new:baldus1490consilia",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnp1",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnp1",
+"key": "96AN5TMQ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn9",
+"key": "new:baldus1575consiliorum",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn9a",
+"key": "ME977F7J",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn9a",
+"key": "7NI9GRAM",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn9a",
+"key": "I4ACSFHS",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn9a",
+"key": "GHPTJ8VP",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn9a",
+"key": "T62QVFSF",
+"kind": "literature",
+"match": "exact",
+"comment": "Cited as whole book; Zotero also holds individual chapters (e.g. 683YASTU, WTNTWXMA)."
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnm1",
+"key": "new:manuscriptajuridicandbaldus",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnm1",
+"key": "new:manuscriptajuridicandbarblat1400",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnm1",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnm1",
+"key": "new:bavbarblat1399",
+"kind": "source",
+"match": "exact",
+"comment": "The digitised manuscripts themselves; DigiVatLib URLs recorded in the item."
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnm2",
+"key": "7NI9GRAM",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnm2",
+"key": "6P3J2AEX",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnm2",
+"key": "new:chicagocodexms6",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnm2",
+"key": "9DJEE4VU",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnm2",
+"key": "GHPTJ8VP",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnm2",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnm2",
+"key": "new:mpilhltndcensus",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n1",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n1",
+"key": "new:lefebvre1957panormitain",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n1",
+"key": "new:norr1964kirche",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n1",
+"key": "new:landau1995nikolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n2",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n3",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n3",
+"key": "new:piccolomini1967de",
+"kind": "source",
+"match": "uncertain",
+"comment": "Cited only as quoted by Pennington; no edition named in the footnote. New item gives the edition Pennington uses (Hay and Smith, 1967)."
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n3",
+"key": "new:norr1964kirche",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n3",
+"key": "new:watanabe1972authority",
+"kind": "literature",
+"match": "exact",
+"comment": "Full title has subtitle \"Panormitanus, Aeneas Sylvius, Cusanus\"."
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n3",
+"key": "new:black1970monarchy",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n4",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n4",
+"key": "new:helmholz2020niccolo",
+"kind": "literature",
+"match": "exact",
+"comment": "Publisher/Crossref date the volume 2020 (online 2 July 2020); footnote gives 2021. Zotero item ZR37RPHZ (Helmholz, \"Counsel in the medieval canon law\", 2020) is a different work."
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:amesndnicolaus",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:tudeschis1475consilia-m47750",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:tudeschis1475consilia-m47753",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:tudeschis1474consilia-m47759",
+"kind": "source",
+"match": "exact",
+"comment": "GW dates it \"nach 10.X.1474\"."
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:tudeschis1477consilia-m47756",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:tudeschis1480consilia-m47764",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:tudeschis1486consilia-m47773",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:tudeschis1488consilia-m47780",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:tudeschis1491consilia-m47782",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "new:tudeschis1500quaestiones-m48058",
+"kind": "source",
+"match": "uncertain",
+"comment": "ERROR IN FOOTNOTE: GW M48058 is Lyon, Johann Siber, 4./18.VIII.1500 (Quaestiones et disputationes, with Consilia P. I–II), not Venice."
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5",
+"key": "96AN5TMQ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5a",
+"key": "9DJEE4VU",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n5a",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n6",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n6",
+"key": "new:romano1983su",
+"kind": "literature",
+"match": "exact",
+"comment": "Not in Zotero (Zotero has other Romano items: DHAWM34U, DGV75P8B, TEUU2A57, 33UADSXE). Pennington gives the title as \"Su un 'consilium' di Gualtiero Paternò conservato nel ms. di Lucca, Biblioteca Capitolare Feliniana, 162\"; footnote wording differs."
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n6",
+"key": "new:novarese1991de",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n6a",
+"key": "V9CNKRRU",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "nm2",
+"key": "96AN5TMQ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "nm2",
+"key": "new:amesndnicolaus",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "nm2",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n7",
+"key": "new:amesfoundation2017panormitanus",
+"kind": "source",
+"match": "exact",
+"comment": "Ames Foundation site offline since Oct. 2026 (security incident); verified via Wayback Machine. Houghton shelfmark IC.T2286.B571c not shown on the archived page (it gives HOLLIS nos. 007169251 and 007169262)."
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "nm1",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "nm1",
+"key": "9DJEE4VU",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "nm1",
+"key": "new:cambraims207",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "nm1",
+"key": "new:molinier1891catalogue",
+"kind": "source",
+"match": "exact",
+"comment": "Printed manuscript catalogue; classed as source (catalogue record)."
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn1",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn1",
+"key": "new:lefebvre1957panormitain",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn1",
+"key": "new:norr1964kirche",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn1",
+"key": "new:landau1995nikolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn2",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn3",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn3",
+"key": "new:piccolomini1967de",
+"kind": "source",
+"match": "uncertain",
+"comment": "Cited only as quoted by Pennington; no edition named in the footnote. New item gives the edition Pennington uses (Hay and Smith, 1967)."
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn3",
+"key": "new:norr1964kirche",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn3",
+"key": "new:watanabe1972authority",
+"kind": "literature",
+"match": "exact",
+"comment": "Full title has subtitle \"Panormitanus, Aeneas Sylvius, Cusanus\"."
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn3",
+"key": "new:black1970monarchy",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn4",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn4",
+"key": "new:helmholz2020niccolo",
+"kind": "literature",
+"match": "exact",
+"comment": "Publisher/Crossref date the volume 2020 (online 2 July 2020); footnote gives 2021. Zotero item ZR37RPHZ (Helmholz, \"Counsel in the medieval canon law\", 2020) is a different work."
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:amesndnicolaus",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:tudeschis1475consilia-m47750",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:tudeschis1475consilia-m47753",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:tudeschis1474consilia-m47759",
+"kind": "source",
+"match": "exact",
+"comment": "GW dates it \"nach 10.X.1474\"."
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:tudeschis1477consilia-m47756",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:tudeschis1480consilia-m47764",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:tudeschis1486consilia-m47773",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:tudeschis1488consilia-m47780",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:tudeschis1491consilia-m47782",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "new:tudeschis1500quaestiones-m48058",
+"kind": "source",
+"match": "uncertain",
+"comment": "ERROR IN FOOTNOTE: GW M48058 is Lyon, Johann Siber, 4./18.VIII.1500 (Quaestiones et disputationes, with Consilia P. I–II), not Venice."
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5",
+"key": "96AN5TMQ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5a",
+"key": "9DJEE4VU",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn5a",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "new:romano1983su",
+"kind": "literature",
+"match": "exact",
+"comment": "Not in Zotero (Zotero has other Romano items: DHAWM34U, DGV75P8B, TEUU2A57, 33UADSXE). Pennington gives the title as \"Su un 'consilium' di Gualtiero Paternò conservato nel ms. di Lucca, Biblioteca Capitolare Feliniana, 162\"; footnote wording differs."
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "new:novarese1991de",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn6a",
+"key": "V9CNKRRU",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dnm2",
+"key": "96AN5TMQ",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dnm2",
+"key": "new:amesndnicolaus",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dnm2",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn7",
+"key": "new:amesfoundation2017panormitanus",
+"kind": "source",
+"match": "exact",
+"comment": "Ames Foundation site offline since Oct. 2026 (security incident); verified via Wayback Machine. Houghton shelfmark IC.T2286.B571c not shown on the archived page (it gives HOLLIS nos. 007169251 and 007169262)."
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dnm1",
+"key": "new:pennington2000nicolaus",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dnm1",
+"key": "9DJEE4VU",
+"kind": "literature",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dnm1",
+"key": "new:cambraims207",
+"kind": "source",
+"match": "exact"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dnm1",
+"key": "new:molinier1891catalogue",
+"kind": "source",
+"match": "exact",
+"comment": "Printed manuscript catalogue; classed as source (catalogue record)."
+}
+]
+}

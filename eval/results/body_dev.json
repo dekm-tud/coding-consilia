@@ -1,0 +1,104 @@
+{
+ "body_gemini-3-8-flash_p1": {
+  "units": 92,
+  "relevance": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "pairs": [
+   0.8478260869565217,
+   1.0,
+   0.9176470588235294
+  ],
+  "role_acc": 0.7435897435897436,
+  "evidence_valid": 1.0,
+  "per_code": {
+   "illegitimate_birth": {
+    "tp": 8,
+    "fp": 1,
+    "fn": 0
+   },
+   "adultery": {
+    "tp": 5,
+    "fp": 0,
+    "fn": 0
+   },
+   "marital_violence": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   },
+   "marital_cohabitation": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "pregnancy_unborn": {
+    "tp": 6,
+    "fp": 0,
+    "fn": 0
+   },
+   "sexual_honour": {
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+   },
+   "concubinage_fornication": {
+    "tp": 2,
+    "fp": 1,
+    "fn": 0
+   },
+   "legitimation": {
+    "tp": 5,
+    "fp": 1,
+    "fn": 0
+   },
+   "birth": {
+    "tp": 1,
+    "fp": 1,
+    "fn": 0
+   },
+   "consummation": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "stuprum": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "conception": {
+    "tp": 1,
+    "fp": 2,
+    "fn": 0
+   },
+   "fertility_sterility": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "paternity_filiation": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   },
+   "chastity_conditions": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "prostitution": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "nursing": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   }
+  }
+ }
+}

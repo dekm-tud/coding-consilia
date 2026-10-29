@@ -1,0 +1,92 @@
+# local tooling and environments
+.claude/
+.venv*/
+.vscode/
+__pycache__/
+*.pyc
+*:Zone.Identifier
+.pytest_cache/
+.ipynb_checkpoints/
+test-results/
+playwright-report/
+node_modules/
+.DS_Store
+Thumbs.db
+
+# credentials and local configuration (API keys live in the environment, never in the repo)
+.env
+.env.*
+*.env
+secrets*.json
+
+# local working areas (never published)
+archive/
+tmp_import/
+scratch/
+Lassberg_Konkordanz_Schonhardt.xlsx
+
+# presentation and paper drafts
+Leeds_2026.pptx
+paper_dhd2027_final.docx
+*.pptx
+*.docx
+
+# output/: generated data. Tracked are only the edition data the site is built from (consilia.json and the
+# registries authors/vocabulary/iiif_manifests), the Flair NER training split and the gold-standard samples and
+# reports. The per-author and per-print JSON files are copies of consilia.json that src/build.py writes again. Everything else (models, embeddings, OCR runs, QA, training data
+# and logs, GPU results) stays local or goes to Hugging Face / Zenodo.
+output/*
+!output/consilia.json
+!output/authors.json
+!output/vocabulary.json
+!output/iiif_manifests.json
+!output/flair/
+output/flair/*
+!output/flair/train.txt
+!output/flair/dev.txt
+!output/flair/test.txt
+!output/flair/labels.json
+!output/gold/
+output/gold/**/img/
+output/**/*_backup.json
+build_manifest.json
+
+# model weights and large binaries never enter git (Hugging Face / Zenodo)
+*.safetensors
+*.mlmodel
+*.ckpt
+*.onnx
+*.pt
+*.bin
+*.arrow
+*.npy
+*.tar
+*.tar.gz
+*.zip
+
+# data/: PageXML and prebuilt texts are tracked; page images, crops and batch bookkeeping never enter git
+# (the site loads every print from IIIF)
+data/**/*.jpg
+data/**/*.jpeg
+data/**/*.png
+data/**/*.tif
+data/**/*.tiff
+data/**/*.avif
+data/**/img/
+data/**/crops/
+data/**/crops_gemini/
+data/**/transkription_batch/
+data/**/transkription/
+data/**/transkription_medium/
+data/Panormitanus_32108367/*/uebersetzung/
+
+# Pages build output, generated exports (TEI, Zotero, Zenodo and Hugging Face packages, server bundles)
+# and the local copies of embeddings and ONNX models (published on Hugging Face, not on GitHub).
+# dist/ also holds the Transkribus export of BLB Cod. St. Georgen 48, whose images must never be published.
+_site/
+dist/
+hf-export/
+hf-models/
+
+# internal work plan (stays local)
+todo.md

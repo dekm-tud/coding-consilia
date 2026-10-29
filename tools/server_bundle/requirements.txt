@@ -1,0 +1,5 @@
+pyyaml
+numpy
+flair>=0.14
+huggingface_hub
+torch

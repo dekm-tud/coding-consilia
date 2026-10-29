@@ -1,0 +1,47 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # site-data/ is generated from output/consilia.json with the standard library only;
+      # fail if the committed copy is stale, so the site never serves out-of-date shards
+      - name: site-data is up to date
+        run: |
+          python src/build_site_data.py
+          git diff --exit-code -- site-data || (echo "site-data/ is stale: run python src/build_site_data.py and commit" && exit 1)
+      - name: Data consistency audit (hard checks only)
+        run: python src/qa/check_data.py --quiet
+      - name: Assemble artifact and check size limits (900 MB total, 95 MB per file, 2 MB reader first load)
+        run: python tools/build_pages_artifact.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

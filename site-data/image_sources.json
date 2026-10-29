@@ -1,0 +1,64 @@
+{
+  "_comment": "Hand-maintained (not generated). Per print: where the reader gets page images. kind 'local' = AVIF derivatives written by src/make_image_derivatives.py (path_template, {print} and {stem} are substituted); kind 'iiif' prints stay in iiif_manifests.json. hathitrust.seq_offset: HathiTrust seq = local page number + seq_offset; null = not yet confirmed, in which case the reader shows no HathiTrust link (never a guessed one). kind 'iiif': pages come from the manifest in iiif_manifests.json. A path_template may be an absolute URL (external image host).",
+  "Baldo_Cons_Print_Venice_1575_v1": {
+    "kind": "iiif",
+    "full_resolution": "iiif",
+    "rights": "Public Domain Mark 1.0 (Internet Archive item)",
+    "attribution": "Digitized by Google from the copy at Universidad Complutense de Madrid (HathiTrust ucm.531017106x); page images served from the Internet Archive item baldus-consilia-venetiis-1575-vol1-ucm.",
+    "hathitrust": {
+      "htid": "ucm.531017106x",
+      "url": "https://babel.hathitrust.org/cgi/pt?id=ucm.531017106x",
+      "seq_offset": null
+    }
+  },
+  "Baldo_Cons_Print_Venice_1575_v2": {
+    "kind": "iiif",
+    "full_resolution": "iiif",
+    "rights": "Public Domain Mark 1.0 (Internet Archive item)",
+    "attribution": "Digitized by Google from the copy at Universidad Complutense de Madrid (HathiTrust ucm.5310171050); page images served from the Internet Archive item baldus-consilia-venetiis-1575-vol2-ucm.",
+    "hathitrust": {
+      "htid": "ucm.5310171050",
+      "url": "https://babel.hathitrust.org/cgi/pt?id=ucm.5310171050",
+      "seq_offset": null
+    }
+  },
+  "Baldo_Cons_Print_Venice_1575_v3": {
+    "kind": "iiif",
+    "full_resolution": "iiif",
+    "rights": "Public Domain Mark 1.0 (Internet Archive item)",
+    "attribution": "Digitized by Google from the copy at Universidad Complutense de Madrid (HathiTrust ucm.5310171023); page images served from the Internet Archive item baldus-consilia-venetiis-1575-vol3-ucm.",
+    "hathitrust": {
+      "htid": "ucm.5310171023",
+      "url": "https://babel.hathitrust.org/cgi/pt?id=ucm.5310171023",
+      "seq_offset": null
+    }
+  },
+  "Baldo_Cons_Print_Venice_1575_v4": {
+    "kind": "iiif",
+    "full_resolution": "iiif",
+    "rights": "Public Domain Mark 1.0 (Internet Archive item)",
+    "attribution": "Digitized by Google from the copy at Universidad Complutense de Madrid (HathiTrust ucm.5310171014); page images served from the Internet Archive item baldus-consilia-venetiis-1575-vol4-ucm.",
+    "hathitrust": {
+      "htid": "ucm.5310171014",
+      "url": "https://babel.hathitrust.org/cgi/pt?id=ucm.5310171014",
+      "seq_offset": null
+    }
+  },
+  "Baldo_Cons_Print_Venice_1575_v5": {
+    "kind": "iiif",
+    "full_resolution": "iiif",
+    "rights": "Public Domain Mark 1.0 (Internet Archive item)",
+    "attribution": "Digitized by Google from the copy at Universidad Complutense de Madrid (HathiTrust ucm.5310171005); page images served from the Internet Archive item baldus-consilia-venetiis-1575-vol5-ucm.",
+    "hathitrust": {
+      "htid": "ucm.5310171005",
+      "url": "https://babel.hathitrust.org/cgi/pt?id=ucm.5310171005",
+      "seq_offset": null
+    }
+  },
+  "Panormitanus_Cons_Print_Venice_1571_v1": {
+    "kind": "iiif",
+    "full_resolution": "iiif",
+    "rights": "Harvard Library viewer terms (see iiif_manifests.json)",
+    "attribution": "Houghton Library, Harvard University (IC.T2286.B571c v.4), via Harvard Library IIIF."
+  }
+}

@@ -1,0 +1,45 @@
+Du transkribierst Bildausschnitte aus Band 4 der Werke des Nicolaus de Tudeschis (Abbas Panormitanus), einem zweispaltig gesetzten Antiqua-Druck des 16. Jahrhunderts. Der Band enthält die Consilia, im letzten Teil die Practica. Jedes Bild zeigt genau eine Druckspalte. Wegen eines Sicherheitsrands können an den Bildrändern Teile des Kolumnentitels, der Nachbarspalte oder der Nachbarseite sichtbar sein.
+
+AUFBAU
+Ein Consilium folgt in der Regel diesem Muster:
+- „Casus consilii sequentis.“ mit kurzer Sachverhaltsschilderung (nicht immer vorhanden),
+- Überschrift „SVMMARIVM.“, darunter nummerierte, kursiv gesetzte Kurzregesten (1, 2, 3 …),
+- Überschrift „CONSILIVM“ mit römischer Ordnungszahl,
+- Text des Consilium, oft mit Schmuckinitiale; am linken Spaltenrand stehen Randziffern, die auf die Nummern des Summarium verweisen, im Text markiert † die zugehörige Stelle,
+- am Schluss häufig die Unterschrift, etwa „Nicolaus Abbas.“
+Ein Consilium kann mitten in der Spalte beginnen oder enden.
+
+UMFANG
+Transkribiert werden alle Zeilen der Spalte in Lesereihenfolge: Casus, Überschriften, Einträge des Summarium samt ihren Nummern und der Text des Consilium.
+- Jede Zeile des Summarium, von der Überschrift „SVMMARIVM.“ bis zur letzten Zeile des letzten Eintrags einschließlich aller Folgezeilen, beginnt mit {S} und einem Leerzeichen, z. B. „{S} 1 Onera communitatis incumbunt laicis …“. Das gilt auch, wenn das Summarium am Spaltenanfang fortgesetzt wird oder am Spaltenende abbricht. Die Nummern der Einträge sind Teil des Textes und stehen ohne geschweifte Klammern.
+- Randziffern am linken Spaltenrand werden als {n} an den Anfang der Zeile gesetzt, neben der sie stehen, gefolgt von einem Leerzeichen, z. B. „{2} †Reſpondeo, quòd licet ex forma ſui …“.
+- Eine Schmuckinitiale wird als gewöhnlicher Großbuchstabe am Anfang ihres Wortes wiedergegeben.
+Weggelassen werden:
+- Kolumnentitel und Blattzahl über der Spalte,
+- Kustoden, Bogensignaturen und Bogennormen am Spaltenfuß,
+- Buchstaben- und Wortreste der Nachbarspalte oder Nachbarseite an den Bildrändern. Ziffern im Spaltenzwischenraum gehören nur dann zur Spalte, wenn sie unmittelbar an ihrem linken Rand stehen.
+
+ABKÜRZUNGEN
+1. Jedes Kürzungszeichen wird aufgelöst, ausnahmslos. In der Ausgabe stehen keine Tilden, Nasal- oder Kürzungsstriche über oder durch Buchstaben mehr (etwa ã ẽ ĩ õ ũ ñ m̃ ā ē ō ū q̃ ꝑ ꝓ ꝗ ꝙ ꝯ). Eine diplomatische Wiedergabe der Kürzung ist ausgeschlossen.
+2. Form der Auflösung: Der gekürzte Buchstabe steht ohne Zeichen, die ergänzten Buchstaben stehen in eckigen Klammern an der Stelle, an der sie fehlen, in gewöhnlicher Schreibung (s, ae). Beispiele:
+   - cõſentanea → co[n]ſentanea, Cõ- → Co[n]-, præſumũtur → præſumu[n]tur, nõ → no[n]
+   - dẽt → d[ebe]t, pñtia → p[raese]ntia, m̃rimonio → m[at]rimonio, tñ → t[ame]n, nr̃o → n[ost]ro, dr̃ → d[icitu]r
+   - ꝙ → q[uod], q̃ → q[uae] oder q[ue] je nach Satz, ꝓbatur → p[ro]batur, ꝑ → p[er], ꝯ → [con], ẽ für est → e[st]
+   - Endungskürzungen: atq; → atq[ue], omnib; → omnib[us]
+3. Bei mehrdeutigen Kürzungen gilt die im Satzzusammenhang wahrscheinlichste Auflösung; juristische Fachsprache und Formeln des Ius commune sind dabei maßgeblich.
+4. Mit Punkt gekürzte Wörter (Allegationen, Namen, Glossen) bleiben unverändert und ohne Klammern: c., l., ff., C., §., glo., not., capitu., Innoc., Archi., Io. An., Bald. Trägt ein solches Wort zusätzlich ein Kürzungszeichen, wird nur dieses nach Regel 2 aufgelöst.
+5. & bleibt &. Ligaturen sind keine Kürzungen: ct, ſt, ff, ſſ werden als Einzelbuchstaben geschrieben, æ und œ bleiben æ und œ. Akzente wie à, è, ò, ù sind keine Kürzungszeichen und bleiben stehen.
+
+ZEICHENTREUE
+- Keine Normalisierung und keine Korrektur, auch nicht von Druckfehlern.
+- Unterschieden werden ſ und s, u und v, i und j sowie ę, æ, œ, Akzente (à, è, ò, ù), ¶ und †, jeweils wie gedruckt.
+- Groß- und Kleinschreibung, Interpunktion und Spatien folgen dem Druck; fehlende Leerzeichen werden nicht ergänzt.
+- Trennstriche am Zeilenende stehen wie gedruckt; fehlt einer, wird keiner ergänzt. Getrennte Wörter werden nicht zusammengezogen.
+- Gesperrt gesetzte Wörter (etwa Überschriften) werden ohne die Sperrabstände geschrieben: „SVMMARIVM.“, „CONSILIVM VI.“
+- Unleserliche Wörter stehen als {?}.
+
+AUSGABE
+- Ein JSON-Objekt mit dem Feld "zeilen": eine Liste mit genau einem Eintrag je gedruckter Zeile, in Lesereihenfolge von oben nach unten.
+- Jeder Eintrag enthält genau eine Druckzeile; Zeilen werden weder zusammengefasst noch geteilt. Eine volle Spalte umfasst etwa 65 bis 72 Zeilen.
+- Keine leeren Einträge, keine Zeilennummern, keine Anmerkungen.
+- Enthält das Bild keine Textzeile der Spalte, ist die Liste leer.

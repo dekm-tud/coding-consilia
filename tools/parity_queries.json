@@ -1,0 +1,252 @@
+[
+{
+"id": 0,
+"lang": "la",
+"text": "an filia dotata possit succedere ab intestato concurrentibus masculis"
+},
+{
+"id": 1,
+"lang": "la",
+"text": "de restitutione dotis soluto matrimonio sine liberis"
+},
+{
+"id": 2,
+"lang": "la",
+"text": "quando mater transit ad secunda vota an amittat tutelam filiorum"
+},
+{
+"id": 3,
+"lang": "la",
+"text": "utrum usurae debeantur ex pacto in mutuo"
+},
+{
+"id": 4,
+"lang": "la",
+"text": "an adulterium probetur per praesumptiones et famam"
+},
+{
+"id": 5,
+"lang": "la",
+"text": "legitimatio per principem an noceat agnatis non citatis"
+},
+{
+"id": 6,
+"lang": "la",
+"text": "de fideicommisso relicto sub conditione si sine liberis decesserit"
+},
+{
+"id": 7,
+"lang": "la",
+"text": "an statutum excludens feminas a successione extendatur ad filias dotatas"
+},
+{
+"id": 8,
+"lang": "la",
+"text": "de iurisdictione ordinaria contra clericum in causa criminali"
+},
+{
+"id": 9,
+"lang": "la",
+"text": "utrum venter praegnantis possit institui heres posthumus"
+},
+{
+"id": 10,
+"lang": "la",
+"text": "quaestio de feudo antiquo et nouo et successione agnatorum"
+},
+{
+"id": 11,
+"lang": "la",
+"text": "an contractus initus a minore sine decreto iudicis valeat"
+},
+{
+"id": 12,
+"lang": "la",
+"text": "de praescriptione centum annorum contra ecclesiam"
+},
+{
+"id": 13,
+"lang": "la",
+"text": "potestas ordinandi statuta communitatis contra ius commune"
+},
+{
+"id": 14,
+"lang": "la",
+"text": "an testamentum coram quinque testibus valeat de iure canonico"
+},
+{
+"id": 15,
+"lang": "la",
+"text": "de compensatione debiti et credit in iudicio"
+},
+{
+"id": 16,
+"lang": "la",
+"text": "de homicidio in defensionem sui moderamine inculpatae tutelae"
+},
+{
+"id": 17,
+"lang": "la",
+"text": "pactum de non petendo an transeat ad heredes"
+},
+{
+"id": 18,
+"lang": "la",
+"text": "de emphyteusi perpetua et devolutione ad dominum directum"
+},
+{
+"id": 19,
+"lang": "la",
+"text": "incestus et stuprum an inducant infamiam"
+},
+{
+"id": 20,
+"lang": "la",
+"text": "de sponsalibus per verba de futuro et copula carnali"
+},
+{
+"id": 21,
+"lang": "la",
+"text": "an impotentia coeundi dirimat matrimonium"
+},
+{
+"id": 22,
+"lang": "la",
+"text": "de legitima portione filiis debita et falcidia"
+},
+{
+"id": 23,
+"lang": "la",
+"text": "fideiussor pro alio soluens an habeat regressum"
+},
+{
+"id": 24,
+"lang": "la",
+"text": "de conductione et locatione rei perempta casu fortuito"
+},
+{
+"id": 25,
+"lang": "en",
+"text": "can a daughter who received a dowry still inherit alongside her brothers"
+},
+{
+"id": 26,
+"lang": "en",
+"text": "return of the dowry when the marriage ends without children"
+},
+{
+"id": 27,
+"lang": "en",
+"text": "does a mother lose guardianship of her children when she remarries"
+},
+{
+"id": 28,
+"lang": "en",
+"text": "interest on a loan by agreement and the prohibition of usury"
+},
+{
+"id": 29,
+"lang": "en",
+"text": "proof of adultery by presumptions and public reputation"
+},
+{
+"id": 30,
+"lang": "en",
+"text": "legitimation of an illegitimate son by imperial decree"
+},
+{
+"id": 31,
+"lang": "en",
+"text": "a bequest conditional on the heir dying without legitimate children"
+},
+{
+"id": 32,
+"lang": "en",
+"text": "city statute excluding women from succession"
+},
+{
+"id": 33,
+"lang": "en",
+"text": "criminal jurisdiction of a secular court over a cleric"
+},
+{
+"id": 34,
+"lang": "en",
+"text": "can an unborn child be instituted as heir"
+},
+{
+"id": 35,
+"lang": "en",
+"text": "contracts made by a minor without the judge's authorisation"
+},
+{
+"id": 36,
+"lang": "en",
+"text": "a wife accused of infidelity and the restitution of her dowry"
+},
+{
+"id": 37,
+"lang": "en",
+"text": "validity of a will made before five witnesses"
+},
+{
+"id": 38,
+"lang": "en",
+"text": "self-defence and the killing of an attacker"
+},
+{
+"id": 39,
+"lang": "en",
+"text": "an impotent husband and the annulment of marriage"
+},
+{
+"id": 40,
+"lang": "en",
+"text": "rape of a virgin and the compensation owed"
+},
+{
+"id": 41,
+"lang": "en",
+"text": "a widow who must live chastely to keep the usufruct"
+},
+{
+"id": 42,
+"lang": "en",
+"text": "the sale of goods by a guardian without permission"
+},
+{
+"id": 43,
+"lang": "de",
+"text": "Rückgabe der Mitgift bei kinderloser Auflösung der Ehe"
+},
+{
+"id": 44,
+"lang": "de",
+"text": "Erbrecht der ausgestatteten Tochter neben den Brüdern"
+},
+{
+"id": 45,
+"lang": "de",
+"text": "Zinsen beim Darlehen und das Wucherverbot"
+},
+{
+"id": 46,
+"lang": "de",
+"text": "Beweis des Ehebruchs durch Vermutungen und Leumund"
+},
+{
+"id": 47,
+"lang": "de",
+"text": "Legitimierung eines unehelichen Sohnes"
+},
+{
+"id": 48,
+"lang": "de",
+"text": "Gültigkeit eines Testaments vor fünf Zeugen"
+},
+{
+"id": 49,
+"lang": "de",
+"text": "Unfruchtbarkeit als Grund für die Nichtigkeit der Ehe"
+}
+]

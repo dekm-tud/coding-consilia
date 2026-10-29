@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <script src="assets/gate-config.js"></script>
+  <script src="assets/gate.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search – Consilia</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%275%27 fill=%27%231c3d5a%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Georgia,serif%27 font-weight=%27700%27 font-size=%2721%27 text-anchor=%27middle%27 fill=%27%23f6f1e7%27%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/app.css">
+  <script src="assets/common.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="about.html"><span class="logo" aria-hidden="true"></span>Consilia <span class="beta">beta</span></a>
+  <nav class="nav">
+    <a href="about.html">About</a>
+    <a href="introduction.html">Introduction</a>
+    <a href="bibliography.html">Bibliography</a>
+    <a href="index.html">Read</a>
+    <a href="search.html" class="active">Search</a>
+    <a href="chat.html">Ask</a>
+    
+  </nav>
+  <span class="spacer"></span>
+  <button class="iconbtn" id="theme-toggle" title="Dark mode" aria-label="Toggle dark mode"></button>
+</header>
+
+<div class="sr-head">
+  <div class="inner">
+    <div class="tabs" id="mode-tabs" role="tablist">
+      <button data-mode="keyword" class="active" role="tab">Full text</button>
+      <button data-mode="semantic" role="tab">Semantic</button>
+      <button data-mode="similar" role="tab">Similar</button>
+      <button data-mode="index" role="tab">Subjects</button>
+    </div>
+    <p class="status" id="mode-hint"></p>
+
+    <!-- one input row for every mode: query, reference consilium or term filter, plus the scope -->
+    <div class="sr-row" id="input-row">
+      <div class="search" id="q-box">
+        <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+        <input id="search-input" class="field" type="search" placeholder="Search…" autocomplete="off" spellcheck="false">
+        <button id="search-clear" class="clear" title="Clear">&#x2715;</button>
+      </div>
+      <select id="sim-vol" class="field hidden" title="Print"></select>
+      <div class="search hidden" id="sim-box">
+        <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+        <input id="sim-input" class="field" type="search" placeholder="Consilium number, or a word of its argument" autocomplete="off" spellcheck="false">
+        <div class="sugg hidden" id="sim-sugg"></div>
+      </div>
+      <div class="chipline hidden" id="sim-chip-row"><span class="chip on" id="chip-n"></span> <span class="serif" id="chip-title"></span> <button class="chip" id="sim-clear" title="Choose another consilium">✕</button></div>
+      <div class="search hidden" id="filter-box">
+        <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+        <input id="index-filter" class="field" type="search" placeholder="Filter terms" autocomplete="off" spellcheck="false">
+      </div>
+      <select id="scope-select" class="field" title="Scope"></select>
+    </div>
+    <p class="status" id="index-progress"></p>
+
+    <!-- semantic / similar: model and passage options -->
+    <div class="sr-panel" id="sem-controls">
+      <div class="sr-row" id="model-actions">
+        <label class="status">Model <select id="model-select" class="field compact"></select></label>
+        <button class="btn" id="btn-load-model">Load model</button>
+        <span class="status" id="model-status"></span>
+        <span class="spacer"></span>
+        <label class="status">Passages <select id="lang-select" class="field compact"><option value="both">Latin + English</option><option value="la">Latin</option><option value="en">English</option></select></label>
+        <label class="status">Show <input id="topk-input" class="field compact" type="number" min="5" max="200" value="20" style="width:4.2rem"></label>
+      </div>
+      <details id="model-details"><summary class="status">About the models</summary>
+        <div id="model-list" role="radiogroup" aria-label="Embedding model"></div>
+      </details>
+    </div>
+
+    <!-- subjects: layer, label language, terms -->
+    <div class="sr-panel" id="index-controls">
+      <div class="sr-row">
+        <div class="seg" id="index-layer"></div>
+        <div class="seg" id="index-lang" title="Label language"></div>
+        <span class="status" id="index-status"></span>
+      </div>
+      <div class="cloud" id="index-cloud"></div>
+    </div>
+  </div>
+</div>
+
+<div id="empty-state" class="empty"></div>
+
+<div class="sr-body" id="results-layout" style="display:none">
+  <section>
+    <div class="sr-row" id="results-head">
+      <span id="result-summary"></span><span class="spacer"></span>
+      <label>Sort <select id="sort-select" class="field compact"><option value="score">relevance</option><option value="n">print order</option></select></label>
+    </div>
+    <div class="sr-list" id="results-list"></div>
+  </section>
+  <aside class="sr-side">
+    <div class="box count"><h3 id="count-head">Matches</h3><div class="big num" id="stat-count">0</div><div class="status" id="stat-pct"></div></div>
+    <details id="side-more" open><summary class="status">Statistics</summary>
+      <div class="box" id="fields-block"><h3>Fields matched</h3>
+        <div class="frow"><span>Title</span><div class="tr"><i id="bar-title"></i></div><span class="c num" id="cnt-title">0</span></div>
+        <div class="frow"><span>Argument</span><div class="tr"><i id="bar-summary"></i></div><span class="c num" id="cnt-summary">0</span></div>
+        <div class="frow"><span>Casus</span><div class="tr"><i id="bar-casus"></i></div><span class="c num" id="cnt-casus">0</span></div>
+        <div class="frow"><span>Text</span><div class="tr"><i id="bar-body"></i></div><span class="c num" id="cnt-body">0</span></div>
+      </div>
+      <div class="box"><h3>Distribution across prints</h3><div id="dist-bars"></div><div class="status" style="display:flex;justify-content:space-between"><span>start</span><span>end of print</span></div></div>
+      <details class="box" id="pca-block" style="display:none"><summary class="label" style="cursor:pointer">Map of the corpus</summary>
+        <p class="status">Every dot is a consilium, placed by its vectors (two principal components). Results are highlighted.</p>
+        <div class="seg" style="margin:.5rem 0"><button class="active" id="pcb-cluster">topic</button><button id="pcb-volume">print</button></div>
+        <canvas id="pca-canvas" class="map" width="560" height="420"></canvas><div class="legend" id="pca-legend"></div>
+      </details>
+    </details>
+  </aside>
+</div>
+
+<footer class="site-foot">
+  <div class="inner">
+    <div><b>Prof. Dr. Michael Schonhardt</b><br><a href="https://www.linglit.tu-darmstadt.de/institutlinglit/mitarbeitende/schonhardt_linglit/schonhardt_startseite_linglit.de.jsp" target="_blank" rel="noopener">Digitale Editorik und Kulturgeschichte des Mittelalters</a>, Technische Universität Darmstadt / Akademie der Wissenschaften und der Literatur | Mainz</div>
+    <div>Institut für Sprach- und Literaturwissenschaft<br>Residenzschloss 1, 64283 Darmstadt<br><a href="mailto:michael.schonhardt@tu-darmstadt.de">michael.schonhardt@tu-darmstadt.de</a></div>
+    <div><a href="about.html#impressum">Imprint / Impressum</a> · <a href="https://github.com/dekm-tud/coding-consilia">Repository</a> · <a href="https://github.com/dekm-tud/coding-consilia/issues">Report an error</a><br>Texts CC BY 4.0, code MIT. Portrait of Baldus after J.-J. Boissard, <i>Bibliotheca sive Thesaurus virtutis et gloriae</i>, Frankfurt 1627 (public domain).</div>
+  </div>
+</footer>
+<div id="tip"></div>
+
+<script src="assets/search-app.js"></script>
+</body>
+</html>

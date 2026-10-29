@@ -1,0 +1,55 @@
+{
+ "_comment": "Manual decisions for casus candidates the automatic direction check could not settle (src/casus.py). Key = id of the consilium that currently ends with the block (owner). decision: move -> block becomes the casus of the next consilium; keep -> block stays in the owner. Decided 2026-09-23 by reading the Latin (Claude, not the editor); not editor-verified.",
+ "consilium-baldo_cons_print_venice_1575_v2-428": {
+  "decision": "move",
+  "reason": "receiver v2-429 has no argumentum, but its body discusses exactly this case (domini consules cannot execute while nullity is pending)"
+ },
+ "consilium-baldo_cons_print_venice_1575_v4-29": {
+  "decision": "move",
+  "reason": "receiver v4-30 has no argumentum; its body discusses the concordia statute for attempted adultery (Lena, sodomy exception) stated in the casus"
+ },
+ "consilium-baldo_cons_print_venice_1575_v5-439": {
+  "decision": "move",
+  "reason": "receiver v5-440 has no argumentum; its body discusses the conductor's interesse under the iron-selling lease stated in the casus"
+ },
+ "consilium-baldo_cons_print_venice_1575_v3-284": {
+  "decision": "move",
+  "reason": "receiver v3-285 is an 'Ad idem' on the same question (testament before 5/7 witnesses); casus stands before its heading, so it introduces v3-285"
+ },
+ "consilium-baldo_cons_print_venice_1575_v2-383": {
+  "decision": "move",
+  "reason": "casus (tutela: maternal grandfather vs mother) is exactly v2-385's question. NOTE data anomaly: a mis-tagged heading fragment 'CONSILIVM CCCLXXXIIII.' sits inside this block and consilium 384 does not exist as a separate record; check the page image"
+ },
+ "consilium-baldo_cons_print_venice_1575_v1-350": {
+  "decision": "keep",
+  "reason": "block ('Proponitur ... condemnatus de falso per episcopum') matches the owner's own argumentum (clericus tabellio, crimen falsi), not v1-351's"
+ },
+ "consilium-baldo_cons_print_venice_1575_v1-359": {
+  "decision": "keep",
+  "reason": "not a casus: the block is mid-opinion reasoning ('credo non valere ... quia est quaedam regeneratio') on the owner's rescriptum; a 'Proponitur' inside the argument"
+ },
+ "consilium-baldo_cons_print_venice_1575_v1-390-2": {
+  "decision": "keep",
+  "reason": "block (three daughters, promise to make them heirs) matches the owner's argumentum (Promissio patris filiabus); receiver v1-441 is unrelated"
+ },
+ "consilium-baldo_cons_print_venice_1575_v3-309": {
+  "decision": "keep",
+  "reason": "block ('Coram vobis ... officium armarii et catastri') is the petition inside the owner's own case (armarium/catastrum), followed by the owner's closing signature"
+ },
+ "consilium-baldo_cons_print_venice_1575_v4-306": {
+  "decision": "keep",
+  "reason": "block (castra granted by the Pope, condemnations by the vicar) matches the owner's argumentum (concesso castro ... condemnationes), not v4-307's (dos profecta)"
+ },
+ "consilium-baldo_cons_print_venice_1575_v2-465": {
+  "decision": "keep",
+  "reason": "block after the signature is ~4.9k chars (casus plus reasoning about a peace instrument between brothers) and matches neither neighbour's argumentum (both gabella): probably a consilium whose heading was lost; needs a page-image check, not resolvable by the direction rule"
+ },
+ "consilium-baldo_cons_print_venice_1575_v4-307": {
+  "decision": "move",
+  "reason": "casus opens with a family tree (Angelucius, Petrus, Andreas, Clara); the same names recur in v4-308's body ('Ang. et Pe.' emphyteusis), and the cosine is close but favours the receiver"
+ },
+ "consilium-baldo_cons_print_venice_1575_v4-359": {
+  "decision": "keep",
+  "reason": "not a casus: 'Casus autem, super quo consului nunc, sub hac forma proponitur, valet.' is the owner's own closing remark after its signature"
+ }
+}

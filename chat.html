@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <script src="assets/gate-config.js"></script>
+  <script src="assets/gate.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask – Consilia</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%275%27 fill=%27%231c3d5a%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Georgia,serif%27 font-weight=%27700%27 font-size=%2721%27 text-anchor=%27middle%27 fill=%27%23f6f1e7%27%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/app.css">
+  <script src="assets/common.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="about.html"><span class="logo" aria-hidden="true"></span>Consilia <span class="beta">beta</span></a>
+  <nav class="nav">
+    <a href="about.html">About</a>
+    <a href="introduction.html">Introduction</a>
+    <a href="bibliography.html">Bibliography</a>
+    <a href="index.html">Read</a>
+    <a href="search.html">Search</a>
+    <a href="chat.html" class="active">Ask</a>
+    
+  </nav>
+  <span class="spacer"></span>
+  <button class="iconbtn" id="theme-toggle" title="Dark mode" aria-label="Toggle dark mode"></button>
+</header>
+
+<main class="chat">
+  <p class="lead" style="font-size:1rem;margin:.6rem 0 .8rem">Ask a question in any language. A language model of your choice (Claude, OpenAI, Gemini or another compatible service) searches the portal and answers with references to the consilia. Every step is shown: what the model plans, which search it runs, what came back. It runs with your own API key, which stays in this browser; usage is billed to your account with that provider.</p>
+
+  <details class="panel" id="cfg-panel" open>
+    <summary>Language model endpoint</summary>
+    <div class="cfg" style="margin-top:.6rem">
+      <label>Preset
+        <select id="cfg-preset" class="field">
+          <option value="anthropic">Claude (Anthropic)</option>
+          <option value="openai">OpenAI</option>
+          <option value="gemini">Gemini (Google)</option>
+          <option value="custom">Other OpenAI-compatible endpoint</option>
+        </select></label>
+      <label>Base URL <input id="cfg-url" class="field" value="https://api.anthropic.com/v1" spellcheck="false"></label>
+      <label>API key <input id="cfg-key" class="field" type="password" placeholder="stays in this browser" autocomplete="off"></label>
+      <label>Chat model <input id="cfg-model" class="field" value="claude-sonnet-5-5" list="model-options" spellcheck="false"><datalist id="model-options"></datalist></label>
+    </div>
+    <div class="sr-row" style="margin-top:.6rem">
+      <button class="btn" id="cfg-save">Save in this browser</button>
+      <button class="btn" id="cfg-test">Test connection</button>
+      <span class="status" id="cfg-status"></span>
+    </div>
+    <p class="status" style="margin-top:.5rem" id="cfg-hint"></p>
+  </details>
+
+  <details class="panel" id="sem-panel">
+    <summary>Semantic search model (optional)</summary>
+    <p class="status" style="margin-top:.5rem">With a passage-embedding model the assistant can also search by meaning (tool <code>search_semantic</code>) and find similar consilia. The model runs in your browser; it is downloaded once on request and then kept by the browser. Without it the assistant searches by words and by the annotation layers.</p>
+    <div class="sr-row" style="margin-top:.4rem">
+      <label>Model <select id="sem-model" class="field"></select></label>
+      <button class="btn" id="sem-load">Load model</button>
+      <span class="status" id="sem-status"></span>
+    </div>
+  </details>
+
+  <div class="chat-log" id="log"></div>
+
+  <form class="chat-form" id="form">
+    <textarea id="q" class="field" rows="1" placeholder="e.g. Which consilia deal with a pregnant widow in a succession dispute?" required></textarea>
+    <button class="btn primary" id="send" type="submit">Ask</button>
+    <button class="btn hidden" id="stop" type="button" title="Stop the current question">Stop</button>
+    <button class="btn" id="reset" type="button" title="Start a new conversation">New</button>
+  </form>
+</main>
+
+<script src="assets/minisearch.min.js"></script>
+<script src="assets/vectors.js"></script>
+<script src="assets/chat-app.js"></script>
+</body>
+</html>

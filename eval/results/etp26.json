@@ -1,0 +1,87 @@
+{
+ "n_queries": 360,
+ "per_cell": 40,
+ "results": {
+  "bge-m3/reference": {
+   "mrr10": 0.3734,
+   "ndcg10": 0.4186,
+   "r10": 0.5611,
+   "lang=deu/ndcg10": 0.3586,
+   "lang=eng/ndcg10": 0.4226,
+   "lang=lat/ndcg10": 0.4745,
+   "style=keyword/ndcg10": 0.3953,
+   "style=paraphrase/ndcg10": 0.7151,
+   "style=persona/ndcg10": 0.1454
+  },
+  "bge-m3/onnx:int8_stock": {
+   "mrr10": 0.3745,
+   "ndcg10": 0.4199,
+   "r10": 0.5639,
+   "lang=deu/ndcg10": 0.3591,
+   "lang=eng/ndcg10": 0.4288,
+   "lang=lat/ndcg10": 0.4716,
+   "style=keyword/ndcg10": 0.3918,
+   "style=paraphrase/ndcg10": 0.7229,
+   "style=persona/ndcg10": 0.1449,
+   "mean_cos_to_reference": 0.9846
+  },
+  "etp-bgem3-ft/reference": {
+   "mrr10": 0.5994,
+   "ndcg10": 0.6528,
+   "r10": 0.8222,
+   "lang=deu/ndcg10": 0.648,
+   "lang=eng/ndcg10": 0.6564,
+   "lang=lat/ndcg10": 0.6538,
+   "style=keyword/ndcg10": 0.6436,
+   "style=paraphrase/ndcg10": 0.9275,
+   "style=persona/ndcg10": 0.3872
+  },
+  "etp-bgem3-ft/onnx:fp32": {
+   "mrr10": 0.5995,
+   "ndcg10": 0.6528,
+   "r10": 0.8222,
+   "lang=deu/ndcg10": 0.6481,
+   "lang=eng/ndcg10": 0.6564,
+   "lang=lat/ndcg10": 0.6538,
+   "style=keyword/ndcg10": 0.6436,
+   "style=paraphrase/ndcg10": 0.9275,
+   "style=persona/ndcg10": 0.3873,
+   "mean_cos_to_reference": 1.0
+  },
+  "etp-bgem3-ft/onnx:int8_tuned": {
+   "mrr10": 0.5996,
+   "ndcg10": 0.6545,
+   "r10": 0.8306,
+   "lang=deu/ndcg10": 0.6544,
+   "lang=eng/ndcg10": 0.6529,
+   "lang=lat/ndcg10": 0.6562,
+   "style=keyword/ndcg10": 0.6507,
+   "style=paraphrase/ndcg10": 0.925,
+   "style=persona/ndcg10": 0.3879,
+   "mean_cos_to_reference": 0.9954
+  },
+  "etp-bgem3-ft/onnx:fp16": {
+   "mrr10": 0.5994,
+   "ndcg10": 0.6528,
+   "r10": 0.8222,
+   "lang=deu/ndcg10": 0.648,
+   "lang=eng/ndcg10": 0.6564,
+   "lang=lat/ndcg10": 0.6538,
+   "style=keyword/ndcg10": 0.6436,
+   "style=paraphrase/ndcg10": 0.9275,
+   "style=persona/ndcg10": 0.3872,
+   "mean_cos_to_reference": 1.0
+  },
+  "qwen3-0.6b/reference": {
+   "mrr10": 0.2948,
+   "ndcg10": 0.3418,
+   "r10": 0.4917,
+   "lang=deu/ndcg10": 0.2791,
+   "lang=eng/ndcg10": 0.3577,
+   "lang=lat/ndcg10": 0.3885,
+   "style=keyword/ndcg10": 0.3541,
+   "style=paraphrase/ndcg10": 0.5204,
+   "style=persona/ndcg10": 0.1508
+  }
+ }
+}

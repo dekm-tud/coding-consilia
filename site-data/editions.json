@@ -1,0 +1,105 @@
+{
+  "_comment": "Hand-maintained bibliographic registry shown on the home page and used for citations. One entry per print id. Keep statements verifiable; no internal project notes here. `portal` is the canonical address used for permalinks, citations and the error-report link (the pages never use their own location for these).",
+  "portal": {
+    "title": "Consilia. A portal for medieval legal opinions",
+    "editor": "Michael Schonhardt",
+    "url": "https://dekm-tud.github.io/coding-consilia/",
+    "repository": "https://github.com/dekm-tud/coding-consilia"
+  },
+  "Baldo_Cons_Print_Venice_1575_v1": {
+    "author": "Baldus de Ubaldis",
+    "title": "Consiliorum sive responsorum volumen primum",
+    "imprint": "Venice: Girolamo Polo, 1575",
+    "volume": "1 of 5 (plus Repertorium)",
+    "copy": "Universidad Complutense de Madrid (Google digitisation via HathiTrust), page images from the Internet Archive item baldus-consilia-venetiis-1575-vol1-ucm",
+    "catalogue": "https://catalog.hathitrust.org/Record/009264041",
+    "other_copies": [
+      {
+        "label": "Biblioteca Nazionale Centrale di Roma, via Internet Archive (IIIF)",
+        "url": "https://archive.org/details/bub_gb_PHN5KxDdwVEC"
+      }
+    ],
+    "hathitrust": "https://babel.hathitrust.org/cgi/pt?id=ucm.531017106x",
+    "google_books": "https://books.google.com/books?id=jxK5aJ3D4UoC",
+    "internet_archive": "https://archive.org/details/baldus-consilia-venetiis-1575-vol1-ucm",
+    "iiif_manifest": "https://iiif.archive.org/iiif/3/baldus-consilia-venetiis-1575-vol1-ucm/manifest.json"
+  },
+  "Baldo_Cons_Print_Venice_1575_v2": {
+    "author": "Baldus de Ubaldis",
+    "title": "Consiliorum sive responsorum volumen secundum",
+    "imprint": "Venice: Girolamo Polo, 1575",
+    "volume": "2 of 5",
+    "copy": "Universidad Complutense de Madrid (Google digitisation via HathiTrust), page images from the Internet Archive item baldus-consilia-venetiis-1575-vol2-ucm",
+    "catalogue": "https://catalog.hathitrust.org/Record/009264041",
+    "other_copies": [
+      {
+        "label": "Biblioteca Nazionale Centrale di Roma, via Internet Archive (IIIF)",
+        "url": "https://archive.org/details/bub_gb_QdsaxFdOIisC"
+      }
+    ],
+    "hathitrust": "https://babel.hathitrust.org/cgi/pt?id=ucm.5310171050",
+    "google_books": "https://books.google.com/books?id=PszoDKaGBtwC",
+    "internet_archive": "https://archive.org/details/baldus-consilia-venetiis-1575-vol2-ucm",
+    "iiif_manifest": "https://iiif.archive.org/iiif/3/baldus-consilia-venetiis-1575-vol2-ucm/manifest.json"
+  },
+  "Baldo_Cons_Print_Venice_1575_v3": {
+    "author": "Baldus de Ubaldis",
+    "title": "Consiliorum sive responsorum volumen tertium",
+    "imprint": "Venice: Girolamo Polo, 1575",
+    "volume": "3 of 5",
+    "copy": "Universidad Complutense de Madrid (Google digitisation via HathiTrust), page images from the Internet Archive item baldus-consilia-venetiis-1575-vol3-ucm",
+    "catalogue": "https://catalog.hathitrust.org/Record/009264041",
+    "hathitrust": "https://babel.hathitrust.org/cgi/pt?id=ucm.5310171023",
+    "google_books": "https://books.google.com/books?id=YRK5sblc0_4C",
+    "internet_archive": "https://archive.org/details/baldus-consilia-venetiis-1575-vol3-ucm",
+    "iiif_manifest": "https://iiif.archive.org/iiif/3/baldus-consilia-venetiis-1575-vol3-ucm/manifest.json"
+  },
+  "Baldo_Cons_Print_Venice_1575_v4": {
+    "author": "Baldus de Ubaldis",
+    "title": "Consiliorum sive responsorum volumen quartum",
+    "imprint": "Venice: Girolamo Polo, 1575",
+    "volume": "4 of 5",
+    "copy": "Universidad Complutense de Madrid (Google digitisation via HathiTrust), page images from the Internet Archive item baldus-consilia-venetiis-1575-vol4-ucm",
+    "catalogue": "https://catalog.hathitrust.org/Record/009264041",
+    "hathitrust": "https://babel.hathitrust.org/cgi/pt?id=ucm.5310171014",
+    "google_books": "https://books.google.com/books?id=cT8QNuCB2moC",
+    "internet_archive": "https://archive.org/details/baldus-consilia-venetiis-1575-vol4-ucm",
+    "iiif_manifest": "https://iiif.archive.org/iiif/3/baldus-consilia-venetiis-1575-vol4-ucm/manifest.json"
+  },
+  "Baldo_Cons_Print_Venice_1575_v5": {
+    "author": "Baldus de Ubaldis",
+    "title": "Consiliorum sive responsorum volumen quintum",
+    "imprint": "Venice: Girolamo Polo, 1575",
+    "volume": "5 of 5",
+    "copy": "Universidad Complutense de Madrid (Google digitisation via HathiTrust), page images from the Internet Archive item baldus-consilia-venetiis-1575-vol5-ucm",
+    "catalogue": "https://catalog.hathitrust.org/Record/009264041",
+    "hathitrust": "https://babel.hathitrust.org/cgi/pt?id=ucm.5310171005",
+    "google_books": "https://books.google.com/books?id=x609eS-JuSkC",
+    "internet_archive": "https://archive.org/details/baldus-consilia-venetiis-1575-vol5-ucm",
+    "iiif_manifest": "https://iiif.archive.org/iiif/3/baldus-consilia-venetiis-1575-vol5-ucm/manifest.json"
+  },
+  "Panormitanus_Cons_Print_Venice_1571_v1": {
+    "author": "Nicolaus de Tudeschis (Panormitanus)",
+    "title": "Consilia, tractatus, quaestiones et practica",
+    "imprint": "Venice, 1571 (Abbatis Panormitani Commentaria, vol. 4, part 9)",
+    "volume": "Consilia in two parts; the volume's commentary sections are not included",
+    "copy": "Houghton Library, Harvard University (IC.T2286.B571c v.4), via Harvard Library IIIF",
+    "catalogue": "https://nrs.lib.harvard.edu/URN-3:FHCL.HOUGH:4884835"
+  },
+  "authors": {
+    "Baldo_29618397": {
+      "name": "Baldus de Ubaldis",
+      "dates": "1327–1400",
+      "text": "Baldo degli Ubaldi of Perugia, a pupil of Bartolus de Saxoferrato, taught civil and canon law at Pisa, Florence, Perugia, Padua and Pavia and advised cities, princes and the Curia. About four thousand of his opinions are known; the printed collection, first complete at Brescia in 1490–91, contains 2,518 and is the largest body of consilia by any medieval jurist. The five-volume Venice edition of 1575 is the standard text.",
+      "page": "baldus.html",
+      "text_de": "Baldo degli Ubaldi aus Perugia, Schüler des Bartolus de Saxoferrato, lehrte beide Rechte in Pisa, Florenz, Perugia, Padua und Pavia und beriet Städte, Fürsten und die Kurie. Etwa viertausend seiner Gutachten sind bekannt; die gedruckte Sammlung, erstmals vollständig in Brescia 1490–91, enthält 2.518 und ist das größte Consilia-Korpus eines mittelalterlichen Juristen. Die fünfbändige venezianische Ausgabe von 1575 ist der Standardtext."
+    },
+    "Panormitanus_32108367": {
+      "name": "Nicolaus de Tudeschis (Panormitanus)",
+      "dates": "1386–1445",
+      "text": "Niccolò de' Tudeschi of Catania, a Benedictine, studied at Bologna and taught canon law at Parma, Siena and Bologna. Abbot of Maniace in Sicily (hence 'Abbas Siculus' or 'Abbas modernus'), from 1434 archbishop of Palermo, he was a leading voice at the Council of Basel and was made cardinal by the council's pope Felix V. His commentary on the Decretals was the most influential canon-law work of the fifteenth century; his consilia, in two books of 108 and 118, circulated with it in the collected editions.",
+      "page": "panormitanus.html",
+      "text_de": "Niccolò de' Tudeschi aus Catania, Benediktiner, studierte in Bologna und lehrte Kirchenrecht in Parma, Siena und Bologna. Abt von Maniace in Sizilien (daher 'Abbas Siculus' oder 'Abbas modernus'), seit 1434 Erzbischof von Palermo, war er eine führende Stimme auf dem Basler Konzil und wurde vom Konzilspapst Felix V. zum Kardinal erhoben. Sein Dekretalenkommentar war das einflussreichste kanonistische Werk des fünfzehnten Jahrhunderts; seine Consilia, in zwei Büchern von 108 und 118, liefen in den Gesamtausgaben mit ihm um."
+    }
+  }
+}

@@ -1,0 +1,51 @@
+# Subject tags of the website bibliography (bibliography.html), replacing the automatic Zotero tags.
+# Each tag has an id, an English and a German label and a facet. Persons and regions are tagged only when a work
+# is about them, not when it merely mentions them.
+facets:
+  genre: {en: 'Genre and practice', de: 'Gattung und Praxis'}
+  sources: {en: 'Sources and transmission', de: 'Quellen und Überlieferung'}
+  law: {en: 'Fields of law', de: 'Rechtsgebiete'}
+  themes: {en: 'Themes', de: 'Themen'}
+  persons: {en: 'Jurists and physicians', de: 'Juristen und Ärzte'}
+  regions: {en: 'Regions', de: 'Regionen'}
+  period: {en: 'Period', de: 'Zeit'}
+tags:
+  - {id: legal-consilia, facet: genre, en: 'Legal consilia', de: 'Juristische Consilia'}
+  - {id: medical-consilia, facet: genre, en: 'Medical consilia', de: 'Medizinische Consilia'}
+  - {id: genre-studies, facet: genre, en: 'The genre and its study', de: 'Die Gattung und ihre Erforschung'}
+  - {id: faculty-opinions, facet: genre, en: 'Faculty opinions and sending of files', de: 'Fakultätsgutachten und Aktenversendung'}
+  - {id: responsa, facet: genre, en: 'Responsa, fatwas and other legal opinions', de: 'Responsen, Fatwas und andere Rechtsgutachten'}
+  - {id: counsel-advice, facet: genre, en: 'Counsel and advice beyond law', de: 'Rat und Ratgeberliteratur außerhalb des Rechts'}
+  - {id: court-practice, facet: genre, en: 'Courts and legal practice', de: 'Gerichte und Rechtspraxis'}
+  - {id: manuscripts, facet: sources, en: 'Manuscripts and transmission', de: 'Handschriften und Überlieferung'}
+  - {id: printed-collections, facet: sources, en: 'Printed collections and book history', de: 'Gedruckte Sammlungen und Buchgeschichte'}
+  - {id: editions-repertories, facet: sources, en: 'Editions, repertories and bibliographies', de: 'Editionen, Repertorien und Bibliographien'}
+  - {id: digital-methods, facet: sources, en: 'Digital methods', de: 'Digitale Methoden'}
+  - {id: canon-law, facet: law, en: 'Canon law', de: 'Kirchenrecht'}
+  - {id: roman-law, facet: law, en: 'Roman law and ius commune', de: 'Römisches Recht und Ius commune'}
+  - {id: statutes-cities, facet: law, en: 'Statutes and city law', de: 'Statuten und Stadtrecht'}
+  - {id: family-inheritance, facet: law, en: 'Marriage, dowry and inheritance', de: 'Ehe, Mitgift und Erbrecht'}
+  - {id: criminal-law, facet: law, en: 'Criminal law and procedure', de: 'Strafrecht und Strafverfahren'}
+  - {id: procedure, facet: law, en: 'Civil procedure and evidence', de: 'Zivilprozess und Beweis'}
+  - {id: feudal-law, facet: law, en: 'Feudal law', de: 'Lehnrecht'}
+  - {id: commerce, facet: law, en: 'Trade, contracts and usury', de: 'Handel, Verträge und Wucher'}
+  - {id: political-thought, facet: law, en: 'Jurisdiction, sovereignty and citizenship', de: 'Jurisdiktion, Souveränität und Bürgerrecht'}
+  - {id: legal-medicine, facet: themes, en: 'Law and medicine', de: 'Recht und Medizin'}
+  - {id: body-sexuality, facet: themes, en: 'Body, sexuality and reproduction', de: 'Körper, Sexualität und Reproduktion'}
+  - {id: women-gender, facet: themes, en: 'Women and gender', de: 'Frauen und Geschlecht'}
+  - {id: jews, facet: themes, en: 'Jews and Jewish law', de: 'Juden und jüdisches Recht'}
+  - {id: universities, facet: themes, en: 'Universities and the legal profession', de: 'Universitäten und Juristenstand'}
+  - {id: church-clergy, facet: themes, en: 'Church, clergy and religious orders', de: 'Kirche, Klerus und Orden'}
+  - {id: baldus, facet: persons, en: 'Baldus de Ubaldis', de: 'Baldus de Ubaldis'}
+  - {id: bartolus, facet: persons, en: 'Bartolus de Saxoferrato', de: 'Bartolus de Saxoferrato'}
+  - {id: oldradus, facet: persons, en: 'Oldradus de Ponte', de: 'Oldradus de Ponte'}
+  - {id: panormitanus, facet: persons, en: 'Panormitanus (Nicolaus de Tudeschis)', de: 'Panormitanus (Nicolaus de Tudeschis)'}
+  - {id: other-jurists, facet: persons, en: 'Other jurists', de: 'Andere Juristen'}
+  - {id: physicians, facet: persons, en: 'Physicians', de: 'Ärzte'}
+  - {id: italy, facet: regions, en: 'Italy', de: 'Italien'}
+  - {id: empire, facet: regions, en: 'Holy Roman Empire', de: 'Heiliges Römisches Reich'}
+  - {id: france, facet: regions, en: 'France', de: 'Frankreich'}
+  - {id: iberia, facet: regions, en: 'Iberian Peninsula', de: 'Iberische Halbinsel'}
+  - {id: low-countries, facet: regions, en: 'Low Countries', de: 'Niederlande'}
+  - {id: middle-ages, facet: period, en: 'Middle Ages (to c. 1500)', de: 'Mittelalter (bis um 1500)'}
+  - {id: early-modern, facet: period, en: 'Early modern period', de: 'Frühe Neuzeit'}

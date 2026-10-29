@@ -1,0 +1,3 @@
+google-genai>=2.30.1
+Pillow>=10
+numpy>=1.24

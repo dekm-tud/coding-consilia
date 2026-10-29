@@ -1,0 +1,1558 @@
+{
+ "_doc": "Fields found by research (catalogue URL in source) and corrections of Zotero records; merge: duplicates; new: works cited on the site that are not in Zotero. Applied by tools/build_bibliography.py.",
+ "merge": {
+  "IAV5AHDA": "B5MPUKN9",
+  "ERG5VKA8": "8VA6KQS2",
+  "UGDVXUDF": "FPXLXBE2",
+  "L5XYPPUW": "Y4ASJY2M",
+  "82ARRYCK": "IB78BCKH"
+ },
+ "new": {
+  "new:dean2007consilia": {
+   "itemType": "bookSection",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Dean",
+     "firstName": "Trevor"
+    }
+   ],
+   "title": "Consilia",
+   "bookTitle": "Crime and Justice in Late Medieval Italy",
+   "place": "Cambridge",
+   "publisher": "Cambridge University Press",
+   "date": "2007",
+   "pages": "95-110",
+   "DOI": "10.1017/CBO9780511496455.006",
+   "ISBN": "978-0-521-86448-0",
+   "source": "https://api.crossref.org/works/10.1017/cbo9780511496455.006",
+   "kind": "literature"
+  },
+  "new:dean2007crime": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Dean",
+     "firstName": "Trevor"
+    }
+   ],
+   "title": "Crime and Justice in Late Medieval Italy",
+   "place": "Cambridge",
+   "publisher": "Cambridge University Press",
+   "date": "2007",
+   "DOI": "10.1017/CBO9780511496455",
+   "ISBN": "978-0-521-86448-0",
+   "source": "https://api.crossref.org/works/10.1017/cbo9780511496455",
+   "kind": "literature"
+  },
+  "new:ascheri2003consilia": {
+   "itemType": "journalArticle",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Ascheri",
+     "firstName": "Mario"
+    }
+   ],
+   "title": "I \"consilia\" dei giuristi: una fonte per il tardo Medioevo",
+   "publicationTitle": "Bullettino dell'Istituto storico italiano per il Medioevo e Archivio muratoriano",
+   "volume": "105",
+   "date": "2003",
+   "pages": "305-334",
+   "source": "https://wuwr.pl/ppa/article/download/11741/10674/11014 (citation in literature; no publisher landing page found)",
+   "kind": "literature"
+  },
+  "new:colli2013von": {
+   "itemType": "report",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Colli",
+     "firstName": "Vincenzo"
+    }
+   ],
+   "title": "Von der Handschrift zum gedruckten Buch im Mittelalter: Repertorium der Werke von Baldus de Ubaldis (1327–1400)",
+   "reportType": "Forschungsbericht 2013 (Jahrbuch der Max-Planck-Gesellschaft)",
+   "institution": "Max-Planck-Institut für europäische Rechtsgeschichte",
+   "place": "Frankfurt am Main",
+   "date": "2013",
+   "url": "https://www.mpg.de/7885970/mpier_jb_2013",
+   "note": "English title: From script to the printed book in the Middle Ages: Baldus de Ubaldis' (1327–1400) repertory of works",
+   "source": "https://www.mpg.de/7885970/mpier_jb_2013?c=119452",
+   "kind": "literature"
+  },
+  "new:pennington1997baldus": {
+   "itemType": "journalArticle",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Pennington",
+     "firstName": "Kenneth"
+    }
+   ],
+   "title": "Baldus de Ubaldis",
+   "publicationTitle": "Rivista internazionale di diritto comune",
+   "volume": "8",
+   "date": "1997",
+   "pages": "35-61",
+   "source": "https://en.wikipedia.org/wiki/Baldus_de_Ubaldis (bibliography); pages per https://revistas.um.es/analesderecho/article/download/64481/62151/269771",
+   "kind": "literature"
+  },
+  "new:pennington2015kp": {
+   "itemType": "webpage",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Pennington",
+     "firstName": "Kenneth"
+    }
+   ],
+   "title": "KP Biography of Baldus, revised BP May, 2015",
+   "websiteTitle": "Bio-Bibliographical Guide to Medieval and Early Modern Jurists",
+   "publisher": "The Ames Foundation, Harvard Law School",
+   "date": "2015",
+   "url": "https://amesfoundation.law.harvard.edu/BioBibCanonists/KP_BP_Baldus_bio.html",
+   "note": "Page last updated 08/05/24. Ames Foundation website offline since Oct. 2026; checked via Wayback Machine.",
+   "source": "https://web.archive.org/web/2025/https://amesfoundation.law.harvard.edu/BioBibCanonists/KP_BP_Baldus_bio.html",
+   "kind": "literature"
+  },
+  "new:pennington1997allegationes": {
+   "itemType": "bookSection",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Pennington",
+     "firstName": "Kenneth"
+    },
+    {
+     "creatorType": "editor",
+     "lastName": "Bellomo",
+     "firstName": "Manlio"
+    }
+   ],
+   "title": "Allegationes, Solutiones, and Dubitationes: Baldus de Ubaldis' Revisions of his Consilia",
+   "bookTitle": "Die Kunst der Disputation. Probleme der Rechtsauslegung und Rechtsanwendung im 13. und 14. Jahrhundert",
+   "series": "Schriften des Historischen Kollegs, Kolloquien",
+   "seriesNumber": "38",
+   "place": "München",
+   "publisher": "Oldenbourg",
+   "date": "1997",
+   "pages": "29-72",
+   "DOI": "10.1524/9783486595901.29",
+   "ISBN": "978-3-486-56258-3",
+   "source": "https://api.crossref.org/works?query.bibliographic=Pennington+Allegationes (DOI 10.1524/9783486595901.29); https://directory.doabooks.org/handle/20.500.12854/51269",
+   "kind": "literature"
+  },
+  "new:pennington2000nicolaus": {
+   "itemType": "bookSection",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Pennington",
+     "firstName": "Kenneth"
+    },
+    {
+     "creatorType": "editor",
+     "lastName": "Condorelli",
+     "firstName": "Orazio"
+    }
+   ],
+   "title": "Nicolaus de Tudeschis (Panormitanus)",
+   "bookTitle": "Niccolò Tedeschi (Abbas Panormitanus) e i suoi Commentaria in Decretales",
+   "place": "Roma",
+   "publisher": "Il Cigno Galileo Galilei",
+   "date": "2000",
+   "pages": "9-36",
+   "url": "http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html",
+   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html",
+   "kind": "literature"
+  },
+  "new:lefebvre1957panormitain": {
+   "itemType": "encyclopediaArticle",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Lefebvre",
+     "firstName": "Charles"
+    }
+   ],
+   "title": "Panormitain",
+   "encyclopediaTitle": "Dictionnaire de droit canonique",
+   "volume": "6",
+   "place": "Paris",
+   "publisher": "Letouzey et Ané",
+   "date": "1957",
+   "pages": "1195-1215",
+   "note": "Columns, not pages.",
+   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 3: 'C. Lefebvre, Panormitain, Dictionnaire de droit canonique 6 (1957) 1195-1215'); publisher of the series per https://lawcat.berkeley.edu/record/224571",
+   "kind": "literature"
+  },
+  "new:norr1964kirche": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Nörr",
+     "firstName": "Knut Wolfgang"
+    }
+   ],
+   "title": "Kirche und Konzil bei Nicolaus de Tudeschis (Panormitanus)",
+   "series": "Forschungen zur kirchlichen Rechtsgeschichte und zum Kirchenrecht",
+   "seriesNumber": "4",
+   "place": "Köln; Graz",
+   "publisher": "Böhlau",
+   "date": "1964",
+   "source": "https://core-prod.cambridgecore.org/core/journals/journal-of-ecclesiastical-history/article/kirche-und-konzil-bei-nicolaus-de-tudeschis-panormitanus-by-knut-wolfgang-norr-forschungen-zur-kirchlichen-rechtsgeschichte-und-zum-kirchenrecht-iv-pp-viii-192-cologne-bohlau-1964-dm-2000/9841B3167318A1DD4E701D22D55C26CA",
+   "kind": "literature"
+  },
+  "new:landau1995nikolaus": {
+   "itemType": "bookSection",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Landau",
+     "firstName": "Peter"
+    },
+    {
+     "creatorType": "editor",
+     "lastName": "Stolleis",
+     "firstName": "Michael"
+    }
+   ],
+   "title": "Nikolaus de Tudeschis (Panormitanus, 1386–1445)",
+   "bookTitle": "Juristen. Ein biographisches Lexikon. Von der Antike bis zum 20. Jahrhundert",
+   "place": "München",
+   "publisher": "C. H. Beck",
+   "date": "1995",
+   "pages": "458-459",
+   "ISBN": "3-406-39330-6",
+   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 3); book data: https://lgv.vufind.net/lgv/Record/a0006583/Details",
+   "kind": "literature"
+  },
+  "new:watanabe1972authority": {
+   "itemType": "journalArticle",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Watanabe",
+     "firstName": "Morimichi"
+    }
+   ],
+   "title": "Authority and Consent in Church Government: Panormitanus, Aeneas Sylvius, Cusanus",
+   "publicationTitle": "Journal of the History of Ideas",
+   "volume": "33",
+   "issue": "2",
+   "date": "1972",
+   "pages": "217-236",
+   "DOI": "10.2307/2708870",
+   "source": "https://api.crossref.org/works/10.2307/2708870",
+   "kind": "literature"
+  },
+  "new:black1970monarchy": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Black",
+     "firstName": "Antony"
+    }
+   ],
+   "title": "Monarchy and Community: Political Ideas in the Later Conciliar Controversy 1430–1450",
+   "series": "Cambridge Studies in Medieval Life and Thought, Third Series",
+   "seriesNumber": "2",
+   "place": "Cambridge",
+   "publisher": "Cambridge University Press",
+   "date": "1970",
+   "ISBN": "0-521-07739-7",
+   "source": "https://ci.nii.ac.jp/ncid/BA03085557?l=en",
+   "kind": "literature"
+  },
+  "new:helmholz2020niccolo": {
+   "itemType": "bookSection",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Helmholz",
+     "firstName": "R. H."
+    },
+    {
+     "creatorType": "editor",
+     "lastName": "Condorelli",
+     "firstName": "Orazio"
+    },
+    {
+     "creatorType": "editor",
+     "lastName": "Domingo",
+     "firstName": "Rafael"
+    }
+   ],
+   "title": "Niccolò dei Tedeschi (Panormitanus) (1386–1445)",
+   "bookTitle": "Law and the Christian Tradition in Italy: The Legacy of the Great Jurists",
+   "series": "Law and Religion",
+   "place": "Abingdon; New York",
+   "publisher": "Routledge",
+   "date": "2020",
+   "pages": "216-229",
+   "DOI": "10.4324/9781003014539-13",
+   "source": "https://api.crossref.org/works/10.4324/9781003014539",
+   "kind": "literature"
+  },
+  "new:romano1983su": {
+   "itemType": "bookSection",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Romano",
+     "firstName": "Andrea"
+    },
+    {
+     "creatorType": "editor",
+     "lastName": "Motta",
+     "firstName": "Giovanna"
+    }
+   ],
+   "title": "Su un \"consilium\" di Gualtiero Paternò conservato nel ms. di Lucca, Biblioteca Capitolare Feliniana, 162",
+   "bookTitle": "Studi dedicati a Carmelo Trasselli",
+   "series": "Quaderni di scienze umane",
+   "seriesNumber": "6",
+   "place": "Soveria Mannelli",
+   "date": "1983",
+   "pages": "583-600",
+   "note": "Title as given by Pennington; the footnote has 'Un consilium di Gualtiero Paternò conservato nel ms. 162 della Biblioteca Capitolare Feliniana di Lucca'. Publisher (Rubbettino, per footnote) not verified.",
+   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 78)",
+   "kind": "literature"
+  },
+  "new:novarese1991de": {
+   "itemType": "journalArticle",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Novarese",
+     "firstName": "Daniela"
+    }
+   ],
+   "title": "\"De aqua sancti Cosmani\". Quattro consigli inediti di Niccolò Tedeschi, Gualtiero Paternò e Paolo Mazzone",
+   "publicationTitle": "Rivista di storia del diritto italiano",
+   "volume": "64",
+   "date": "1991",
+   "pages": "99-155",
+   "note": "Pennington's citation reads 'Quarto consigli' (apparently a typo); the Panormitanus consilium is edited on pp. 140-145.",
+   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 80)",
+   "kind": "literature"
+  },
+  "new:molinier1891catalogue": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Molinier",
+     "firstName": "Auguste"
+    }
+   ],
+   "title": "Catalogue général des manuscrits des bibliothèques publiques de France. Départements, tome XVII: Cambrai",
+   "volume": "17",
+   "place": "Paris",
+   "publisher": "Plon",
+   "date": "1891",
+   "url": "https://archive.org/details/cataloguegnr171891fran",
+   "source": "https://archive.org/details/cataloguegnr171891fran; https://biblissima.demo.logilab.fr/en/ark:/43093/mdata29b4c3bade13762f637ad03e432cd31dad44aaf7",
+   "kind": "source"
+  },
+  "new:piccolomini1967de": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Piccolomini",
+     "firstName": "Aeneas Sylvius"
+    },
+    {
+     "creatorType": "editor",
+     "lastName": "Hay",
+     "firstName": "Denys"
+    },
+    {
+     "creatorType": "editor",
+     "lastName": "Smith",
+     "firstName": "W. K."
+    }
+   ],
+   "title": "De gestis concilii Basiliensis commentariorum libri II",
+   "series": "Oxford Medieval Texts",
+   "place": "Oxford",
+   "date": "1967",
+   "note": "Edition used by Pennington (p. 173); the footnote names the work only.",
+   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 22)",
+   "kind": "source"
+  },
+  "new:bnflat11727": {
+   "itemType": "manuscript",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Baldus de Ubaldis",
+     "firstName": ""
+    }
+   ],
+   "title": "Lectura super usibus feudorum; Commentarius ad Pacem Constantiae; Quaestiones de feudis",
+   "place": "Paris",
+   "archive": "Bibliothèque nationale de France, Département des manuscrits",
+   "archiveLocation": "Latin 11727",
+   "date": "14th century",
+   "url": "https://biblissima.demo.logilab.fr/en/ark:/43093/mdata195d198bd28a2daad51f7078f371231e84e37367",
+   "source": "https://manuscripts.rg.mpg.de/manuscript/6973",
+   "kind": "source"
+  },
+  "new:bavbarblat1399": {
+   "itemType": "manuscript",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Baldus de Ubaldis",
+     "firstName": ""
+    }
+   ],
+   "title": "Consilia (libri minutari consiliorum), with the Margarita consiliorum in Barb. lat. 1400",
+   "place": "Città del Vaticano",
+   "archive": "Biblioteca Apostolica Vaticana",
+   "archiveLocation": "Barb. lat. 1399–1412",
+   "url": "https://digi.vatlib.it/view/MSS_Barb.lat.1399",
+   "note": "DigiVatLib: MSS_Barb.lat.1399, 1401–1409, 1412 (URLs as linked on baldus.html).",
+   "source": "https://manuscripts.lhlt.mpg.de/item/25752",
+   "kind": "source"
+  },
+  "new:manuscriptajuridicandbaldus": {
+   "itemType": "webpage",
+   "creators": [],
+   "title": "Vaticano, BAV, Barb. lat. 1399, 1401-1410, 1412, item 1: Baldus de Ubaldis, Consilia",
+   "websiteTitle": "Manuscripta juridica",
+   "publisher": "Max Planck Institute for Legal History and Legal Theory",
+   "url": "https://manuscripts.lhlt.mpg.de/item/25752",
+   "note": "Principal investigator G. R. Dolezalek; entry summarises Colli's analysis.",
+   "source": "https://manuscripts.lhlt.mpg.de/item/25752",
+   "kind": "source"
+  },
+  "new:manuscriptajuridicandbarblat1400": {
+   "itemType": "webpage",
+   "creators": [],
+   "title": "Vaticano, BAV, Barb. lat. 1400, item 1: Baldus de Ubaldis, Consilia",
+   "websiteTitle": "Manuscripta juridica",
+   "publisher": "Max Planck Institute for Legal History and Legal Theory",
+   "url": "https://manuscripts.lhlt.mpg.de/item/25753",
+   "source": "https://manuscripts.lhlt.mpg.de/item/25753",
+   "kind": "source"
+  },
+  "new:baldus1490consilia": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Baldus de Ubaldis",
+     "firstName": ""
+    }
+   ],
+   "title": "Consilia, P. I–V",
+   "place": "Brescia",
+   "publisher": "Boninus de Boninis (P. I–IV); Baptista Farfengus (P. V)",
+   "date": "1490-1491",
+   "note": "ISTC iu00022000; Goff U-22; HC *2330; IGI 9931-35. Parts dated 15.VII.1490–17.XII.1491.",
+   "url": "https://data.cerl.org/istc/iu00022000",
+   "source": "https://biblissima.demo.logilab.fr/en/ark:/43093/edata8dd97b931493d02c747745b4d8d4681a63187225 (ISTC itself behind bot protection)",
+   "kind": "source"
+  },
+  "new:baldus1575consiliorum": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Baldus de Ubaldis",
+     "firstName": ""
+    }
+   ],
+   "title": "Consiliorum sive responsorum volumen primum [–quintum]",
+   "numberOfVolumes": "5",
+   "place": "Venetiis",
+   "publisher": "Hieronymus Polus",
+   "date": "1575",
+   "note": "Standard five-volume edition with a repertorium as sixth volume; facsimile reprint Torino: Bottega d'Erasmo, 1970.",
+   "source": "https://web.archive.org/web/2025/https://amesfoundation.law.harvard.edu/BioBibCanonists/Report_Biobib2.php?record_id=r084; https://onlinebooks.library.upenn.edu/webbin/who/Polo%2c%20Girolamo%2c%20%28Venecia%29",
+   "kind": "source"
+  },
+  "new:chicagocodexms6": {
+   "itemType": "manuscript",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Baldus de Ubaldis",
+     "firstName": ""
+    }
+   ],
+   "title": "Consilia de iure",
+   "place": "Chicago",
+   "archive": "University of Chicago Library",
+   "archiveLocation": "Codex Ms. 6",
+   "date": "ca. 1420?",
+   "url": "https://search.digital-scriptorium.org/catalog/DS16650",
+   "note": "Digital Scriptorium DS16650.",
+   "source": "https://search.digital-scriptorium.org/catalog/DS16650",
+   "kind": "source"
+  },
+  "new:mpilhltndcensus": {
+   "itemType": "webpage",
+   "creators": [],
+   "title": "Census of Opera by Baldus de Ubaldis (1327-1400)",
+   "websiteTitle": "Max Planck Institute for Legal History and Legal Theory",
+   "url": "https://www.lhlt.mpg.de/research-project/census-of-opera-by-baldus-de-ubaldis",
+   "note": "Live URL returned HTTP 410 on 2026-10-29; archived copy available.",
+   "source": "https://web.archive.org/web/2025/https://www.lhlt.mpg.de/research-project/census-of-opera-by-baldus-de-ubaldis",
+   "kind": "source"
+  },
+  "new:amesndnicolaus": {
+   "itemType": "webpage",
+   "creators": [],
+   "title": "Report No. r450: Nicolaus de Tudeschis 1386–1445",
+   "websiteTitle": "Bio-Bibliographical Guide to Medieval and Early Modern Jurists",
+   "publisher": "The Ames Foundation, Harvard Law School",
+   "url": "https://amesfoundation.law.harvard.edu/BioBibCanonists/Report_Biobib2.php?record_id=r450",
+   "note": "Ames Foundation website offline since Oct. 2026; checked via Wayback Machine.",
+   "source": "https://web.archive.org/web/2025/https://amesfoundation.law.harvard.edu/BioBibCanonists/Report_Biobib2.php?record_id=r450",
+   "kind": "source"
+  },
+  "new:amesfoundation2017panormitanus": {
+   "itemType": "webpage",
+   "creators": [],
+   "title": "Panormitanus \"metadata\" (Abbatis Panormitani Commentaria, Venice 1570–1571, Houghton Library copy)",
+   "websiteTitle": "The Ames Foundation",
+   "publisher": "The Ames Foundation, Harvard Law School",
+   "date": "2017",
+   "url": "https://amesfoundation.law.harvard.edu/digital/Panormitanus/PanormitanusMetadata.html",
+   "note": "Houghton cataloguing: HOLLIS nos. 007169251, 007169262. Date inferred from 'last visited, 22 May 2017' on the page. Site offline since Oct. 2026.",
+   "source": "https://web.archive.org/web/2025/https://amesfoundation.law.harvard.edu/digital/Panormitanus/PanormitanusMetadata.html",
+   "kind": "source"
+  },
+  "new:cambraims207": {
+   "itemType": "manuscript",
+   "creators": [],
+   "title": "Recueil de traités sur le grand schisme",
+   "place": "Cambrai",
+   "archive": "Le Labo (Bibliothèque municipale)",
+   "archiveLocation": "Ms. 207",
+   "date": "15th century",
+   "url": "https://biblissima.demo.logilab.fr/en/ark:/43093/mdata29b4c3bade13762f637ad03e432cd31dad44aaf7",
+   "note": "Digitisation: https://arca.irht.cnrs.fr/ark:/63955/md99n2970d5f",
+   "source": "https://biblissima.demo.logilab.fr/en/ark:/43093/mdata29b4c3bade13762f637ad03e432cd31dad44aaf7",
+   "kind": "source"
+  },
+  "new:tudeschis1475consilia-m47750": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Tudeschis",
+     "firstName": "Nicolaus de"
+    }
+   ],
+   "title": "Consilia, P. I.II. Mit Tabula von Ludovicus Bologninus",
+   "place": "Ferrara",
+   "publisher": "Andreas Belfortis",
+   "date": "22.II.1475",
+   "note": "GW M47750; HC 12344; ISTC ip00029000",
+   "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47750.htm",
+   "source": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47750.htm",
+   "kind": "source"
+  },
+  "new:tudeschis1475consilia-m47753": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Tudeschis",
+     "firstName": "Nicolaus de"
+    }
+   ],
+   "title": "Consilia, P. I.II. Mit Tabula von Ludovicus Bologninus",
+   "place": "Ferrara",
+   "publisher": "Petrus de Aranceyo und Johannes de Tornaco",
+   "date": "9.V.1475",
+   "note": "GW M47753; H 12345; ISTC ip00029500",
+   "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47753.htm",
+   "source": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47753.htm",
+   "kind": "source"
+  },
+  "new:tudeschis1474consilia-m47759": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Tudeschis",
+     "firstName": "Nicolaus de"
+    }
+   ],
+   "title": "Consilia, P. I.II. Hrsg. von Ludovicus Bologninus",
+   "place": "[Strassburg]",
+   "publisher": "[Heinrich Eggestein]",
+   "date": "[nach 10.X.1474]",
+   "note": "GW M47759; HC 12343; ISTC ip00028000",
+   "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47759.htm",
+   "source": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47759.htm",
+   "kind": "source"
+  },
+  "new:tudeschis1477consilia-m47756": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Tudeschis",
+     "firstName": "Nicolaus de"
+    }
+   ],
+   "title": "Consilia, P. I.II. Mit Tabula von Ludovicus Bologninus",
+   "place": "Köln",
+   "publisher": "Johann Koelhoff",
+   "date": "1.X.1477",
+   "note": "GW M47756; HC 12346; ISTC ip00029400",
+   "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47756.htm",
+   "source": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47756.htm",
+   "kind": "source"
+  },
+  "new:tudeschis1480consilia-m47764": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Tudeschis",
+     "firstName": "Nicolaus de"
+    }
+   ],
+   "title": "Consilia. Hrsg. Ludovicus Bologninus",
+   "place": "Venedig",
+   "publisher": "Johann von Köln und Johann Manthen",
+   "date": "1480",
+   "note": "GW M47764; H 12347",
+   "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47764.htm",
+   "source": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47764.htm",
+   "kind": "source"
+  },
+  "new:tudeschis1486consilia-m47773": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Tudeschis",
+     "firstName": "Nicolaus de"
+    }
+   ],
+   "title": "Consilia, P. I. Hrsg. Ludovicus Bologninus",
+   "place": "Venedig",
+   "publisher": "Peregrino Pasquale und Dominicus Bertochus",
+   "date": "14.XII.1486",
+   "note": "GW M47773; HC 12348",
+   "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47773.htm",
+   "source": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47773.htm",
+   "kind": "source"
+  },
+  "new:tudeschis1488consilia-m47780": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Tudeschis",
+     "firstName": "Nicolaus de"
+    }
+   ],
+   "title": "Consilia, P. II",
+   "place": "Pescia",
+   "publisher": "Sigismund Rodt und Genossen für Bastianus und Raphael Orlandis",
+   "date": "2.IX.1488",
+   "note": "GW M47780; H 12352; ISTC ip00032000",
+   "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47780.htm",
+   "source": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47780.htm",
+   "kind": "source"
+  },
+  "new:tudeschis1491consilia-m47782": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Tudeschis",
+     "firstName": "Nicolaus de"
+    }
+   ],
+   "title": "Consilia, P. II",
+   "place": "Venedig",
+   "publisher": "Jacobus de Paganinis",
+   "date": "7.IV.1491",
+   "note": "GW M47782; HC 12353; ISTC ip00033000",
+   "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47782.htm",
+   "source": "https://www.gesamtkatalogderwiegendrucke.de/docs/M47782.htm",
+   "kind": "source"
+  },
+  "new:tudeschis1500quaestiones-m48058": {
+   "itemType": "book",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Tudeschis",
+     "firstName": "Nicolaus de"
+    }
+   ],
+   "title": "Quaestiones et disputationes. Daran: Consilia P. I.II",
+   "place": "Lyon",
+   "publisher": "Johann Siber",
+   "date": "4.VIII. und 18.VIII.1500",
+   "note": "GW M48058; H 12359; ISTC ip00031500, ip00037500",
+   "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M48058.htm",
+   "source": "https://www.gesamtkatalogderwiegendrucke.de/docs/M48058.htm",
+   "kind": "source"
+  }
+ },
+ "H368F2MG": {
+  "publisher": "Böhlau",
+  "source": "https://d-nb.info/1326447351"
+ },
+ "DHAWM34U": {
+  "editors": [
+   "Ascheri, Mario",
+   "Baumgärtner, Ingrid",
+   "Kirshner, Julius"
+  ],
+  "publisher": "Robbins Collection",
+  "source": "https://lccn.loc.gov/99056417"
+ },
+ "CVEVXFPP": {
+  "editors": [
+   "Casagrande, Carla",
+   "Crisciani, Chiara",
+   "Vecchio, Silvana"
+  ],
+  "publisher": "SISMEL – Edizioni del Galluzzo",
+  "source": "https://scholarworks.iu.edu/journals/index.php/tmr/article/view/16273",
+  "title_replace": [
+   "II consilium",
+   "Il consilium"
+  ]
+ },
+ "6X3X87FA": {
+  "editors": [
+   "Ascheri, Mario",
+   "Baumgärtner, Ingrid",
+   "Kirshner, Julius"
+  ],
+  "publisher": "Robbins Collection",
+  "source": "https://lccn.loc.gov/99056417"
+ },
+ "6P3J2AEX": {
+  "place": "Cambridge",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=883365766"
+ },
+ "4LHKJ4YH": {
+  "place": "Cambridge",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1884251242"
+ },
+ "ATVZPD86": {
+  "publisher": "Ministero per i beni culturali e ambientali, Ufficio centrale per i beni archivistici",
+  "source": "https://dgagaeta.cultura.gov.it/public/uploads/documents/Saggi/5af1a94c42524.pdf",
+  "authors": [
+   "Vallone, Giancarlo"
+  ],
+  "pages": "1082-1088",
+  "note": "first name misspelled, pages"
+ },
+ "Z9BN23SH": {
+  "editors": [
+   "Linehan, Peter"
+  ],
+  "publisher": "Biblioteca Apostolica Vaticana",
+  "place": "Città del Vaticano",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=043753868"
+ },
+ "WTNTWXMA": {
+  "place": "Toronto, Buffalo, London",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1738991571"
+ },
+ "IAV5AHDA": {
+  "editors": [
+   "Maffei, Paola",
+   "Varanini, Gian Maria"
+  ],
+  "publisher": "Firenze University Press",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1903977819"
+ },
+ "XZXQXX5N": {
+  "editors": [
+   "Turner, Wendy J.",
+   "Butler, Sara M."
+  ],
+  "publisher": "Brill",
+  "place": "Leiden, Boston",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1738190323"
+ },
+ "WTC8NX47": {
+  "publisher": "Brepols",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=272706973",
+  "series": "Typologie des sources du moyen âge occidental"
+ },
+ "QHV7RFFN": {
+  "editors": [
+   "Turner, Wendy J.",
+   "Butler, Sara M."
+  ],
+  "publisher": "Brill",
+  "place": "Leiden, Boston",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1738190323"
+ },
+ "MRCPH58T": {
+  "publisher": "Fondazione Centro Italiano di Studi sull'Alto Medioevo",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1679019201"
+ },
+ "MDNNYKXB": {
+  "place": "Firenze",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1164756613",
+  "publisher": "Tipografia Galileiana"
+ },
+ "LJTSLUMY": {
+  "publisher": "Harrassowitz",
+  "place": "Wiesbaden",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=638408342",
+  "year": "2010",
+  "note": "Pirckheimer-Jahrbuch 24 (2009/2010)"
+ },
+ "KWFF6C52": {
+  "editors": [
+   "Turner, Wendy J.",
+   "Butler, Sara M."
+  ],
+  "publisher": "Brill",
+  "place": "Leiden, Boston",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1738190323"
+ },
+ "FASI566U": {
+  "editors": [
+   "Leu, Urs B.",
+   "Opitz, Peter"
+  ],
+  "publisher": "De Gruyter Oldenbourg",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1665096551"
+ },
+ "683YASTU": {
+  "place": "Toronto, Buffalo, London",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1738991571"
+ },
+ "5EKCRBYI": {
+  "place": "Leiden, Boston",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1738190323",
+  "authors": [],
+  "editors": [
+   "Turner, Wendy J.",
+   "Butler, Sara M."
+  ],
+  "note": "Turner and Butler are editors of the volume"
+ },
+ "4EN6H2M2": {
+  "editors": [
+   "Turner, Wendy J.",
+   "Butler, Sara M."
+  ],
+  "publisher": "Brill",
+  "place": "Leiden, Boston",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1738190323",
+  "title_replace": [
+   "Kape",
+   "Rape"
+  ],
+  "note": "typo in title"
+ },
+ "W8G7346Z": {
+  "editors": [
+   "Turner, Wendy J.",
+   "Butler, Sara M."
+  ],
+  "publisher": "Brill",
+  "place": "Leiden, Boston",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1738190323"
+ },
+ "ERG5VKA8": {
+  "editors": [
+   "Maffei, Paola",
+   "Varanini, Gian Maria"
+  ],
+  "publisher": "Firenze University Press",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1903977819"
+ },
+ "96AN5TMQ": {
+  "editors": [
+   "Ascheri, Mario",
+   "Baumgärtner, Ingrid",
+   "Kirshner, Julius"
+  ],
+  "publisher": "Robbins Collection",
+  "source": "https://lccn.loc.gov/99056417"
+ },
+ "ZIVGNRR7": {
+  "publisher": "Publications de la Sorbonne",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=729961451"
+ },
+ "T62QVFSF": {
+  "publisher": "University of Toronto Press",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1738991571"
+ },
+ "VH7NFSR9": {
+  "publisher": "Koninklijke Vlaamse Academie van België voor Wetenschappen en Kunsten",
+  "source": "https://bib.kuleuven.be/rbib/collectie/archieven/ish/2001-15-broeck.pdf",
+  "seriesNumber": "XV",
+  "series": "Iuris Scripta Historica",
+  "title": "De rechtsleer in de Zuidelijke Nederlanden tijdens de 18de eeuw",
+  "note": "title page"
+ },
+ "AQ66WRVB": {
+  "place": "Amsterdam",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=169856807X",
+  "authors": [
+   "Barker, Sheila"
+  ],
+  "editors": [
+   "Ritchey, Sara",
+   "Strocchia, Sharon"
+  ],
+  "note": "Strocchia listed twice"
+ },
+ "DQ8MHBVZ": {
+  "editors": [
+   "Ascheri, Mario",
+   "Baumgärtner, Ingrid",
+   "Kirshner, Julius"
+  ],
+  "publisher": "Robbins Collection",
+  "source": "https://lccn.loc.gov/99056417"
+ },
+ "8WTRY539": {
+  "volume": "17",
+  "source": "https://doi.org/10.32064/17.2020.04"
+ },
+ "WK3PIWBK": {
+  "publisher": "Il Leccio",
+  "source": "https://lawcat.berkeley.edu/record/131800"
+ },
+ "UVD2R8UN": {
+  "editors": [
+   "Turner, Wendy J.",
+   "Butler, Sara M."
+  ],
+  "publisher": "Brill",
+  "place": "Leiden, Boston",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1738190323"
+ },
+ "TZKNXEC6": {
+  "editors": [
+   "Ascheri, Mario",
+   "Baumgärtner, Ingrid",
+   "Kirshner, Julius"
+  ],
+  "publisher": "Robbins Collection",
+  "source": "https://lawcat.berkeley.edu/record/114924"
+ },
+ "QAHCSCGR": {
+  "editors": [
+   "Ascheri, Mario",
+   "Baumgärtner, Ingrid",
+   "Kirshner, Julius"
+  ],
+  "publisher": "Robbins Collection",
+  "source": "https://lawcat.berkeley.edu/record/114924"
+ },
+ "BXNDR5ZG": {
+  "publisher": "Éditions de la Sorbonne",
+  "place": "Paris",
+  "source": "https://books.openedition.org/psorbonne/34027"
+ },
+ "LZ2EPSVT": {
+  "editors": [
+   "Chandelier, Joël",
+   "Robert, Aurélien"
+  ],
+  "publisher": "École française de Rome",
+  "place": "Roma",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=847561593"
+ },
+ "IDDE7WHZ": {
+  "publisher": "Giuffrè",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1107301335"
+ },
+ "UACJXC3V": {
+  "publisher": "University of Chicago Press",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=152401423",
+  "year": "1991"
+ },
+ "FE34MMR9": {
+  "editors": [
+   "de Jong, Hylkje"
+  ],
+  "publisher": "VU University Press",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1869375262",
+  "container": "Secundum doctores. Essays in Medieval Learned Law in Honour of Harry Dondorp",
+  "place": "Amsterdam",
+  "year": "2023",
+  "pages": "56-73",
+  "note": "wrong volume in Zotero"
+ },
+ "JJV5UU8N": {
+  "editors": [
+   "Specker, Hans Eugen"
+  ],
+  "publisher": "Kohlhammer",
+  "source": "https://d-nb.info/952566699",
+  "place": "Stuttgart"
+ },
+ "SQ9ESAQN": {
+  "editors": [
+   "Jaritz, Gerhard",
+   "Richter, Michael"
+  ],
+  "publisher": "Medium Aevum Quotidianum",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=363090096",
+  "seriesNumber": "Sonderband 12"
+ },
+ "73RB4EH3": {
+  "editors": [
+   "Andersen, Per",
+   "Salonen, Kirsi",
+   "Sigh, Helle Møller",
+   "Vogt, Helle"
+  ],
+  "publisher": "DJØF Publishing",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=163247333X"
+ },
+ "HUWUCGIU": {
+  "publisher": "Gerold",
+  "source": "https://www.digitale-sammlungen.de/view/bsb10543552"
+ },
+ "TMSKHU93": {
+  "editors": [
+   "Castillo Lara, Rosalio J."
+  ],
+  "publisher": "Libreria Ateneo Salesiano",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=1763351696"
+ },
+ "XZC5NKWC": {
+  "editors": [
+   "Coing, Helmut"
+  ],
+  "publisher": "Beck",
+  "source": "https://d-nb.info/760197016"
+ },
+ "AEGRUSGP": {
+  "publisher": "Peter Lang",
+  "source": "https://d-nb.info/966409264"
+ },
+ "KC4DVMV3": {
+  "publisher": "Peter Lang",
+  "source": "https://d-nb.info/550957189"
+ },
+ "DAF94K9B": {
+  "publisher": "Peter Lang",
+  "source": "https://d-nb.info/959955283"
+ },
+ "WSNSB723": {
+  "publisher": "Albert",
+  "source": "https://d-nb.info/454460740"
+ },
+ "RH3HIG4X": {
+  "publisher": "Peter Lang",
+  "source": "https://d-nb.info/551181893"
+ },
+ "AXSAHJVB": {
+  "publisher": "Peter Lang",
+  "source": "https://d-nb.info/910367833"
+ },
+ "KRIPGFMQ": {
+  "publisher": "Peter Lang",
+  "source": "https://d-nb.info/943193028",
+  "seriesNumber": "60"
+ },
+ "BGII5XDI": {
+  "publisher": "Peter Lang",
+  "source": "https://d-nb.info/900658584"
+ },
+ "GHZZ67I5": {
+  "publisher": "Peter Lang",
+  "source": "https://d-nb.info/551924454"
+ },
+ "WUV79567": {
+  "editors": [
+   "Charageat, Martine",
+   "Leveleux-Teixeira, Corinne"
+  ],
+  "publisher": "Presses universitaires du Midi",
+  "source": "https://books.openedition.org/pumi/38618",
+  "container": "Consulter, délibérer, décider : donner son avis au Moyen Âge"
+ },
+ "N3JMVD6R": {
+  "editors": [
+   "Gilli, Patrick"
+  ],
+  "publisher": "Presses Universitaires de la Méditerranée",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=584135386"
+ },
+ "P2V66XP6": {
+  "editors": [
+   "Charageat, Martine"
+  ],
+  "publisher": "Presses universitaires du Midi",
+  "source": "https://books.openedition.org/pumi/15222",
+  "container": "Conseiller les juges au Moyen Âge"
+ },
+ "GAQ2FJ9U": {
+  "editors": [
+   "Colli, Vincenzo",
+   "Conte, Emanuele"
+  ],
+  "publisher": "Robbins Collection",
+  "source": "https://kxp.k10plus.de/DB=2.1/PPNSET?PPN=545554934"
+ },
+ "46JZAHKH": {
+  "editors": [
+   "Charageat, Martine"
+  ],
+  "publisher": "Presses universitaires du Midi",
+  "source": "https://books.openedition.org/pumi/15222",
+  "pages": "15-23"
+ },
+ "ZP9NQFZW": {
+  "editors": [
+   "Charageat, Martine"
+  ],
+  "publisher": "Presses universitaires du Midi",
+  "pages": "99-109",
+  "source": "https://books.openedition.org/pumi/15273"
+ },
+ "JR2N9M9H": {
+  "publisher": "Polygraphischer Verlag",
+  "source": "https://d-nb.info/573024847"
+ },
+ "VJKR98NW": {
+  "publisher": "Harvard University Press",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=380113228",
+  "year": "2004"
+ },
+ "2XXUGRRW": {
+  "editors": [
+   "Rossi, Guido"
+  ],
+  "publisher": "Edinburgh University Press",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1798071142"
+ },
+ "AAVZBMHR": {
+  "editors": [
+   "Buccellati, Graziella",
+   "Marchi, Anna"
+  ],
+  "publisher": "Università degli Studi di Milano",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1606827383"
+ },
+ "C2XMM8EZ": {
+  "editors": [
+   "Bellomo, Manlio"
+  ],
+  "publisher": "Oldenbourg",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=234870850"
+ },
+ "9PAXNC9R": {
+  "editors": [
+   "Lange, Christian R.",
+   "Müller, Wolfgang P.",
+   "Neumann, Christoph K."
+  ],
+  "publisher": "Mohr Siebeck",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1000013375"
+ },
+ "UXRIMDVF": {
+  "editors": [
+   "Baumann, Anette"
+  ],
+  "publisher": "De Gruyter Oldenbourg",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1833862953"
+ },
+ "TFNDJ88U": {
+  "publisher": "de Gruyter",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=368050246"
+ },
+ "2Q8U86VT": {
+  "editors": [
+   "Neuhaus, Helmut",
+   "Stollberg-Rilinger, Barbara"
+  ],
+  "publisher": "Duncker & Humblot",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1794089217"
+ },
+ "2SUH6TSQ": {
+  "publisher": "Pontifical Institute of Mediaeval Studies",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=110973267"
+ },
+ "PG985SU9": {
+  "publisher": "Istituto di Scienze Storiche dell'Università di Roma",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1086921372"
+ },
+ "KMU6NPHV": {
+  "publisher": "Tip. G. Guerra",
+  "source": "https://archive.org/details/iconsiliadellafa01scal",
+  "place": "Perugia"
+ },
+ "8Z3E9JXA": {
+  "editors": [
+   "Arlinghaus, Franz-Josef",
+   "Baumgärtner, Ingrid",
+   "Colli, Vincenzo",
+   "Lepsius, Susanne",
+   "Wetzstein, Thomas"
+  ],
+  "publisher": "Klostermann",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=50901478X"
+ },
+ "E9INHHQF": {
+  "publisher": "Viella",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1739909070"
+ },
+ "C22EF888": {
+  "publisher": "Recueil Sirey",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=417860293"
+ },
+ "27565XEN": {
+  "publisher": "Schulthess",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=273728938",
+  "authors": [
+   "Richter, Daniel"
+  ]
+ },
+ "CIBZNUA8": {
+  "publisher": "de Gruyter",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=184898498"
+ },
+ "MMZB8U2D": {
+  "editors": [
+   "Maffei, Paola",
+   "Varanini, Gian Maria"
+  ],
+  "publisher": "Firenze University Press",
+  "source": "https://books.fupress.com/isbn/9788866556275"
+ },
+ "VSJQEBR6": {
+  "editors": [
+   "Mayali, Laurent",
+   "Tibbetts, Stephanie A. J."
+  ],
+  "publisher": "Catholic University of America Press",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=276686675"
+ },
+ "PNIISK9U": {
+  "editors": [
+   "Lorenz, Sönke",
+   "Bauer, Dieter R."
+  ],
+  "publisher": "Königshausen & Neumann",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=273643886"
+ },
+ "KRP6JBT6": {
+  "editors": [
+   "Becker, Peter Jörg",
+   "Bliembach, Eva",
+   "Nickel, Holger",
+   "Schipke, Renate",
+   "Staccioli, Giuliano"
+  ],
+  "publisher": "Reichert",
+  "source": "https://d-nb.info/958490333",
+  "place": "Wiesbaden"
+ },
+ "UGDVXUDF": {
+  "editors": [
+   "Baumgärtner, Ingrid"
+  ],
+  "publisher": "Thorbecke",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=18468904X"
+ },
+ "XU27ZRZA": {
+  "editors": [
+   "Baumann, Anette"
+  ],
+  "publisher": "De Gruyter Oldenbourg",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1833862953"
+ },
+ "PGI6PS2Q": {
+  "editors": [
+   "Boockmann, Hartmut",
+   "Grenzmann, Ludger"
+  ],
+  "publisher": "Vandenhoeck & Ruprecht",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=337647453"
+ },
+ "7UD5P9XX": {
+  "publisher": "Helbing & Lichtenhahn",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=273045725",
+  "authors": [
+   "Suter, Stefan"
+  ],
+  "place": "Basel, Frankfurt am Main"
+ },
+ "ZZE7RSHR": {
+  "publisher": "Akademie der Wissenschaften und der Literatur, Steiner",
+  "source": "https://d-nb.info/740563254",
+  "place": "Mainz, Wiesbaden"
+ },
+ "3I332SD8": {
+  "editors": [
+   "Hesse, Christian",
+   "Oschema, Klaus"
+  ],
+  "publisher": "Thorbecke",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=626503957"
+ },
+ "R8K5DHUV": {
+  "publisher": "Duncker & Humblot",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=27232423X"
+ },
+ "TRTZN5DZ": {
+  "editors": [
+   "Braun, Emanuel",
+   "Heiler, Franz",
+   "Littger, Klaus",
+   "Naab, Erich"
+  ],
+  "publisher": "EOS",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1728650410",
+  "place": "Sankt Ottilien"
+ },
+ "S2IATGKF": {
+  "publisher": "Enke",
+  "source": "https://archive.org/details/dasrmischerecht00liesgoog"
+ },
+ "TXPBZJ55": {
+  "publisher": "Helbing & Lichtenhahn",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=022819010",
+  "year": "1970"
+ },
+ "AE7NGFCP": {
+  "publisher": "Ius Deco Publications",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1105335127",
+  "authors": [],
+  "editors": [
+   "Wijffels, Alain"
+  ],
+  "year": "1993"
+ },
+ "6SGV2RNU": {
+  "editors": [
+   "Charageat, Martine"
+  ],
+  "publisher": "Presses universitaires du Mirail",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1612934501"
+ },
+ "JXSMUNGP": {
+  "publisher": "Helbing & Lichtenhahn",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=177084618"
+ },
+ "Q4C3VVNJ": {
+  "editors": [
+   "Frova, Carla",
+   "Nico Ottaviani, Maria Grazia",
+   "Zucchini, Stefania"
+  ],
+  "publisher": "Università degli studi",
+  "source": "https://openlibrary.org/books/OL31725633M",
+  "year": "2005"
+ },
+ "Z3XWHT6P": {
+  "editors": [
+   "Rossi, Guido"
+  ],
+  "publisher": "Edinburgh University Press",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1851383034"
+ },
+ "3HVU8CXJ": {
+  "publisher": "Müller & Gräff",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=405445733"
+ },
+ "MAA4ZSEA": {
+  "publisher": "Böhlau",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1608160858",
+  "title_replace": [
+   "12. Jahrhunderts",
+   "12. Jahrhundert"
+  ],
+  "place": "Köln, Wien"
+ },
+ "5H74H9JX": {
+  "editors": [
+   "Lieberwirth, Rolf",
+   "Lück, Heiner"
+  ],
+  "publisher": "Nomos",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1651906483",
+  "year": "2008"
+ },
+ "BD3KN428": {
+  "publisher": "Klostermann",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=503340081"
+ },
+ "5Q7GCDJF": {
+  "publisher": "Imprimerie centrale",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1954126700",
+  "container": "Mélanges Philippe Meylan"
+ },
+ "82W7NK6X": {
+  "publisher": "Peeters",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1888285710"
+ },
+ "2TRFK7B9": {
+  "editors": [
+   "Saar, Stefan Chr.",
+   "Roth, A.",
+   "Hattenhauer, Christian"
+  ],
+  "publisher": "Erich Schmidt",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=47945731X"
+ },
+ "6SVE3QNC": {
+  "publisher": "Harrassowitz",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=538647779"
+ },
+ "U66CRIVE": {
+  "editors": [
+   "Frova, Carla",
+   "Nico Ottaviani, Maria Grazia",
+   "Zucchini, Stefania"
+  ],
+  "publisher": "Università degli studi",
+  "source": "https://openlibrary.org/books/OL31725633M"
+ },
+ "5Q282AS3": {
+  "publisher": "Il Leccio",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1604727284",
+  "place": "Monteriggioni",
+  "title_replace": [
+   "l Consilium",
+   "Il Consilium"
+  ]
+ },
+ "DC2IXTP6": {
+  "editors": [
+   "Fried, Johannes"
+  ],
+  "publisher": "Hiersemann",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=027302849"
+ },
+ "6SV4BUGE": {
+  "publisher": "Giuffrè",
+  "source": "https://find.library.upenn.edu/catalog/9910578443503681"
+ },
+ "PICMZN62": {
+  "editors": [
+   "Frova, Carla",
+   "Nico Ottaviani, Maria Grazia",
+   "Zucchini, Stefania"
+  ],
+  "publisher": "Università degli studi",
+  "source": "https://openlibrary.org/books/OL31725633M",
+  "place": "Perugia",
+  "year": "2005"
+ },
+ "MB9MFE8V": {
+  "publisher": "Cedam",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1075435587"
+ },
+ "PAMDDAX2": {
+  "publisher": "SISMEL - Edizioni del Galluzzo",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=391703501",
+  "authors": [],
+  "editors": [
+   "Casagrande, Carla",
+   "Crisciani, Chiara",
+   "Vecchio, Silvana"
+  ],
+  "note": "edited volume"
+ },
+ "F7HQMIAT": {
+  "publisher": "Enrico Spoerri",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1823687601"
+ },
+ "GU7EKENF": {
+  "publisher": "Istituto storico italiano per il Medio Evo",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=577749110",
+  "authors": [
+   "Bellomo, Manlio",
+   "Martinoli, Livia"
+  ]
+ },
+ "7RIN3IQV": {
+  "publisher": "De Gruyter Oldenbourg",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1833862953"
+ },
+ "937KZZC5": {
+  "publisher": "Universitätsbund Erlangen-Nürnberg",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=123045215",
+  "authors": [
+   "Baumgärtel, Gottfried"
+  ],
+  "title_replace": [
+   "im ersten Jahrhunderts",
+   "in dem ersten Jahrhundert"
+  ]
+ },
+ "XCWJ7A4N": {
+  "publisher": "Catholic University of America Press",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=276686675"
+ },
+ "6QHJVVZX": {
+  "editors": [
+   "Levy, Avigdor"
+  ],
+  "publisher": "Darwin Press",
+  "place": "Princeton, NJ",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1603098747"
+ },
+ "9KCUVBXP": {
+  "editors": [
+   "Coing, Helmut"
+  ],
+  "publisher": "Beck",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1922321966"
+ },
+ "8FKJVSRQ": {
+  "publisher": "The Robbins Collection",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=306377764"
+ },
+ "SMHER3MU": {
+  "publisher": "Il Mulino",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=1646019113"
+ },
+ "K854GXE3": {
+  "editors": [
+   "Nicolaj, Giovanna"
+  ],
+  "publisher": "Dipartimento per i beni archivistici e librari, Direzione generale per gli archivi, Scuola Vaticana di Paleografia, Diplomatica e Archivistica",
+  "source": "https://opac.k10plus.de/DB=2.1/PPNSET?PPN=514848243"
+ },
+ "FPXLXBE2": {
+  "place": "Sigmaringen",
+  "source": "research 2026-10-29, see note"
+ },
+ "4WRMCSBT": {
+  "year": "2018",
+  "source": "research 2026-10-29, see note"
+ },
+ "IG5TQT4I": {
+  "year": "2020",
+  "source": "https://revistas.upsa.es/index.php/derechocanonico/article/view/1058",
+  "note": "vol. 77, no. 188 (2020); Zotero had the DOI registration date 2024-03-12"
+ },
+ "ZR37RPHZ": {
+  "container": "Bulletin of Medieval Canon Law",
+  "source": "Zotero journal abbreviation BMCL, n.s. 37 (2020)",
+  "note": "journal name missing in Zotero"
+ },
+ "include": [
+  "HJMNXFTT",
+  "PCHJJIMM",
+  "5CI66A8M"
+ ]
+}

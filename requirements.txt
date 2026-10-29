@@ -1,0 +1,6 @@
+flair>=0.15.1
+sentence-transformers>=3.0
+safetensors>=0.4
+mcp[cli]>=1.0
+scikit-learn>=1.2
+# dev/test only: pytest (see README "Tests")

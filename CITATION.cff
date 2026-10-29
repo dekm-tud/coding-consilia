@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use these data, please cite the edition as below. The data revision is recorded in every TEI file (editionStmt) and in site-data/manifest.json."
+type: dataset
+title: "Consilia. A portal for medieval legal opinions: TEI data of the printed consilia of Baldus de Ubaldis (Venice 1575) and Nicolaus de Tudeschis, Panormitanus (Venice 1571)"
+authors:
+  - family-names: Schonhardt
+    given-names: Michael
+    orcid: "https://orcid.org/0000-0002-2750-1900"
+    affiliation: "Technische Universität Darmstadt"
+    email: michael.schonhardt@tu-darmstadt.de
+version: beta
+license: CC-BY-4.0
+repository-code: "https://github.com/dekm-tud/coding-consilia"
+url: "https://dekm-tud.github.io/coding-consilia/"
+keywords:
+  - consilia
+  - ius commune
+  - medieval law
+  - Baldus de Ubaldis
+  - Panormitanus
+  - TEI
+  - early printed books
+abstract: "Machine-transcribed, structured and annotated texts of 2,740 legal opinions from two sixteenth-century printed collections, one TEI P5 file per volume with facsimile links to the digitised copies, machine translations, automatic keywords and controlled subject layers. Status: beta, not proof-read."

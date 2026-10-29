@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<trpDocMetadata>
+    <docId>13119248</docId>
+    <title>Baldo_Consilia_v1</title>
+    <uploadTimestamp>1766267827962</uploadTimestamp>
+    <uploader>michael.schonhardt@googlemail.com</uploader>
+    <uploaderId>19940</uploaderId>
+    <nrOfPages>324</nrOfPages>
+    <pageId>109937048</pageId>
+    <url>https://files.transkribus.eu/Get?fileType=view&amp;id=FXZCOFZPLSKYVJPDFBFJNBYW</url>
+    <thumbUrl>https://files.transkribus.eu/Get?fileType=thumb&amp;id=FXZCOFZPLSKYVJPDFBFJNBYW</thumbUrl>
+    <externalId>NA</externalId>
+    <authority>NA</authority>
+    <status>0</status>
+    <fimgStoreColl>TrpDoc_DEA_13119248</fimgStoreColl>
+    <origDocId>0</origDocId>
+    <collectionList>
+        <colList>
+            <colId>2217442</colId>
+            <colName>Consilia</colName>
+            <description>created by michael.schonhardt@googlemail.com</description>
+            <crowdsourcing>false</crowdsourcing>
+            <elearning>false</elearning>
+            <nrOfDocuments>0</nrOfDocuments>
+        </colList>
+    </collectionList>
+    <mainColId>2217442</mainColId>
+</trpDocMetadata>

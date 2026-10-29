@@ -1,0 +1,156 @@
+{
+ "_comment": "Embedding models of the search page. `embeddings`: base URLs of chunks.f16.bin + chunks.json, tried in order (local copy first until the public HF dataset is live; then put the HF URL first). `onnx_repo`/`onnx_revision`: transformers.js weights, pinned to a revision (never 'main' once published). `dtype`: per runtime ('wasm' = CPU, 'webgpu'); a model without a 'wasm' entry needs WebGPU. onnx_ready=false: the query model is not published yet, Similar mode still works. `query_prefix` is prepended to queries only (documents were embedded without it). chunks.json.data_revision must equal manifest.json.revision. `description` is the one line shown to users; `notes` and `eval` are internal.",
+ "transformers_js": "3.8.1",
+ "models": [
+  {
+   "tag": "bge-m3",
+   "label": "BGE-M3",
+   "model_id": "BAAI/bge-m3",
+   "onnx_repo": "Xenova/bge-m3",
+   "onnx_revision": "4de13258303883538bd53b696b452bf8099f0858",
+   "onnx_ready": true,
+   "dtype": {
+    "wasm": "q8",
+    "webgpu": "fp16"
+   },
+   "download_mb": {
+    "wasm": 570,
+    "webgpu": 1134
+   },
+   "requires_webgpu": false,
+   "pooling": "cls",
+   "normalize": true,
+   "query_prefix": "",
+   "dims": 1024,
+   "embeddings": [
+    "https://huggingface.co/datasets/dekmATtud/consilia-embeddings/resolve/v0.2/bge-m3/",
+    "hf-export/bge-m3/"
+   ],
+   "notes": "Baseline for comparison with the fine-tune.",
+   "eval": {
+    "gold": "Layer B gold (model-annotated), 25 codes; mean average precision",
+    "judged_pool": {
+     "label": 0.4479,
+     "definition": 0.3512,
+     "latin": 0.3124
+    },
+    "corpus": {
+     "label": 0.1463,
+     "definition": 0.0681,
+     "latin": 0.1219
+    }
+   },
+   "default": true,
+   "description": "General multilingual model (BAAI). Default."
+  },
+  {
+   "tag": "etp-bgem3-ft",
+   "label": "BGE-M3 Latin (ETP)",
+   "model_id": "mschonhardt/etp-bgem3-contrastive-ft",
+   "onnx_repo": "mschonhardt/etp-bgem3-contrastive-ft",
+   "onnx_revision": "a41f187db4477504a02a24967435d2b31ce7abd5",
+   "onnx_ready": true,
+   "dtype": {
+    "wasm": "q8",
+    "webgpu": "fp16"
+   },
+   "download_mb": {
+    "wasm": 796,
+    "webgpu": 1134
+   },
+   "requires_webgpu": false,
+   "pooling": "cls",
+   "normalize": true,
+   "query_prefix": "",
+   "dims": 1024,
+   "embeddings": [
+    "https://huggingface.co/datasets/dekmATtud/consilia-embeddings/resolve/v0.2/etp-bgem3-ft/",
+    "hf-export/etp-bgem3-ft/"
+   ],
+   "notes": "The project's Latin-tuned model. On the Layer B gold it is NOT better than stock BGE-M3 overall (worse for short and Latin queries, better for long English definitions); ONNX uploaded 2026-10-17 (int8 with last 6 layers fp32, 796 MB; fp16). Parity of the shipped int8: mean top-20 overlap 0.915, pass.",
+   "eval": {
+    "gold": "Layer B gold (model-annotated), 25 codes; mean average precision",
+    "judged_pool": {
+     "label": 0.3278,
+     "definition": 0.3842,
+     "latin": 0.2048
+    },
+    "corpus": {
+     "label": 0.1063,
+     "definition": 0.092,
+     "latin": 0.0752
+    }
+   },
+   "default": false,
+   "description": "BGE-M3 fine-tuned on medieval Latin legal texts (ETP)."
+  },
+  {
+   "tag": "qwen3-0.6b",
+   "label": "Qwen3-Embedding 0.6B",
+   "model_id": "Qwen/Qwen3-Embedding-0.6B",
+   "onnx_repo": "onnx-community/Qwen3-Embedding-0.6B-ONNX",
+   "onnx_revision": "c25a394dd583836952667c12f008335071b3f43d",
+   "onnx_ready": true,
+   "dtype": {
+    "wasm": "q8",
+    "webgpu": "q4f16"
+   },
+   "download_mb": {
+    "wasm": 613,
+    "webgpu": 567
+   },
+   "requires_webgpu": false,
+   "pooling": "last_token",
+   "normalize": true,
+   "query_prefix": "Instruct: Given a question about medieval legal opinions, retrieve passages of consilia that answer it\nQuery:",
+   "dims": 1024,
+   "embeddings": [
+    "https://huggingface.co/datasets/dekmATtud/consilia-embeddings/resolve/v0.2/qwen3-0.6b/",
+    "hf-export/qwen3-0.6b/"
+   ],
+   "notes": "Weaker than the 4B/8B models on rare and sensitive categories (rape, incest) in the project's own earlier evaluation.",
+   "eval": {
+    "gold": "Layer B gold (model-annotated), 25 codes; mean average precision",
+    "judged_pool": {
+     "label": 0.4418,
+     "definition": 0.4507,
+     "latin": 0.3847
+    },
+    "corpus": {
+     "label": 0.1643,
+     "definition": 0.1435,
+     "latin": 0.1365
+    }
+   },
+   "default": false,
+   "description": "Small instruction-tuned embedding model (Qwen)."
+  },
+  {
+   "tag": "qwen3-4b",
+   "label": "Qwen3-Embedding 4B",
+   "model_id": "Qwen/Qwen3-Embedding-4B",
+   "onnx_repo": "mschonhardt/Qwen3-Embedding-4B-ONNX",
+   "onnx_revision": "main",
+   "onnx_ready": false,
+   "dtype": {
+    "webgpu": "q4f16"
+   },
+   "download_mb": {
+    "webgpu": 2500
+   },
+   "requires_webgpu": true,
+   "pooling": "last_token",
+   "normalize": true,
+   "query_prefix": "Instruct: Given a question about medieval legal opinions, retrieve passages of consilia that answer it\nQuery:",
+   "dims": 2560,
+   "embeddings": [
+    "https://huggingface.co/datasets/dekmATtud/consilia-embeddings/resolve/v0.2/qwen3-4b/",
+    "hf-export/qwen3-4b/"
+   ],
+   "notes": "Large download; needs WebGPU and roughly 8 GB of GPU memory. Only community ONNX exports exist (fp32, 16 GB); a smaller export has not been made yet.",
+   "eval": null,
+   "default": false,
+   "description": "Larger Qwen embedding model; needs WebGPU."
+  }
+ ]
+}

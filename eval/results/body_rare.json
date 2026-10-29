@@ -1,0 +1,134 @@
+{
+ "body_gemini-3-8-flash_p1": {
+  "units": 37,
+  "relevance": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "pairs": [
+   0.7936507936507936,
+   0.9433962264150944,
+   0.8620689655172413
+  ],
+  "role_acc": 0.72,
+  "evidence_valid": 1.0,
+  "per_code": {
+   "incest": {
+    "tp": 2,
+    "fp": 2,
+    "fn": 0
+   },
+   "adultery": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 1
+   },
+   "illegitimate_birth": {
+    "tp": 7,
+    "fp": 0,
+    "fn": 0
+   },
+   "sodomy": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   },
+   "sexual_honour": {
+    "tp": 3,
+    "fp": 3,
+    "fn": 1
+   },
+   "stuprum": {
+    "tp": 2,
+    "fp": 1,
+    "fn": 0
+   },
+   "chastity_conditions": {
+    "tp": 6,
+    "fp": 0,
+    "fn": 0
+   },
+   "pregnancy_unborn": {
+    "tp": 5,
+    "fp": 0,
+    "fn": 0
+   },
+   "abortion_miscarriage": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 1
+   },
+   "birth": {
+    "tp": 1,
+    "fp": 2,
+    "fn": 0
+   },
+   "impotence": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "sex_determination": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   },
+   "fertility_sterility": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "legitimation": {
+    "tp": 3,
+    "fp": 1,
+    "fn": 0
+   },
+   "virginity": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "abduction": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "consummation": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0
+   },
+   "concubinage_fornication": {
+    "tp": 1,
+    "fp": 3,
+    "fn": 0
+   },
+   "puberty_body": {
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+   },
+   "nursing": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "rape": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "marital_cohabitation": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 0
+   },
+   "conception": {
+    "tp": 0,
+    "fp": 1,
+    "fn": 0
+   }
+  }
+ }
+}

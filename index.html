@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <script src="assets/gate-config.js"></script>
+  <script src="assets/gate.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reader – Consilia</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%275%27 fill=%27%231c3d5a%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27Georgia,serif%27 font-weight=%27700%27 font-size=%2721%27 text-anchor=%27middle%27 fill=%27%23f6f1e7%27%3EC%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/app.css">
+  <script src="assets/common.js"></script>
+</head>
+<body class="reader">
+
+<header class="topbar">
+  <button class="iconbtn drawer-btn" id="ix-toggle" title="Index" aria-label="Open index"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="brand" href="about.html"><span class="logo" aria-hidden="true"></span>Consilia <span class="beta">beta</span></a>
+  <nav class="nav">
+    <a href="about.html">About</a>
+    <a href="introduction.html">Introduction</a>
+    <a href="bibliography.html">Bibliography</a>
+    <a href="index.html" class="active">Read</a>
+    <a href="search.html">Search</a>
+    <a href="chat.html">Ask</a>
+    
+  </nav>
+  <span class="spacer"></span>
+  <select id="volume-select" class="field" title="Print" aria-label="Print"></select>
+  <select id="tr-select" class="field" title="Translation" aria-label="Translation">
+    <option value="la">Latin only</option>
+    <option value="en">With English translation</option>
+    <option value="de">With German translation</option>
+  </select>
+  <label class="meta" title="Citations and names found by a language model, checked by a tagger"><input type="checkbox" id="mark-refs" checked> Citations</label>
+  <button class="iconbtn" id="fac-toggle" title="Facsimile" aria-label="Toggle facsimile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 15l4-4 4 4 3-3 5 5"/></svg></button>
+  <button class="iconbtn" id="theme-toggle" title="Dark mode" aria-label="Toggle dark mode"></button>
+</header>
+
+<div class="rd" id="rd">
+  <nav class="rd-index" aria-label="Index of consilia">
+    <div class="head">
+      <div class="label" id="print-name">—</div>
+      <div class="mobile-controls" id="mobile-controls"></div>
+      <div class="search">
+        <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+        <input id="find-input" class="field" type="search" placeholder="Find in this print" title="Spelling variants i/j, u/v, ae/e are treated as equal. Other forms of a word are found as well; a word in quotation marks only in the form given." autocomplete="off" spellcheck="false" style="width:100%">
+        <button id="find-clear" class="clear" title="Clear">&#x2715;</button>
+      </div>
+      <div class="count"><span id="rd-count">—</span> <a id="corpus-link" href="search.html">search all volumes</a></div>
+    </div>
+    <div class="rd-list" id="rd-list"></div>
+  </nav>
+
+  <main class="rd-text" id="rd-text">
+    <div class="rd-toolbar"><span class="spacer"></span><span id="tr-note"></span></div>
+    <div class="rd-inner" id="rd-inner"><p class="empty">Loading consilia…</p></div>
+  </main>
+
+  <aside class="rd-fac" aria-label="Facsimile">
+    <div class="fac-bar">
+      <span class="pg" id="page-label">—</span>
+      <span class="tag" id="page-tag">facsimile</span>
+      <span class="spacer"></span>
+      <button id="page-prev" title="Previous page">‹</button>
+      <span class="pg num" id="page-counter"></span>
+      <button id="page-next" title="Next page">›</button>
+    </div>
+    <div class="fac-stage"><div class="osd" id="osd"></div><div class="empty" id="osd-empty">select a consilium</div></div>
+    <div class="fac-credit" id="fac-credit"></div>
+  </aside>
+</div>
+
+<script src="assets/minisearch.min.js"></script>
+<script src="assets/vendor/mirador.min.js"></script>
+<script src="assets/viewer.js"></script>
+<script src="assets/reader-app.js"></script>
+</body>
+</html>

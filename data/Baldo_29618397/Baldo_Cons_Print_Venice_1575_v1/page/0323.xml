@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15/pagecontent.xsd">
+    <Metadata>
+        <Creator>prov=READ-COOP:name=PyLaia@TranskribusPlatform:version=2.43.0:model_id=571589:lm=none:date=21_05_2026_22:26</Creator>
+        <Created>2025-10-30T09:59:30.339+01:00</Created>
+        <LastChange>2026-05-21T22:26:00.963+02:00</LastChange>
+        <TranskribusMetadata docId="13119248" pageId="109937929" pageNr="323" tsid="288364005" status="IN_PROGRESS" userId="19940" imgUrl="https://files.transkribus.eu/Get?fileType=view&amp;id=TUPATZBNYTSXFATSUXIOHYIY" xmlUrl="https://files.transkribus.eu/Get?id=YGNKNMUKSZFHOHOHESUMGHPQ" imageId="92654160" />
+    </Metadata>
+    <Page imageFilename="0323.jpg" imageWidth="2904" imageHeight="4233">
+        <ReadingOrder>
+            <OrderedGroup id="ro_1785668617180" caption="Regions reading order">
+                <RegionRefIndexed index="0" regionRef="tr_1" />
+            </OrderedGroup>
+        </ReadingOrder>
+        <TextRegion id="tr_1" custom="readingOrder {index:0;}">
+            <Coords points="1895,4089 2049,4089 2049,4173 1895,4173" />
+            <TextEquiv>
+                <Unicode />
+            </TextEquiv>
+        <TextLine id="tr_1_tl_1" custom="readingOrder {index:0;} structure {type:cons_body;}" comments="final 2026-10-23: majority agrees with data/: kept as it is; final 2026-10-23: majority agrees with data/: kept as it is"><Coords points="1872,4099 1994,4127 2052,4107 2095,4125 2131,4109 2179,4109 2179,4039 2117,4009 2087,4021 2038,4001 1936,4037 1920,4023 1872,4029" /><Baseline points="1883,4101 1928,4104 1973,4104 2017,4104 2062,4104 2107,4104 2152,4104 2182,4104" /><TextEquiv index="0" conf="1.0" comments="final"><Unicode>Ornioinat from¬</Unicode></TextEquiv><TextEquiv index="1" conf="0.5" comments="gemini"><Unicode>Ornioinat from¬</Unicode></TextEquiv><TextEquiv index="2" conf="0.5" comments="pylaia"><Unicode>Ornioinat from¬</Unicode></TextEquiv><TextEquiv index="3" conf="0.73" comments="kraken"><Unicode>Srioua con</Unicode></TextEquiv></TextLine><TextLine id="tr_1_tl_2" custom="readingOrder {index:1;} structure {type:cons_body;}" comments="final 2026-10-23: majority agrees with data/: kept as it is; final 2026-10-23: majority agrees with data/: kept as it is"><Coords points="1663,4181 1874,4167 2153,4181 2153,4109 1974,4125 1876,4093 1663,4107" /><Baseline points="1674,4155 1719,4164 1764,4164 1809,4170 1853,4167 1898,4164 1943,4167 1988,4167 2032,4167 2077,4167 2122,4167 2159,4163" /><TextEquiv index="0" conf="1.0" comments="final"><Unicode>RGIDD COMpltIE.</Unicode></TextEquiv><TextEquiv index="1" conf="0.5" comments="gemini"><Unicode>RGIDD COMpltIE.</Unicode></TextEquiv><TextEquiv index="2" conf="0.5" comments="pylaia"><Unicode>RGIDD COMpltIE.</Unicode></TextEquiv><TextEquiv index="3" conf="0.778" comments="kraken"><Unicode>C</Unicode></TextEquiv></TextLine></TextRegion>
+    </Page>
+</PcGts>

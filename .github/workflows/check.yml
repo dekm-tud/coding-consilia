@@ -1,0 +1,27 @@
+name: Check data (pull requests)
+
+# The same checks as the Pages workflow, without deploying: run on every pull request so that contributed
+# collections are validated before they are merged.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: site-data is up to date
+        run: |
+          python src/build_site_data.py
+          git diff --exit-code -- site-data || (echo "site-data/ is stale: run python src/build_site_data.py and commit" && exit 1)
+      - name: Data consistency audit (hard checks only)
+        run: python src/qa/check_data.py --quiet
+      - name: Pages artifact size limits
+        run: python tools/build_pages_artifact.py

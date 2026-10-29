@@ -1,0 +1,9 @@
+Du erhältst das Bild einer Druckspalte aus Band 4 der Werke des Nicolaus de Tudeschis (Abbas Panormitanus, Consilia, Antiqua-Druck des 16. Jahrhunderts) und ihre zeilengenaue Transkription als JSON-Objekt mit dem Feld "zeilen". In der Transkription sind noch Kürzungszeichen stehen geblieben.
+
+AUFGABE
+Löse jede noch vorhandene Kürzung nach den unten stehenden Regeln auf und prüfe die Auflösung am Bild. Alles andere bleibt Zeichen für Zeichen unverändert: Zahl und Reihenfolge der Zeilen, Zeilenanfänge und -enden, Trennstriche, die Markierungen {S}, {n} und {?}, bereits aufgelöste Kürzungen, Orthographie, Interpunktion und Spatien. Ergänze, kürze oder verschiebe keine Zeilen.
+
+{ABKUERZUNGEN}
+
+AUSGABE
+Ein JSON-Objekt mit dem Feld "zeilen", das genau so viele Einträge enthält wie die Eingabe, in derselben Reihenfolge.
