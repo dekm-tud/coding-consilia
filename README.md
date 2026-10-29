@@ -18,7 +18,7 @@ images in part but have not been proofread.
 | Print | Pages | Consilia | Text | Images |
 |---|---|---|---|---|
 | Baldus de Ubaldis, *Consilia*, Venice 1575, vol. 1 to 5 (`Baldo_Cons_Print_Venice_1575_v1` … `_v5`) | 1,392 | 2,514 | PageXML, with each line decided from three readings (PyLaia, kraken, Gemini) | Internet Archive (copy of the Universidad Complutense de Madrid) |
-| Panormitanus, *Consilia*, Venice 1571 (`Panormitanus_Cons_Print_Venice_1571_v1`) | 552 | 226 (2 partes) | Gemini column transcription (`prebuilt.json`) | Harvard, Houghton Library (IIIF) |
+| Panormitanus, *Consilia*, Venice 1571 (`Panormitanus_Cons_Print_Venice_1571_v1`) | 552 | 226 (2 partes) | Gemini column transcription (`prebuilt.json`), corrected after a comparison with kraken (`corrections.json`) | Harvard, Houghton Library (IIIF) |
 
 ## Published data and models
 

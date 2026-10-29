@@ -31,7 +31,10 @@ the new print and processes it.
 **Prints segmented outside the pipeline.** If a print folder contains `prebuilt.json`
 (`{"meta": …, "consilia": {id: record}}`, written by `src/gemini_ocr/pipeline.py export-json`), the build imports it
 through `src/import_prebuilt.py` instead of segmenting PageXML lines. `page/` must still exist, because it gives the
-page sizes and region boxes. The Panormitanus volume enters the corpus this way.
+page sizes and region boxes. The Panormitanus volume enters the corpus this way. A `corrections.json` next to it is applied after the spelling rules of the edition. For Panormitanus it is made
+by `tools/panormitanus_corrections.py` from the comparison with the kraken reading of the same pages
+(`tools/kraken_compare_panormitanus.py`): abbreviation marks left unexpanded, artefacts of the long s and single
+words where only the kraken reading is a word of the Baldus text.
 
 **Images.** The repository stores no page images. The website shows them from the holding library or the
 Internet Archive through IIIF. `output/iiif_manifests.json` maps each print to its manifest, and `canvas_offset`
