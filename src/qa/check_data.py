@@ -50,7 +50,7 @@ def main() -> None:
     soft: dict[str, list[str]] = defaultdict(list)
 
     consilia = load(OUTPUT / "consilia.json")["consilia"]
-    # 1. per-print files are the source of consilia.json
+    # 1. per-print files are the source of consilia.json (written by src/build.py next to it)
     union: dict = {}
     for author_dir in sorted(OUTPUT.iterdir()):
         if not author_dir.is_dir() or not (author_dir / "consilia.json").exists():   # author folders only
@@ -61,7 +61,10 @@ def main() -> None:
             d = load(f)
             if isinstance(d, dict) and "consilia" in d:      # per-print edition files only
                 union.update(d["consilia"])
-    if set(union) != set(consilia):
+    # the per-print files are local build copies (not in the repository): compared only where they exist
+    if not union:
+        pass
+    elif set(union) != set(consilia):
         only_merged = sorted(set(consilia) - set(union))[:5]
         only_prints = sorted(set(union) - set(consilia))[:5]
         hard.append(f"consilia.json ids differ from per-print files (only merged: {only_merged}, "
