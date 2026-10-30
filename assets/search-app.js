@@ -281,26 +281,42 @@ async function embedQuery(text) {
 
 /* ── modes ─────────────────────────────────────────────────────────────── */
 const HINTS = {
-  keyword: 'Searches the Latin text of all consilia. i/j, u/v and ae/e count as equal; word beginnings match.',
-  semantic: 'Ranks passages by meaning rather than wording. Ask in Latin, English or German. Needs a model in your browser (one download).',
+  keyword: 'Searches the Latin text of all consilia, with all forms of each word. Several words must all occur, and terms separated by commas are compared.',
+  semantic: 'Ranks the consilia by the meaning of their passages and shows the closest ones. Ask in Latin, English or German. Needs a model in your browser (one download).',
   similar: 'Lists the consilia whose passages are closest to a chosen one, by the stored passage vectors.',
   index: 'Browse the consilia by annotation layer.',
 };
+const HELP = {
+  keyword: `<p>The full-text search finds every consilium whose title, argument, casus or text contains the words of the query. A word is found in all its forms through a lemma list made with the <a href="https://huggingface.co/mschonhardt/latin-lemmatizer" target="_blank" rel="noopener">Latin lemmatizer</a>, so <i>heredem</i> also finds <i>heres</i> and <i>heredibus</i>. The spellings i and j, u and v, ae and e count as the same letter, and the beginning of a word matches as well.</p>
+<table class="syntax"><tr><td><code>feudum vasallus</code></td><td>consilia that contain both words</td></tr>
+<tr><td><code>femina OR mulier</code></td><td>consilia that contain either word</td></tr>
+<tr><td><code>feudum -vasallus</code></td><td>consilia with the first word but without the second</td></tr>
+<tr><td><code>"heredem"</code></td><td>only this form, without the other forms of the word</td></tr>
+<tr><td><code>feudum, vasallus</code></td><td>a comparison: each term is searched on its own, the results are listed together, and the chart on the right draws one curve for each term</td></tr></table>
+<p>Relevance is the score of the search index (BM25). A consilium ranks higher when the words occur in it more often, when they are rare in the corpus as a whole and when its text is short, and a match in the title counts three times as much as one in the text, a match in the argument or the casus one and a half times. Choose print order under Sort to read the results in the sequence of the volumes, as in the reader.</p>
+<p>The chart shows how the matches are spread over the prints, either as the share of consilia that contain a term or as occurrences per 10,000 words. Comparing terms with commas gives the frequency curves of several words side by side.</p>`,
+  semantic: `<p>The semantic search compares the meaning of the query with every passage of the corpus, that is every section of the text and of the casus, in Latin and in the English translation. Each consilium counts with its closest passage, and the consilia are ranked by that similarity (the cosine of the two vectors, shown as the bar under each result).</p>
+<p>The result is a ranking of the nearest consilia and not a complete list. It shows the number set under Show, 20 by default and up to 200. Below the first places the similarity decreases gradually, so there is no point at which the relevant consilia end, and a subject that is treated in many consilia will have more of them than the list shows.</p>
+<p>A Latin query lies closest to Latin passages and an English query to the English translations, which is why <i>femina</i> and <i>woman</i> return different consilia. Under Passages the search can be limited to one language. To find every occurrence of a word with all its forms, use the full-text search, where synonyms can be combined, for example <code>femina OR mulier</code>.</p>`,
+  similar: `<p>Similar lists the consilia whose passages come closest to those of a chosen consilium, ranked by the closest pair of passages. One section on the same legal question is therefore enough for two consilia to count as similar. As in the semantic search, the list shows the nearest consilia up to the number set under Show and is not a complete list.</p>
+<p>Every result and every consilium in the reader has a link to this list (similar, Similar consilia), which is the quickest way from one consilium to others on the same matter.</p>`,
+  index: `<p>The subject layers group the consilia by keywords, controlled subjects, cited works, cited jurists and the passages on body and sexuality. They were made by language models and by rules, they are not reviewed by hand, and they can therefore miss consilia or include one that touches a subject only in passing. The results are listed in print order.</p>`,
+};
 const LAYER_HINTS = {
   machine: 'Keywords assigned to each consilium by a language model (English).',
-  subjects: 'Controlled vocabulary of legal subjects, assigned by a language model; each is central or secondary to a consilium.',
+  subjects: 'Controlled vocabulary of legal subjects, assigned by a language model, each marked as central or secondary to a consilium.',
   references: 'Works cited in the text, identified by rule from the printed citations.',
   jurists: 'Jurists cited by name in the text.',
-  body: 'Passages on body and sexuality, coded by a language model with a codebook; the evidence is shown.',
+  body: 'Passages on body and sexuality, coded by a language model with a codebook, with the passage shown as evidence.',
 };
 const EXAMPLES = {
-  keyword: ['dos', 'statutum', 'usurae', 'testamentum'],
+  keyword: ['dos', 'statutum', 'usurae', 'testamentum', 'feudum, vasallus'],
   semantic: ['Can a father disinherit a legitimate son?', 'Zinsverbot und Kaufvertrag', 'de iurisdictione episcopi'],
 };
 function showEmpty() {
   const el = $('empty-state');
   let text = '', eg = '';
-  if (mode === 'keyword') { text = 'Type a Latin word. Other forms of the same word are found as well (lemma list from the <a href="https://huggingface.co/mschonhardt/latin-lemmatizer" target="_blank" rel="noopener">Latin lemmatizer</a>); a word in quotation marks only in the form given.'; eg = EXAMPLES.keyword.map(x => `<button data-q="${esc(x)}">${esc(x)}</button>`).join(''); }
+  if (mode === 'keyword') { text = 'Type one or more Latin words. Other forms of the same word are found as well, and a word in quotation marks only in the form given. Separate words with commas to compare their frequency.'; eg = EXAMPLES.keyword.map(x => `<button data-q="${esc(x)}">${esc(x)}</button>`).join(''); }
   else if (mode === 'semantic') { text = 'Describe what you are looking for.'; eg = EXAMPLES.semantic.map(x => `<button data-q="${esc(x)}">${esc(x)}</button>`).join(''); }
   else if (mode === 'similar') { text = 'Enter a consilium above, or press “similar” on any result.'; }
   else { text = 'Choose a term above.'; }
@@ -314,6 +330,7 @@ function setMode(m, silent) {
   if (!langTouched) { lang = m === 'similar' ? 'la' : 'both'; $('lang-select').value = lang; }   // Similar defaults to Latin↔Latin (translator style would otherwise dominate)
   document.querySelectorAll('#mode-tabs button').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
   $('mode-hint').textContent = m === 'index' ? (LAYER_HINTS[layerKey] || HINTS.index) : HINTS[m];
+  $('mode-help-body').innerHTML = HELP[m] || '';
   $('sem-controls').classList.toggle('show', m === 'semantic' || m === 'similar');
   $('index-controls').classList.toggle('show', m === 'index');
   $('fields-block').style.display = m === 'keyword' ? '' : 'none';
@@ -342,12 +359,21 @@ async function runSearch() {
   const seq = ++searchSeq;
   if (mode === 'keyword') {
     if (!q) { showEmpty(); lastResults = []; return; }
-    const re = buildHighlightRe(q);
-    let res; try { res = await workerSearch(q); } catch (e) { showResults(false, e.message); return; }
+    const re = buildHighlightRe(q), groups = splitGroups(q);
+    let per; try { per = await Promise.all(groups.map(g => workerSearch(g))); } catch (e) { showResults(false, e.message); return; }
     if (seq !== searchSeq) return;
-    lastResults = res.filter(r => consilia[r.id] && inScope(consilia[r.id]));
+    const merged = new Map();
+    per.forEach((res, gi) => res.forEach(r => {
+      if (!consilia[r.id] || !inScope(consilia[r.id])) return;
+      const m = merged.get(r.id);
+      if (!m) merged.set(r.id, { ...r, terms: [gi] });
+      else { m.terms.push(gi); m.score = Math.max(m.score, r.score); Object.entries(r.match || {}).forEach(([t, f]) => { m.match[t] = [...new Set([...(m.match[t] || []), ...f])]; }); }
+    }));
+    lastResults = [...merged.values()].sort((a, b) => b.score - a.score);
+    termGroups = groups.map((g, gi) => ({ label: g, re: buildHighlightRe(g), color: TERM_COLORS[gi % TERM_COLORS.length], n: lastResults.filter(r => r.terms.includes(gi)).length }));
     showResults(true); $('count-head').textContent = 'Matches';
-    shown = PAGE; renderKeyword(re); renderStats(scopedItems().length); summary(`for “${q}”`);
+    shown = PAGE; renderKeyword(re); renderStats(scopedItems().length);
+    summary(groups.length > 1 ? 'for ' + termGroups.map(t => `“${t.label}” (${t.n})`).join(', ') : `for “${q}”`);
     return;
   }
   if (mode === 'index') {
@@ -366,6 +392,8 @@ async function runSearch() {
     if (mode === 'semantic') await runSemantic(q, seq); else await runSimilar();
   } catch (e) { $('results-list').innerHTML = `<div class="empty error">${esc(e.message)}</div>`; setModelStatus(e.message); }
 }
+const TERM_COLORS = ['#b23a2c', '#2f6f8f', '#9a7a2e', '#3f6b5e', '#7c4a6b', '#56688c'];
+let termGroups = [], trendMetric = 'share';
 function summary(what) { const n = lastResults.length; $('result-summary').textContent = `${n} ${n === 1 ? 'consilium' : 'consilia'} ${what}`; }
 const PAGE = 30; let shown = PAGE, rerender = null;
 function paginate(list, sorted, draw) {
@@ -438,8 +466,9 @@ async function runSimilar() {
 
 /* ── rendering ─────────────────────────────────────────────────────────── */
 function sortResults() { const m = $('sort-select').value; return [...lastResults].sort((a, b) => m === 'n' ? ((consilia[a.id].volume.localeCompare(consilia[b.id].volume)) || (consilia[a.id].n - consilia[b.id].n)) : (b.score - a.score)); }
-function hitHead(c) {
-  return `<div class="top"><span class="n">${c.pars ? c.pars + '.' : ''}${c.n}</span><span class="ttl">${esc(c.title_display || c.title)}</span><span class="vol" title="${esc(volLabel(c.volume))}">${esc(volShort(c.volume))}</span>` +
+function hitHead(c, r) {
+  const dots = r && r.terms && termGroups.length > 1 ? `<span class="tdots">${r.terms.map(gi => `<i style="background:${termGroups[gi].color}" title="${esc(termGroups[gi].label)}"></i>`).join('')}</span>` : '';
+  return `<div class="top"><span class="n">${c.pars ? c.pars + '.' : ''}${c.n}</span><span class="ttl">${esc(c.title_display || c.title)}</span>${dots}<span class="vol" title="${esc(volLabel(c.volume))}">${esc(volShort(c.volume))}</span>` +
     `<button class="sim" data-sim-id="${esc(c.id)}" title="Find similar consilia">similar</button></div>`;
 }
 function renderKeyword(re) {
@@ -454,7 +483,7 @@ function renderKeyword(re) {
     else if (matched.has('casus') && (c.casus || []).length) { snip = highlightText(snippet(c.casus.join(' '), re), re); field = 'casus'; }
     else { snip = highlightText(snippet((c.body || []).join(' '), re), re); field = 'text'; }
     const a = document.createElement('a'); a.className = 'hit'; a.href = `index.html?id=${encodeURIComponent(c.id)}&q=${encodeURIComponent($('search-input').value.trim())}`;
-    a.innerHTML = hitHead(c) + `<div class="snip"><span class="ev">${field}</span>${snip}</div><div class="bar" title="score ${r.score.toFixed(1)}"><i style="width:${(r.score / max * 100).toFixed(0)}%"></i></div>`;
+    a.innerHTML = hitHead(c, r) + `<div class="snip"><span class="ev">${field}</span>${snip}</div><div class="bar" title="score ${r.score.toFixed(1)}"><i style="width:${(r.score / max * 100).toFixed(0)}%"></i></div>`;
     return a;
   });
 }
@@ -562,6 +591,7 @@ function renderStats(total) {
     Object.keys(fc).forEach(f => { $('cnt-' + f).textContent = fc[f]; $('bar-' + f).style.width = `${(fc[f] / mx * 100).toFixed(0)}%`; });
   }
   renderDistribution();
+  renderTrend();
 }
 function renderDistribution() {
   const el = $('dist-bars'), pool = scopedItems(); if (!pool.length) { el.innerHTML = ''; return; }
@@ -575,6 +605,59 @@ function renderDistribution() {
   const mx = Math.max(...rows.flatMap(r => r.counts), 1);
   el.innerHTML = rows.map(r => `<div class="drow"><span title="${esc(volLabel(r.v))}">${esc(volShort(r.v))}</span><div class="mini">${r.counts.map(v => `<i style="height:${(v / mx * 100).toFixed(0)}%" title="${v}"></i>`).join('')}</div><span class="c num">${r.total}</span></div>`).join('');
 }
+/* frequency of the searched terms along the prints (keyword mode): sections of consecutive consilia within each
+   print, as the share of consilia containing the term or as occurrences per 10,000 words */
+function renderTrend() {
+  const box = $('trend-block'); box.style.display = mode === 'keyword' && termGroups.length ? '' : 'none';
+  if (box.style.display === 'none') return;
+  const pool = scopedItems(), byVol = {};
+  pool.forEach(c => { (byVol[c.volume] = byVol[c.volume] || []).push(c); });
+  const vols = Object.keys(byVol).sort(), size = Math.max(10, Math.ceil(pool.length / 40));
+  const hits = termGroups.map((_, gi) => new Set(lastResults.filter(r => r.terms.includes(gi)).map(r => r.id)));
+  const bins = [];
+  vols.forEach(v => {
+    const list = byVol[v].sort((a, b) => (a.pars || 0) - (b.pars || 0) || a.n - b.n), nb = Math.max(1, Math.round(list.length / size));
+    for (let b = 0; b < nb; b++) {
+      const part = list.slice(Math.floor(b * list.length / nb), Math.floor((b + 1) * list.length / nb)); if (!part.length) continue;
+      const words = trendMetric === 'per10k' ? part.reduce((s, c) => s + wordCount(c), 0) : 0;
+      const vals = termGroups.map((t, gi) => {
+        const inBin = part.filter(c => hits[gi].has(c.id));
+        return trendMetric === 'per10k' ? (words ? inBin.reduce((s, c) => s + countMatches(c, t.re), 0) / words * 1e4 : 0) : inBin.length / part.length * 100;
+      });
+      bins.push({ v, from: part[0], to: part[part.length - 1], vals });
+    }
+  });
+  const W = 300, H = 150, L = 30, R = 6, T = 8, B = 22, mx = Math.max(...bins.flatMap(b => b.vals), 0) || 1;
+  const x = i => L + (bins.length > 1 ? i / (bins.length - 1) : .5) * (W - L - R), y = v => T + (1 - v / mx) * (H - T - B);
+  let svg = `<line x1="${L}" y1="${H - B}" x2="${W - R}" y2="${H - B}" class="ax"/><text x="${L - 4}" y="${T + 4}" class="tk" text-anchor="end">${fmtNum(mx)}${trendMetric === 'share' ? '%' : ''}</text><text x="${L - 4}" y="${H - B}" class="tk" text-anchor="end">0</text>`;
+  vols.forEach(v => {
+    const idx = bins.map((b, i) => b.v === v ? i : -1).filter(i => i >= 0); if (!idx.length) return;
+    const x0 = idx[0] > 0 ? (x(idx[0] - 1) + x(idx[0])) / 2 : L;
+    if (idx[0] > 0) svg += `<line x1="${x0}" y1="${T}" x2="${x0}" y2="${H - B}" class="sep"/>`;
+    svg += `<text x="${(x(idx[0]) + x(idx[idx.length - 1])) / 2}" y="${H - B + 13}" class="tk" text-anchor="middle">${esc(volShort(v))}</text>`;
+  });
+  termGroups.forEach((t, gi) => { svg += `<polyline fill="none" stroke="${t.color}" stroke-width="1.6" stroke-linejoin="round" points="${bins.map((b, i) => `${x(i).toFixed(1)},${y(b.vals[gi]).toFixed(1)}`).join(' ')}"/>`; });
+  svg += `<line id="trend-cursor" x1="0" y1="${T}" x2="0" y2="${H - B}" class="cur" style="display:none"/>`;
+  $('trend-chart').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Frequency of the search terms along the prints">${svg}</svg>`;
+  $('trend-legend').innerHTML = termGroups.map(t => `<span><i style="background:${t.color}"></i>${esc(t.label)} <span class="num">${t.n}</span></span>`).join('');
+  const el = $('trend-chart').querySelector('svg'), tip = $('tip'), cur = $('trend-cursor');
+  el.onmousemove = e => {
+    const r = el.getBoundingClientRect(), px = (e.clientX - r.left) * W / r.width;
+    let i = 0, bd = Infinity; bins.forEach((_, k) => { const d = Math.abs(x(k) - px); if (d < bd) { bd = d; i = k; } });
+    const b = bins[i]; cur.setAttribute('x1', x(i)); cur.setAttribute('x2', x(i)); cur.style.display = '';
+    tip.innerHTML = `${esc(volShort(b.v))}, n ${b.from.pars ? b.from.pars + '.' : ''}${b.from.n} to ${b.to.pars ? b.to.pars + '.' : ''}${b.to.n}<br>` +
+      termGroups.map((t, gi) => `<span style="color:${t.color}">●</span> ${esc(t.label)}: ${fmtNum(b.vals[gi])}${trendMetric === 'share' ? ' %' : ''}`).join('<br>');
+    tip.style.display = 'block'; tip.style.left = (e.clientX + 12) + 'px'; tip.style.top = (e.clientY - 8) + 'px';
+  };
+  el.onmouseleave = () => { tip.style.display = 'none'; cur.style.display = 'none'; };
+  $('trend-note').textContent = trendMetric === 'share'
+    ? `Share of consilia containing the term, in sections of about ${size} consilia of each print.`
+    : `Occurrences per 10,000 words, in sections of about ${size} consilia of each print.`;
+}
+function fmtNum(v) { return v >= 10 ? v.toFixed(0) : v >= 1 ? v.toFixed(1) : v.toFixed(2); }
+document.querySelectorAll('#trend-metric button').forEach(b => b.addEventListener('click', () => {
+  trendMetric = b.dataset.metric; document.querySelectorAll('#trend-metric button').forEach(x => x.classList.toggle('active', x === b)); renderTrend();
+}));
 function seededRng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
 const MAP_SEED = 20260923;
 $('pcb-cluster').addEventListener('click', () => setPcaColor('cluster')); $('pcb-volume').addEventListener('click', () => setPcaColor('volume'));

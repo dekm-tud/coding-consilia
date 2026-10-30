@@ -50,18 +50,64 @@ const SEARCH_OPTIONS = {               // shared by the search worker and the re
   boost: { title: 3, summary: 1.5, casus: 1.5, body: 1 }, processTerm: queryTerm,
   prefix: t => !isLemmaKey(t), fuzzy: t => !isLemmaKey(t) && t.length > 4 ? 0.15 : false,
 };
-function splitQuery(raw) {             // words in quotation marks (exact forms) and the rest
-  const exact = [];
-  const rest = raw.replace(/["“”„«»]([^"“”„«»]*)["“”„«»]?/g, (_, w) => { exact.push(...w.split(/\s+/).filter(Boolean)); return ' '; });
-  return { exact, rest: rest.trim() };
+/* ── query syntax of the full-text search ────────────────────────────────
+   words            all of them in the same consilium (feudum vasallus)
+   OR, |            either word (femina OR mulier)
+   -word            consilia without that word (feudum -vasallus)
+   "word"           that form only, without the other forms of its lemma ("heredem")
+   a, b             several terms compared: each is searched on its own and the results are combined */
+function splitGroups(raw) {            // terms to compare, separated by commas or semicolons outside quotation marks
+  const out = []; let cur = '', quoted = false;
+  for (const ch of raw) {
+    if ('"“”„«»'.includes(ch)) quoted = !quoted;
+    if (!quoted && (ch === ',' || ch === ';')) { if (cur.trim()) out.push(cur.trim()); cur = ''; } else cur += ch;
+  }
+  if (cur.trim()) out.push(cur.trim());
+  return out;
 }
-function buildQuery(raw) {             // MiniSearch query: free words by lemma, quoted words as typed (form only)
-  const { exact, rest } = splitQuery(raw);
-  if (!exact.length) return rest;
-  const queries = exact.map(w => ({ queries: [w], processTerm: normalise, prefix: false, fuzzy: false }));
-  if (rest) queries.unshift(rest);
-  return { queries };
+function parseGroup(raw) {             // -> {clauses: [[{w, exact}]], neg: [{w, exact}]}: clauses are joined by AND, the words of a clause by OR
+  const toks = []; const re = /(-?)["“”„«»]([^"“”„«»]*)["“”„«»]?|(\S+)/g; let m;
+  while ((m = re.exec(raw)) !== null) {
+    if (m[3] !== undefined) {
+      if (m[3] === 'OR' || m[3] === '|') { toks.push({ or: true }); continue; }
+      const neg = m[3].length > 1 && m[3][0] === '-', w = (neg ? m[3].slice(1) : m[3]).replace(/^[^\p{L}\d]+|[^\p{L}\d]+$/gu, '');
+      if (w) toks.push({ w, exact: false, neg });
+    } else m[2].split(/\s+/).filter(Boolean).forEach(w => toks.push({ w, exact: true, neg: m[1] === '-' }));
+  }
+  const clauses = [], neg = []; let joinNext = false;
+  toks.forEach(t => {
+    if (t.or) { joinNext = clauses.length > 0; return; }
+    if (t.neg) { neg.push(t); joinNext = false; return; }
+    if (joinNext) clauses[clauses.length - 1].push(t); else clauses.push([t]);
+    joinNext = false;
+  });
+  return { clauses, neg };
 }
+function termQuery(t) {                // one word: form and lemma, or the quoted form only
+  return t.exact ? { queries: [t.w], processTerm: normalise, prefix: false, fuzzy: false } : { queries: [t.w], combineWith: 'OR' };
+}
+function groupQuery(raw) {
+  const { clauses, neg } = parseGroup(raw);
+  if (!clauses.length) return null;
+  const cl = clauses.map(c => c.length === 1 ? termQuery(c[0]) : { combineWith: 'OR', queries: c.map(termQuery) });
+  const pos = cl.length === 1 ? cl[0] : { combineWith: 'AND', queries: cl };
+  return neg.length ? { combineWith: 'AND_NOT', queries: [pos, ...neg.map(termQuery)] } : pos;
+}
+function buildQuery(raw) {             // MiniSearch query for the whole input: the compared terms joined by OR
+  const qs = splitGroups(raw).map(groupQuery).filter(Boolean);
+  if (!qs.length) return { queries: [], combineWith: 'OR' };
+  return qs.length === 1 ? qs[0] : { combineWith: 'OR', queries: qs };
+}
+function queryWords(raw) {             // the words to mark in the text: every word that is searched for, not the excluded ones
+  const out = [];
+  splitGroups(raw).forEach(g => parseGroup(g).clauses.flat().forEach(t => out.push(t)));
+  return out;
+}
+/* the text of a consilium as searched (title, argument, casus, text), its length in words and the matches of a
+   highlight pattern in it: frequency curves on the search page and term_frequency in Ask */
+function fullText(c) { return [c.title || '', c.summary || '', (c.casus || []).join(' '), (c.body || []).join(' ')].join(' '); }
+function wordCount(c) { if (c._nw === undefined) c._nw = (fullText(c).match(/[^\s.,;:!?()]+/g) || []).length; return c._nw; }
+function countMatches(c, re) { if (!re) return 0; re.lastIndex = 0; let n = 0; const t = fullText(c); while (re.exec(t) !== null) n++; return n; }
 function formsOf(lemma) {             // all corpus forms of a lemma (for highlighting), the lemma itself included
   if (!LEMMAS) return [lemma];
   if (!LEMMA_FORMS) { LEMMA_FORMS = new Map(); for (const [f, l] of Object.entries(LEMMAS)) { if (!LEMMA_FORMS.has(l)) LEMMA_FORMS.set(l, []); LEMMA_FORMS.get(l).push(f); } }
@@ -70,12 +116,13 @@ function formsOf(lemma) {             // all corpus forms of a lemma (for highli
 const LETTER = '[A-Za-z\u00C0-\u024F\u0300-\u036F]';      // a letter, for whole-word matching without the u flag
 const wholeWord = x => `(?<!${LETTER})${termToRegexPart(x)}(?!${LETTER})`;
 function buildHighlightRe(raw) {
-  const { exact, rest } = splitQuery(raw);
-  const toks = rest.split(/\s+/).filter(Boolean);
-  if (!toks.length && !exact.length) return null;
-  const parts = exact.map(t => wholeWord(normalise(t)));                                       // quoted: that form only
-  toks.forEach(t => {
-    const f = normalise(t); const l = lemmaOf(f);
+  const words = queryWords(raw);
+  if (!words.length) return null;
+  const parts = [];
+  words.forEach(t => {
+    const f = normalise(t.w);
+    if (t.exact) { parts.push(wholeWord(f)); return; }                                        // quoted: that form only
+    const l = lemmaOf(f);
     if (l) formsOf(l).slice(0, 80).forEach(x => parts.push(wholeWord(x)));                     // whole forms of the lemma
     parts.push(termToRegexPart(f));                                                            // and the typed text as a prefix
   });

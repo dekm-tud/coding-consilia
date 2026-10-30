@@ -168,6 +168,60 @@ test('a word in quotation marks is searched in that form only', async ({ page })
   expect(marks.every(t => t === 'heredem')).toBe(true);
 });
 
+test('several words must all occur, OR and -word work, commas compare terms in the chart', async ({ page }) => {
+  const errors = watchConsole(page);
+  const count = async q => {
+    await page.fill('#search-input', q);
+    await expect(page.locator('#result-summary')).toContainText(q.includes(',') ? 'feudum' : `“${q}”`, { timeout: 60000 });
+    await expect(page.locator('#index-progress')).toHaveText('', { timeout: 60000 });
+    await page.fill('#search-input', ''); await page.fill('#search-input', q);
+    await expect(page.locator('#result-summary')).toContainText(q.includes(',') ? 'feudum' : `“${q}”`);
+    return Number(await page.locator('#stat-count').textContent());
+  };
+  await page.goto('/search.html');
+  const both = await count('feudum vasallus'), either = await count('feudum OR vasallus'), only = await count('feudum -vasallus'), one = await count('feudum');
+  expect(both).toBeGreaterThan(0);
+  expect(both).toBeLessThan(one);
+  expect(either).toBeGreaterThan(one);
+  expect(only + both).toBe(one);
+  await count('feudum, vasallus');
+  await expect(page.locator('#trend-chart polyline')).toHaveCount(2);
+  await expect(page.locator('#trend-legend span:has(i)')).toHaveCount(2);
+  await page.locator('#trend-metric button[data-metric="per10k"]').click();
+  await expect(page.locator('#trend-note')).toContainText('per 10,000 words');
+  await expect(page.locator('#results-list a.hit .tdots i').first()).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('Ask tools: full-text syntax and term_frequency give the numbers of the search page', async ({ page }) => {
+  const errors = watchConsole(page);
+  await page.goto('/chat.html');
+  await expect.poll(() => page.evaluate(() => typeof textsReady !== 'undefined' && textsReady !== null), { timeout: 30000 }).toBe(true);
+  const r = await page.evaluate(async () => {
+    await textsReady;
+    const a = await TOOLS.search_fulltext.run({ query: 'feudum vasallus', limit: 3 });
+    const b = await TOOLS.search_fulltext.run({ query: 'feudum -vasallus', limit: 3 });
+    const t = await TOOLS.term_frequency.run({ terms: ['feudum', 'vasallus'], sections: true });
+    return { a: a.total, b: b.total, hits: a.hits.length, terms: t.terms, prints: t.prints.length, sections: t.sections.length, chart: t.chart };
+  });
+  expect(r.a).toBe(58);
+  expect(r.b).toBe(130);
+  expect(r.hits).toBe(3);
+  expect(r.terms.map(x => x.consilia)).toEqual([188, 70]);
+  expect(r.terms[0].per_10k_words).toBeGreaterThan(0);
+  expect(r.sections).toBeGreaterThan(20);
+  expect(r.chart).toContain('search.html?mode=keyword&q=feudum%2C%20vasallus');
+  expect(errors).toEqual([]);
+});
+
+test('every search mode explains itself', async ({ page }) => {
+  await page.goto('/search.html');
+  await page.locator('#mode-help summary').click();
+  await expect(page.locator('#mode-help-body')).toContainText('BM25');
+  await page.locator('#mode-tabs button[data-mode="semantic"]').click();
+  await expect(page.locator('#mode-help-body')).toContainText('not a complete list');
+});
+
 test('fulltext runs in a worker and reports indexing progress', async ({ page }) => {
   await page.goto('/search.html');
   await page.fill('#search-input', 'usufructu');

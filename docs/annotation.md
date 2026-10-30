@@ -123,7 +123,10 @@ normalised word forms of the corpus). `tools/lemmatize_corpus.py` builds it with
 [Latin lemmatizer](https://huggingface.co/mschonhardt/latin-lemmatizer) of the project and applies a short list of
 hand corrections (`OVERRIDES`), which can be applied to an existing list with `--overrides-only`. In the browser
 every word is indexed with its form and a lemma key, a query word is searched as typed and by its lemma, and a word
-in quotation marks is searched in that form only.
+in quotation marks is searched in that form only. Several words must all occur in a consilium, `OR` (or `|`) joins
+alternatives, a word with a leading minus excludes the consilia that contain it, and terms separated by commas are
+searched one by one and drawn as separate frequency curves along the prints (`splitGroups`, `parseGroup` and
+`buildQuery` in `assets/common.js`).
 
 ## TEI and archive packages
 

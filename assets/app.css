@@ -297,6 +297,19 @@ select.field.compact { padding-right: 1.5rem; }
 .map { width: 100%; height: auto; background: var(--paper-2); border-radius: var(--r); cursor: crosshair; display: block; }
 .legend { display: flex; flex-direction: column; gap: .15rem; margin-top: .4rem; font-size: .68rem; color: var(--ink-3); }
 .legend span { display: flex; align-items: center; gap: .4rem; } .legend i { width: 8px; height: 8px; border-radius: 50%; }
+.sr-help { margin: .2rem 0 .5rem; font-size: .8rem; color: var(--ink-2); }
+.sr-help > summary { cursor: pointer; color: var(--ink-3); font-size: .76rem; }
+.sr-help[open] > summary { margin-bottom: .4rem; }
+.sr-help p { margin: 0 0 .55rem; line-height: 1.5; max-width: 52rem; }
+.sr-help a { color: var(--accent); }
+.sr-help code { font-family: var(--mono); font-size: .76rem; background: var(--paper-2); padding: 0 .3em; border-radius: 2px; white-space: nowrap; }
+.sr-help table.syntax { border-collapse: collapse; margin: 0 0 .6rem; }
+.sr-help table.syntax td { padding: .15rem .9rem .15rem 0; vertical-align: top; }
+.hit .tdots { display: inline-flex; gap: 3px; align-self: center; } .hit .tdots i { width: 7px; height: 7px; border-radius: 50%; }
+.trend svg { width: 100%; height: auto; display: block; }
+.trend .ax { stroke: var(--line-2); } .trend .sep { stroke: var(--line); stroke-dasharray: 2 2; } .trend .cur { stroke: var(--ink-3); stroke-width: .6; }
+.trend .tk { font-size: 8px; fill: var(--ink-3); font-family: var(--sans); }
+#trend-legend span { gap: .4rem; } #trend-legend .num { color: var(--ink-3); margin-left: auto; }
 #tip { position: fixed; z-index: 100; pointer-events: none; display: none; background: var(--ink); color: var(--bg); font-size: .72rem; line-height: 1.4; padding: .3rem .55rem; border-radius: var(--r); max-width: 260px; }
 .empty { font-family: var(--serif); font-style: italic; color: var(--ink-3); text-align: center; padding: 3rem 1rem; }
 #side-more > summary { display: none; }

@@ -7,6 +7,8 @@
 | Tool | What it returns |
 |---|---|
 | `corpus_stats()` | number of consilia per author and volume and the size of the vocabulary |
+| `search_fulltext(query, top_k, author_viaf, volume)` | the full-text search of the website, with the complete number of matching consilia and the best ones with a snippet |
+| `term_frequency(terms, author_viaf, volume, with_sections)` | for each term the consilia that contain it and its occurrences per 10,000 words, in total, per print and along the prints |
 | `search_consilia(query, model, top_k, author_viaf, volume, lang)` | semantic search over the section embeddings, where a consilium scores with its best section |
 | `list_embedding_models()` | the models `search_consilia` accepts and whether their vectors are present |
 | `get_consilium(consilium_id)` | the complete consilium with title, argument, body and keywords |
@@ -16,6 +18,12 @@
 | `consilia_by_subject(concept, central_only, top_k, author_viaf, volume)` | all consilia assigned to a concept, central ones first |
 | `list_body_codes()` | the codes of the codebook on body and sexuality with roles and counts |
 | `consilia_by_body_code(code, roles, top_k, author_viaf, volume)` | all consilia with a code, with the Latin evidence and roles |
+
+`search_fulltext` and `term_frequency` use `src/fulltext.py`, which reproduces the search of the website in Python:
+the same query syntax (all words must occur, `OR` for alternatives, `-word` to exclude, a word in quotation marks for
+that form only, commas to compare terms), the lemma list `site-data/lemmas.json`, prefix and fuzzy matching and the
+field weights. Both return the same number of consilia as the search page. The index is built on the first call,
+which takes about a second.
 
 A result of `search_consilia` gives the id, number, title, volume, author, score, the argument (up to 600
 characters), the first substantial body section (up to 400 characters), the number of body sections and the

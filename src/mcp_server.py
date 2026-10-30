@@ -10,6 +10,10 @@ Exposes these tools to Claude Desktop and Claude Code:
   list_embedding_models()                            — which embedding models are
                                                         available for search_consilia's
                                                         `model` argument
+  search_fulltext(query, top_k, author_viaf, volume) — full-text search with the syntax of the search page
+                                                        (all words, OR, -word, "form", lemma forms)
+  term_frequency(terms, author_viaf, volume)         — compare words: consilia and occurrences per
+                                                        print and along the prints
   get_consilium(consilium_id)                        — return full text of a consilium
   list_keywords(query, top_k)                        — browse/search the controlled
                                                         vocabulary (output/vocabulary.json)
@@ -366,6 +370,8 @@ def search_consilia(
     per chunk (not as one whole-document vector) — a document's score is the max
     over its own chunks, which recovers short/rare mentions that would otherwise
     get diluted inside a long document. Returns the top_k highest-scoring consilia.
+    The result is a ranking of the nearest consilia, not a complete list: for every
+    consilium that contains a word, and for counts, use search_fulltext.
 
     Each result contains:
       - summary: numbered legal propositions of the consilium (most information-dense;
@@ -445,6 +451,86 @@ def search_consilia(
         })
 
     return results
+
+
+_FT = None
+
+
+def _fulltext():
+    global _FT
+    if _FT is None:
+        sys.path.insert(0, str(ROOT / "src"))
+        from fulltext import FullText
+        _FT = FullText(CONSILIA)
+    return _FT
+
+
+def _in_scope(c: dict, author_viaf: str | None, volume: str | None) -> bool:
+    return (not author_viaf or c.get("author_viaf") == author_viaf) and (not volume or c.get("volume") == volume)
+
+
+@mcp.tool()
+def search_fulltext(query: str, top_k: int = 20, author_viaf: str | None = None, volume: str | None = None) -> dict:
+    """Full-text search over the Latin title, argument, casus and text of every consilium, the same search as the
+    "Full text" tab of the website. Returns the total number of matching consilia (a complete count, unlike the
+    semantic search) and the best top_k with a snippet.
+
+    A word is found in all its forms through the lemma list (heredem also finds heres, heredibus), the spellings
+    i/j, u/v and ae/e count as equal, the beginning of a word matches, and long words also match forms one letter
+    off. Query syntax:
+      feudum vasallus      consilia that contain both words
+      femina OR mulier     consilia that contain either word (also "|")
+      feudum -vasallus     consilia with the first word but without the second
+      "heredem"            only this form
+      feudum, vasallus     several terms compared, results combined (use term_frequency for the numbers)
+    Search with Latin words. Synonyms need OR (femina OR mulier), forms of one word do not.
+
+    Args:
+        query: the query in the syntax above.
+        top_k: number of consilia returned (default 20, max 100); `total` counts all of them.
+        author_viaf: optional author filter, e.g. 'Baldo_29618397'.
+        volume: optional print filter, e.g. 'Baldo_Cons_Print_Venice_1575_v1'.
+    """
+    ft = _fulltext()
+    hits = [(cid, s, f) for cid, s, f in ft.search(query) if _in_scope(CONSILIA[cid], author_viaf, volume)]
+    top_k = min(max(1, top_k), 100)
+    return {"query": query, "total": len(hits),
+            "search_page": f"{SITE_URL}/search.html?mode=keyword&q={_quote(query)}",
+            "hits": [_brief(cid, CONSILIA[cid], score=round(s, 2), matched_fields=f, snippet=ft.snippet(query, cid))
+                     for cid, s, f in hits[:top_k]]}
+
+
+@mcp.tool()
+def term_frequency(terms: list[str], author_viaf: str | None = None, volume: str | None = None,
+                   with_sections: bool = True) -> dict:
+    """Compare how often words occur in the corpus: for each term the number and share of consilia that contain
+    it and its occurrences per 10,000 words, in total, per print and (with_sections) along the prints in
+    sections of consecutive consilia, as drawn in the frequency chart of the search page. Each term is one query in
+    the syntax of search_fulltext, so a term can be "feudum", "femina OR mulier" or "dos -statutum".
+
+    Args:
+        terms: one to six queries to compare, e.g. ["feudum", "vasallus"].
+        author_viaf: optional author filter.
+        volume: optional print filter.
+        with_sections: include the values per section of about 70 consilia (default true).
+    """
+    ft = _fulltext()
+    terms = [t for t in terms if t.strip()][:6]
+    if not terms:
+        return {"error": "no terms given"}
+    ids = [cid for cid, c in CONSILIA.items() if _in_scope(c, author_viaf, volume)]
+    out = ft.profile(terms, ids)
+    if not with_sections:
+        out.pop("sections", None)
+    out["chart"] = f"{SITE_URL}/search.html?mode=keyword&q={_quote(', '.join(terms))}"
+    out["note"] = ("share_pct = consilia containing the term in % of the consilia of the print or section; "
+                   "per_10k_words = occurrences of the searched word forms per 10,000 words")
+    return out
+
+
+def _quote(s: str) -> str:
+    from urllib.parse import quote
+    return quote(s)
 
 
 @mcp.tool()

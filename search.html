@@ -37,6 +37,7 @@
       <button data-mode="index" role="tab">Subjects</button>
     </div>
     <p class="status" id="mode-hint"></p>
+    <details class="sr-help" id="mode-help"><summary>How this search works</summary><div id="mode-help-body"></div></details>
 
     <!-- one input row for every mode: query, reference consilium or term filter, plus the scope -->
     <div class="sr-row" id="input-row">
@@ -105,6 +106,10 @@
         <div class="frow"><span>Argument</span><div class="tr"><i id="bar-summary"></i></div><span class="c num" id="cnt-summary">0</span></div>
         <div class="frow"><span>Casus</span><div class="tr"><i id="bar-casus"></i></div><span class="c num" id="cnt-casus">0</span></div>
         <div class="frow"><span>Text</span><div class="tr"><i id="bar-body"></i></div><span class="c num" id="cnt-body">0</span></div>
+      </div>
+      <div class="box" id="trend-block" style="display:none"><h3>Frequency along the prints</h3>
+        <div class="seg" id="trend-metric" style="margin-bottom:.5rem"><button class="active" data-metric="share">consilia</button><button data-metric="per10k">per 10,000 words</button></div>
+        <div id="trend-chart" class="trend"></div><div class="legend" id="trend-legend"></div><p class="status" id="trend-note"></p>
       </div>
       <div class="box"><h3>Distribution across prints</h3><div id="dist-bars"></div><div class="status" style="display:flex;justify-content:space-between"><span>start</span><span>end of print</span></div></div>
       <details class="box" id="pca-block" style="display:none"><summary class="label" style="cursor:pointer">Map of the corpus</summary>
