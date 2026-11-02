@@ -2038,6 +2038,70 @@
 "key": "new:colli1999incunabula",
 "kind": "literature",
 "match": "added 2026-11-02 (review)"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "nm2",
+"key": "I5N7I6B7",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dnm2",
+"key": "I5N7I6B7",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n7a",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn7a",
+"key": "new:colli2013von",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n8",
+"key": "LWZC7HIW",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn8",
+"key": "LWZC7HIW",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "introduction.html",
+"lang": "en",
+"note_id": "n7",
+"key": "96AN5TMQ",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "introduction.html",
+"lang": "de",
+"note_id": "dn7",
+"key": "96AN5TMQ",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
 }
 ]
 }
