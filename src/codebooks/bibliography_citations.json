@@ -237,10 +237,10 @@
 {
 "page": "introduction.html",
 "lang": "en",
-"note_id": "n10c",
+"note_id": "n3a",
 "key": "46JZAHKH",
 "kind": "literature",
-"match": "exact"
+"match": "moved 2026-11-02 (claims check)"
 },
 {
 "page": "introduction.html",
@@ -528,10 +528,10 @@
 {
 "page": "introduction.html",
 "lang": "de",
-"note_id": "dn10c",
+"note_id": "dn3a",
 "key": "46JZAHKH",
 "kind": "literature",
-"match": "exact"
+"match": "moved 2026-11-02 (claims check)"
 },
 {
 "page": "introduction.html",
@@ -1412,14 +1412,6 @@
 {
 "page": "panormitanus.html",
 "lang": "en",
-"note_id": "n3",
-"key": "new:black1970monarchy",
-"kind": "literature",
-"match": "exact"
-},
-{
-"page": "panormitanus.html",
-"lang": "en",
 "note_id": "n4",
 "key": "new:pennington2000nicolaus",
 "kind": "literature",
@@ -1720,14 +1712,6 @@
 "kind": "literature",
 "match": "exact",
 "comment": "Full title has subtitle \"Panormitanus, Aeneas Sylvius, Cusanus\"."
-},
-{
-"page": "panormitanus.html",
-"lang": "de",
-"note_id": "dn3",
-"key": "new:black1970monarchy",
-"kind": "literature",
-"match": "exact"
 },
 {
 "page": "panormitanus.html",
@@ -2101,6 +2085,86 @@
 "note_id": "dn7",
 "key": "96AN5TMQ",
 "kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n4",
+"key": "new:watanabe1972authority",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn4",
+"key": "new:watanabe1972authority",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n4",
+"key": "new:norr1964kirche",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn4",
+"key": "new:norr1964kirche",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n1",
+"key": "new:kirshner2020baldo",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn1",
+"key": "new:kirshner2020baldo",
+"kind": "literature",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "nm1",
+"key": "new:amesndnicolaus",
+"kind": "source",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dnm1",
+"key": "new:amesndnicolaus",
+"kind": "source",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "panormitanus.html",
+"lang": "en",
+"note_id": "n6",
+"key": "new:amesndnicolaus",
+"kind": "source",
+"match": "added 2026-11-02 (claims check)"
+},
+{
+"page": "panormitanus.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "new:amesndnicolaus",
+"kind": "source",
 "match": "added 2026-11-02 (claims check)"
 }
 ]

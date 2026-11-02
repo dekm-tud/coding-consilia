@@ -25,7 +25,7 @@
    "pages": "95-110",
    "DOI": "10.1017/CBO9780511496455.006",
    "ISBN": "978-0-521-86448-0",
-   "source": "https://api.crossref.org/works/10.1017/cbo9780511496455.006",
+   "source": "https://api.crossref.org/works/10.1017/cbo9780511496455.006; chapter PDF checked 2026-11-02, quotations on p. 95 verbatim",
    "kind": "literature"
   },
   "new:dean2007crime": {
@@ -43,7 +43,7 @@
    "date": "2007",
    "DOI": "10.1017/CBO9780511496455",
    "ISBN": "978-0-521-86448-0",
-   "source": "https://api.crossref.org/works/10.1017/cbo9780511496455",
+   "source": "https://api.crossref.org/works/10.1017/cbo9780511496455; chapter PDF checked 2026-11-02, quotations on p. 95 verbatim",
    "kind": "literature"
   },
   "new:ascheri2003consilia": {
@@ -96,8 +96,9 @@
    "volume": "8",
    "date": "1997",
    "pages": "35-61",
-   "source": "https://en.wikipedia.org/wiki/Baldus_de_Ubaldis (bibliography); pages per https://revistas.um.es/analesderecho/article/download/64481/62151/269771",
-   "kind": "literature"
+   "source": "CUA Law Scholarship Repository copy, 'Baldus de Ubaldis, 8 Rivista internazionale di diritto comune 35 (1997)', checked 2026-11-02",
+   "kind": "literature",
+   "url": "https://scholarship.law.edu/scholar/"
   },
   "new:pennington2015kp": {
    "itemType": "webpage",
@@ -114,8 +115,10 @@
    "date": "2015",
    "url": "https://amesfoundation.law.harvard.edu/BioBibCanonists/KP_BP_Baldus_bio.html",
    "note": "Page last updated 08/05/24. Ames Foundation website offline since Oct. 2026; checked via Wayback Machine.",
-   "source": "https://web.archive.org/web/2025/https://amesfoundation.law.harvard.edu/BioBibCanonists/KP_BP_Baldus_bio.html",
-   "kind": "literature"
+   "source": "https://web.archive.org/web/2025/https://amesfoundation.law.harvard.edu/BioBibCanonists/KP_BP_Baldus_bio.html; Wayback Machine snapshot of 2026-01-11 read 2026-11-02 (Ames site offline since 22 Oct 2026)",
+   "kind": "literature",
+   "archiveURL": "http://web.archive.org/web/20260111215508/https://amesfoundation.law.harvard.edu/BioBibCanonists/KP_BP_Baldus_bio.html",
+   "archiveDate": "2026-01-11"
   },
   "new:pennington1997allegationes": {
    "itemType": "bookSection",
@@ -185,7 +188,7 @@
    "date": "1957",
    "pages": "1195-1215",
    "note": "Columns, not pages.",
-   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 3: 'C. Lefebvre, Panormitain, Dictionnaire de droit canonique 6 (1957) 1195-1215'); publisher of the series per https://lawcat.berkeley.edu/record/224571",
+   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 3: 'C. Lefebvre, Panormitain, Dictionnaire de droit canonique 6 (1957) 1195-1215'); publisher of the series per https://lawcat.berkeley.edu/record/224571; cited after Pennington 2000 and the Bio-Bibliographical Guide",
    "kind": "literature"
   },
   "new:norr1964kirche": {
@@ -203,7 +206,7 @@
    "place": "Köln; Graz",
    "publisher": "Böhlau",
    "date": "1964",
-   "source": "https://core-prod.cambridgecore.org/core/journals/journal-of-ecclesiastical-history/article/kirche-und-konzil-bei-nicolaus-de-tudeschis-panormitanus-by-knut-wolfgang-norr-forschungen-zur-kirchlichen-rechtsgeschichte-und-zum-kirchenrecht-iv-pp-viii-192-cologne-bohlau-1964-dm-2000/9841B3167318A1DD4E701D22D55C26CA",
+   "source": "PDF of the book checked 2026-11-02",
    "kind": "literature"
   },
   "new:landau1995nikolaus": {
@@ -227,7 +230,7 @@
    "date": "1995",
    "pages": "458-459",
    "ISBN": "3-406-39330-6",
-   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 3); book data: https://lgv.vufind.net/lgv/Record/a0006583/Details",
+   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 3); book data: https://lgv.vufind.net/lgv/Record/a0006583/Details; cited after Pennington 2000 and the Bio-Bibliographical Guide",
    "kind": "literature"
   },
   "new:watanabe1972authority": {
@@ -246,27 +249,9 @@
    "date": "1972",
    "pages": "217-236",
    "DOI": "10.2307/2708870",
-   "source": "https://api.crossref.org/works/10.2307/2708870",
-   "kind": "literature"
-  },
-  "new:black1970monarchy": {
-   "itemType": "book",
-   "creators": [
-    {
-     "creatorType": "author",
-     "lastName": "Black",
-     "firstName": "Antony"
-    }
-   ],
-   "title": "Monarchy and Community: Political Ideas in the Later Conciliar Controversy 1430–1450",
-   "series": "Cambridge Studies in Medieval Life and Thought, Third Series",
-   "seriesNumber": "2",
-   "place": "Cambridge",
-   "publisher": "Cambridge University Press",
-   "date": "1970",
-   "ISBN": "0-521-07739-7",
-   "source": "https://ci.nii.ac.jp/ncid/BA03085557?l=en",
-   "kind": "literature"
+   "source": "JSTOR PDF checked 2026-11-02",
+   "kind": "literature",
+   "url": "https://www.jstor.org/stable/2708870"
   },
   "new:helmholz2020niccolo": {
    "itemType": "bookSection",
@@ -295,7 +280,7 @@
    "date": "2020",
    "pages": "216-229",
    "DOI": "10.4324/9781003014539-13",
-   "source": "https://api.crossref.org/works/10.4324/9781003014539",
+   "source": "https://api.crossref.org/works/10.4324/9781003014539; volume PDF checked 2026-11-02, pp. 216–229",
    "kind": "literature"
   },
   "new:romano1983su": {
@@ -320,7 +305,7 @@
    "date": "1983",
    "pages": "583-600",
    "note": "Title as given by Pennington; the footnote has 'Un consilium di Gualtiero Paternò conservato nel ms. 162 della Biblioteca Capitolare Feliniana di Lucca'. Publisher (Rubbettino, per footnote) not verified.",
-   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 78)",
+   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 78); cited after Pennington 2000 and the Bio-Bibliographical Guide",
    "kind": "literature"
   },
   "new:novarese1991de": {
@@ -338,7 +323,7 @@
    "date": "1991",
    "pages": "99-155",
    "note": "Pennington's citation reads 'Quarto consigli' (apparently a typo); the Panormitanus consilium is edited on pp. 140-145.",
-   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 80)",
+   "source": "https://web.archive.org/web/2024/http://legalhistorysources.com/Canon%20Law/PANORMITANUS.html (Pennington n. 80); cited after Pennington 2000 and the Bio-Bibliographical Guide",
    "kind": "literature"
   },
   "new:molinier1891catalogue": {
@@ -516,8 +501,10 @@
    "publisher": "The Ames Foundation, Harvard Law School",
    "url": "https://amesfoundation.law.harvard.edu/BioBibCanonists/Report_Biobib2.php?record_id=r450",
    "note": "Ames Foundation website offline since Oct. 2026; checked via Wayback Machine.",
-   "source": "https://web.archive.org/web/2025/https://amesfoundation.law.harvard.edu/BioBibCanonists/Report_Biobib2.php?record_id=r450",
-   "kind": "source"
+   "source": "https://web.archive.org/web/2025/https://amesfoundation.law.harvard.edu/BioBibCanonists/Report_Biobib2.php?record_id=r450; Wayback Machine snapshot of 2025-11-21 read 2026-11-02 (Ames site offline since 22 Oct 2026)",
+   "kind": "source",
+   "archiveURL": "http://web.archive.org/web/20251121221729/https://amesfoundation.law.harvard.edu/BioBibCanonists/Report_Biobib2.php?record_id=r450",
+   "archiveDate": "2025-11-21"
   },
   "new:amesfoundation2017panormitanus": {
    "itemType": "webpage",
@@ -528,8 +515,10 @@
    "date": "2017",
    "url": "https://amesfoundation.law.harvard.edu/digital/Panormitanus/PanormitanusMetadata.html",
    "note": "Houghton cataloguing: HOLLIS nos. 007169251, 007169262. Date inferred from 'last visited, 22 May 2017' on the page. Site offline since Oct. 2026.",
-   "source": "https://web.archive.org/web/2025/https://amesfoundation.law.harvard.edu/digital/Panormitanus/PanormitanusMetadata.html",
-   "kind": "source"
+   "source": "https://web.archive.org/web/2025/https://amesfoundation.law.harvard.edu/digital/Panormitanus/PanormitanusMetadata.html; Wayback Machine snapshot of 2026-07-15 read 2026-11-02 (Ames site offline since 22 Oct 2026)",
+   "kind": "source",
+   "archiveURL": "http://web.archive.org/web/20260715102613/https://amesfoundation.law.harvard.edu/digital/Panormitanus/PanormitanusMetadata.html",
+   "archiveDate": "2026-07-15"
   },
   "new:cambraims207": {
    "itemType": "manuscript",
@@ -758,6 +747,34 @@
    "pages": "323-346",
    "url": "https://www.lhlt.mpg.de/2242556/ic25_09_colli.pdf",
    "source": "https://www.lhlt.mpg.de/library/reprints",
+   "kind": "literature"
+  },
+  "new:kirshner2020baldo": {
+   "itemType": "bookSection",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Kirshner",
+     "firstName": "Julius"
+    },
+    {
+     "creatorType": "editor",
+     "lastName": "Condorelli",
+     "firstName": "Orazio"
+    },
+    {
+     "creatorType": "editor",
+     "lastName": "Domingo",
+     "firstName": "Rafael"
+    }
+   ],
+   "title": "Baldo degli Ubaldi da Perugia (1327–1400)",
+   "bookTitle": "Law and the Christian Tradition in Italy: The Legacy of the Great Jurists",
+   "place": "Abingdon and New York",
+   "publisher": "Routledge",
+   "date": "2020",
+   "pages": "179-197",
+   "source": "volume PDF checked 2026-11-02",
    "kind": "literature"
   }
  },

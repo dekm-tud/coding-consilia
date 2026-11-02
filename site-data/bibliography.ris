@@ -632,20 +632,6 @@ KW  - italy
 KW  - middle-ages
 ER  - 
 
-TY  - BOOK
-AU  - Black, Antony
-TI  - Monarchy and Community: Political Ideas in the Later Conciliar Controversy 1430–1450
-PY  - 1970
-CY  - Cambridge
-PB  - Cambridge University Press
-SN  - 0-521-07739-7
-T3  - Cambridge Studies in Medieval Life and Thought, Third Series
-KW  - political-thought
-KW  - church-clergy
-KW  - panormitanus
-KW  - middle-ages
-ER  - 
-
 TY  - JOUR
 AU  - Bliemetzrieder, Franz
 TI  - Gutachten der juristischen Fakultät zu Padua über Urbans VI. Wahl (sommer 1378)
@@ -2485,6 +2471,19 @@ KW  - italy
 KW  - middle-ages
 ER  - 
 
+TY  - CHAP
+AU  - Kirshner, Julius
+ED  - Condorelli, Orazio
+ED  - Domingo, Rafael
+TI  - Baldo degli Ubaldi da Perugia (1327–1400)
+T2  - Law and the Christian Tradition in Italy: The Legacy of the Great Jurists
+PY  - 2020
+CY  - Abingdon and New York
+PB  - Routledge
+SP  - 179
+EP  - 197
+ER  - 
+
 TY  - JOUR
 AU  - Kirshner, Julius
 TI  - Un consilium di Onofrio Bartolini da Perugia sulla mulier alibi nupta
@@ -3853,6 +3852,7 @@ TI  - Baldus de Ubaldis
 JO  - Rivista internazionale di diritto comune
 PY  - 1997
 VL  - 8
+UR  - https://scholarship.law.edu/scholar/
 SP  - 35
 EP  - 61
 KW  - legal-consilia
@@ -4813,6 +4813,7 @@ PY  - 1972
 VL  - 33
 IS  - 2
 DO  - 10.2307/2708870
+UR  - https://www.jstor.org/stable/2708870
 SP  - 217
 EP  - 236
 KW  - political-thought
