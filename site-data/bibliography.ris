@@ -1,3 +1,13 @@
+TY  - ELEC
+TI  - Abbatis Panormitani Commentaria (Venice 1570–1571), Houghton Library copy: metadata and table of contents
+T2  - The Ames Foundation
+PY  - 2017
+PB  - The Ames Foundation, Harvard Law School
+UR  - https://amesfoundation.law.harvard.edu/digital/Panormitanus/PanormitanusMetadata.html
+KW  - editions-repertories
+KW  - panormitanus
+ER  - 
+
 TY  - CHAP
 AU  - Andenna, Cristina
 ED  - Barret, Sébastien
@@ -891,7 +901,7 @@ ER  -
 TY  - ELEC
 TI  - Census of Opera by Baldus de Ubaldis (1327-1400)
 T2  - Max Planck Institute for Legal History and Legal Theory
-UR  - https://www.lhlt.mpg.de/research-project/census-of-opera-by-baldus-de-ubaldis
+UR  - https://web.archive.org/web/2025/https://www.lhlt.mpg.de/research-project/census-of-opera-by-baldus-de-ubaldis
 KW  - editions-repertories
 KW  - baldus
 ER  - 
@@ -1070,6 +1080,17 @@ KW  - baldus
 KW  - middle-ages
 ER  - 
 
+TY  - JOUR
+AU  - Colli, Vincenzo
+TI  - Collezioni d'autore di Baldo degli Ubaldi nel MS Biblioteca Apostolica Vaticana, Barb. lat. 1398
+JO  - Ius commune
+PY  - 1998
+VL  - 25
+UR  - https://www.lhlt.mpg.de/2242556/ic25_09_colli.pdf
+SP  - 323
+EP  - 346
+ER  - 
+
 TY  - CHAP
 AU  - Colli, Vincenzo
 ED  - Ascheri, Mario
@@ -1087,6 +1108,28 @@ KW  - manuscripts
 KW  - printed-collections
 KW  - italy
 KW  - middle-ages
+ER  - 
+
+TY  - JOUR
+AU  - Colli, Vincenzo
+TI  - Incunabula operum Baldi de Ubaldis
+JO  - Ius commune
+PY  - 1999
+VL  - 26
+UR  - https://www.lhlt.mpg.de/2242663/ic26_07_colli_2.pdf
+SP  - 241
+EP  - 297
+ER  - 
+
+TY  - JOUR
+AU  - Colli, Vincenzo
+TI  - L'esemplare di dedica e la tradizione del testo della Lectura super usibus feudorum di Baldo degli Ubaldi
+JO  - Ius commune
+PY  - 2000
+VL  - 27
+UR  - https://www.lhlt.mpg.de/2242722/ic27_03_colli_1.pdf
+SP  - 69
+EP  - 117
 ER  - 
 
 TY  - CHAP
@@ -3682,16 +3725,6 @@ KW  - legal-consilia
 KW  - genre-studies
 KW  - roman-law
 KW  - middle-ages
-ER  - 
-
-TY  - ELEC
-TI  - Panormitanus "metadata" (Abbatis Panormitani Commentaria, Venice 1570–1571, Houghton Library copy)
-T2  - The Ames Foundation
-PY  - 2017
-PB  - The Ames Foundation, Harvard Law School
-UR  - https://amesfoundation.law.harvard.edu/digital/Panormitanus/PanormitanusMetadata.html
-KW  - editions-repertories
-KW  - panormitanus
 ER  - 
 
 TY  - BOOK

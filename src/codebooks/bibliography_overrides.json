@@ -503,8 +503,8 @@
    "creators": [],
    "title": "Census of Opera by Baldus de Ubaldis (1327-1400)",
    "websiteTitle": "Max Planck Institute for Legal History and Legal Theory",
-   "url": "https://www.lhlt.mpg.de/research-project/census-of-opera-by-baldus-de-ubaldis",
-   "note": "Live URL returned HTTP 410 on 2026-10-29; archived copy available.",
+   "url": "https://web.archive.org/web/2025/https://www.lhlt.mpg.de/research-project/census-of-opera-by-baldus-de-ubaldis",
+   "note": "Project page of the Max Planck Institute; the live URL returned HTTP 410 on 2026-10-29 and 2026-11-02, so the archived copy is linked. The 2013 research report (new:colli2013von) gives the same figures.",
    "source": "https://web.archive.org/web/2025/https://www.lhlt.mpg.de/research-project/census-of-opera-by-baldus-de-ubaldis",
    "kind": "source"
   },
@@ -522,7 +522,7 @@
   "new:amesfoundation2017panormitanus": {
    "itemType": "webpage",
    "creators": [],
-   "title": "Panormitanus \"metadata\" (Abbatis Panormitani Commentaria, Venice 1570–1571, Houghton Library copy)",
+   "title": "Abbatis Panormitani Commentaria (Venice 1570–1571), Houghton Library copy: metadata and table of contents",
    "websiteTitle": "The Ames Foundation",
    "publisher": "The Ames Foundation, Harvard Law School",
    "date": "2017",
@@ -705,6 +705,60 @@
    "url": "https://www.gesamtkatalogderwiegendrucke.de/docs/M48058.htm",
    "source": "https://www.gesamtkatalogderwiegendrucke.de/docs/M48058.htm",
    "kind": "source"
+  },
+  "new:colli2000esemplare": {
+   "itemType": "journalArticle",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Colli",
+     "firstName": "Vincenzo"
+    }
+   ],
+   "title": "L'esemplare di dedica e la tradizione del testo della Lectura super usibus feudorum di Baldo degli Ubaldi",
+   "publicationTitle": "Ius Commune",
+   "volume": "27",
+   "date": "2000",
+   "pages": "69-117",
+   "url": "https://www.lhlt.mpg.de/2242722/ic27_03_colli_1.pdf",
+   "source": "https://www.lhlt.mpg.de/library/reprints",
+   "kind": "literature"
+  },
+  "new:colli1999incunabula": {
+   "itemType": "journalArticle",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Colli",
+     "firstName": "Vincenzo"
+    }
+   ],
+   "title": "Incunabula operum Baldi de Ubaldis",
+   "publicationTitle": "Ius Commune",
+   "volume": "26",
+   "date": "1999",
+   "pages": "241-297",
+   "url": "https://www.lhlt.mpg.de/2242663/ic26_07_colli_2.pdf",
+   "source": "https://www.lhlt.mpg.de/library/reprints",
+   "kind": "literature"
+  },
+  "new:colli1998collezioni": {
+   "itemType": "journalArticle",
+   "creators": [
+    {
+     "creatorType": "author",
+     "lastName": "Colli",
+     "firstName": "Vincenzo"
+    }
+   ],
+   "title": "Collezioni d'autore di Baldo degli Ubaldi nel MS Biblioteca Apostolica Vaticana, Barb. lat. 1398",
+   "publicationTitle": "Ius Commune",
+   "volume": "25",
+   "date": "1998",
+   "pages": "323-346",
+   "url": "https://www.lhlt.mpg.de/2242556/ic25_09_colli.pdf",
+   "source": "https://www.lhlt.mpg.de/library/reprints",
+   "kind": "literature"
   }
  },
  "H368F2MG": {

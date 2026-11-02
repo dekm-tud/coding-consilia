@@ -1958,6 +1958,86 @@
 "kind": "source",
 "match": "exact",
 "comment": "Printed manuscript catalogue; classed as source (catalogue record)."
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n2",
+"key": "new:colli2000esemplare",
+"kind": "literature",
+"match": "added 2026-11-02 (review)"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn2",
+"key": "new:colli2000esemplare",
+"kind": "literature",
+"match": "added 2026-11-02 (review)"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n9a",
+"key": "RCL6PVV3",
+"kind": "literature",
+"match": "added 2026-11-02 (review)"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn9a",
+"key": "RCL6PVV3",
+"kind": "literature",
+"match": "added 2026-11-02 (review)"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n6",
+"key": "new:colli1998collezioni",
+"kind": "literature",
+"match": "added 2026-11-02 (review)"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "new:colli1998collezioni",
+"kind": "literature",
+"match": "added 2026-11-02 (review)"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n6",
+"key": "U66CRIVE",
+"kind": "literature",
+"match": "added 2026-11-02 (review)"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn6",
+"key": "U66CRIVE",
+"kind": "literature",
+"match": "added 2026-11-02 (review)"
+},
+{
+"page": "baldus.html",
+"lang": "en",
+"note_id": "n8",
+"key": "new:colli1999incunabula",
+"kind": "literature",
+"match": "added 2026-11-02 (review)"
+},
+{
+"page": "baldus.html",
+"lang": "de",
+"note_id": "dn8",
+"key": "new:colli1999incunabula",
+"kind": "literature",
+"match": "added 2026-11-02 (review)"
 }
 ]
 }

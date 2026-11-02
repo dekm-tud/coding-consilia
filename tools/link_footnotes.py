@@ -32,7 +32,11 @@ def short(e: dict) -> str:
         elif len(people) > 2:
             name += " et al."
     else:
-        name = e.get("archiveLocation") or e["title"].split(":")[0][:40]
+        name = e.get("archiveLocation") or e.get("container") or e["title"]
+        if len(name) > 40:
+            name = re.split(r"[:(]", e["title"])[0].strip()
+        if len(name) > 40:
+            name = name[:40].rsplit(" ", 1)[0] + " …"
     return f"{name} {e.get('dateText') or e.get('year') or ''}".strip()
 
 
@@ -62,7 +66,13 @@ def main() -> None:
             if not keys:
                 return f'<li id="{note_id}">{body}</li>'
             lang = "de" if note_id.startswith("d") else "en"
-            links = ", ".join(f'<a href="bibliography.html#{k}">{html.escape(short(entries[k]))}</a>' for k in keys)
+            labels = {k: short(entries[k]) for k in keys}
+            dup = {v for v in labels.values() if list(labels.values()).count(v) > 1}
+            for k in keys:                                  # two works of one author and year: add a word of the title
+                if labels[k] in dup:
+                    word = re.sub(r"^(l'|il |la |i |le |the |die |der |das |de |von |von der )", "", entries[k]["title"].lower()).split()[0]
+                    labels[k] = f"{short(entries[k])} ({word.capitalize()})"
+            links = ", ".join(f'<a href="bibliography.html#{k}">{html.escape(labels[k])}</a>' for k in keys)
             span = f' <span class="fn-bib">{LABEL[lang]}: {links}</span>'
             total += 1
             back = body.rfind('<a href="#')
